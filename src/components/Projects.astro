@@ -1,0 +1,327 @@
+---
+// Projects.astro - Sección de proyectos organizados por año
+
+// Datos simulados de proyectos (ampliados)
+const projects = [
+  {
+    title: "NFT Marketplace",
+    description: "Plataforma para comprar y vender activos digitales con tecnología blockchain.",
+    image: "/images/projects/project-1.webp",
+    year: 2023,
+    category: "full-stack",
+    technologies: ["React", "Node.js", "Solidity", "Web3.js"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "E-commerce Dashboard",
+    description: "Panel de administración para tienda online con analíticas en tiempo real.",
+    image: "/images/projects/project-2.webp",
+    year: 2023,
+    category: "frontend",
+    technologies: ["Vue", "Tailwind CSS", "Chart.js"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Music Streaming App",
+    description: "Aplicación de streaming de música con interfaz inspirada en la estética de Feid.",
+    image: "/images/projects/project-3.webp",
+    year: 2023,
+    category: "full-stack",
+    technologies: ["React Native", "Node.js", "MongoDB", "AWS"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Social Media Platform",
+    description: "Red social con feed personalizado y mensajería en tiempo real.",
+    image: "/images/projects/project-sm.webp",
+    year: 2023,
+    category: "full-stack",
+    technologies: ["React", "Firebase", "Socket.io", "TailwindCSS"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "AI Content Generator",
+    description: "Herramienta de generación de contenido con inteligencia artificial.",
+    image: "/images/projects/project-ai.webp",
+    year: 2023,
+    category: "full-stack",
+    technologies: ["Python", "TensorFlow", "React", "FastAPI"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "API Gateway",
+    description: "Servicio de API Gateway para microservicios con autenticación y rate limiting.",
+    image: "/images/projects/project-4.webp",
+    year: 2022,
+    category: "backend",
+    technologies: ["Go", "Docker", "Kubernetes", "Redis"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Crypto Dashboard",
+    description: "Plataforma para visualizar y analizar criptomonedas en tiempo real.",
+    image: "/images/projects/project-5.webp",
+    year: 2022,
+    category: "frontend",
+    technologies: ["React", "Redux", "D3.js", "Firebase"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Health & Fitness App",
+    description: "Aplicación para seguimiento de actividad física y nutrición.",
+    image: "/images/projects/project-health.webp",
+    year: 2022,
+    category: "mobile",
+    technologies: ["React Native", "Redux", "HealthKit", "Firebase"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Real Estate Platform",
+    description: "Plataforma para compra, venta y alquiler de propiedades.",
+    image: "/images/projects/project-realestate.webp",
+    year: 2022,
+    category: "full-stack",
+    technologies: ["Vue.js", "Node.js", "PostgreSQL", "Google Maps API"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Task Management App",
+    description: "Aplicación de gestión de tareas con interfaz minimalista y funcionalidades avanzadas.",
+    image: "/images/projects/project-6.webp",
+    year: 2021,
+    category: "full-stack",
+    technologies: ["Angular", "Express", "MongoDB", "Socket.io"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Weather App",
+    description: "Aplicación del clima con visualizaciones animadas y pronósticos detallados.",
+    image: "/images/projects/project-7.webp",
+    year: 2021,
+    category: "frontend",
+    technologies: ["React", "OpenWeather API", "Framer Motion"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Sitio web de portafolio con animaciones y modo oscuro.",
+    image: "/images/projects/project-portfolio.webp",
+    year: 2021,
+    category: "frontend",
+    technologies: ["Astro", "TailwindCSS", "JavaScript", "GSAP"],
+    link: "#",
+    github: "#"
+  }
+];
+
+// Agrupar proyectos por año
+const projectsByYear = projects.reduce((acc, project) => {
+  acc[project.year] = acc[project.year] || [];
+  acc[project.year].push(project);
+  return acc;
+}, {});
+
+// Obtener años únicos y ordenarlos de más reciente a más antiguo
+const years = Object.keys(projectsByYear).map(Number).sort((a, b) => b - a);
+
+// Categorías de proyectos para filtrar
+const categories = [
+  { id: "all", name: "Todos" },
+  { id: "frontend", name: "Frontend" },
+  { id: "backend", name: "Backend" },
+  { id: "full-stack", name: "Full Stack" },
+  { id: "mobile", name: "Mobile" }
+];
+---
+
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-4">
+    <!-- Encabezado de sección -->
+    <div class="text-center mb-16">
+      <h2 
+        class="text-3xl md:text-4xl font-bold mb-4 text-feid-light"
+        data-aos="fade-up"
+      >
+        Mis <span class="neon-text">Proyectos</span>
+      </h2>
+      <div 
+        class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      ></div>
+      <p 
+        class="mt-4 max-w-2xl mx-auto text-gray-300"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Una colección completa de mis trabajos organizados por año. Cada proyecto es una oportunidad 
+        para innovar y aplicar nuevas tecnologías.
+      </p>
+    </div>
+    
+    <!-- Filtros de proyectos -->
+    <div class="flex flex-wrap justify-center mb-10 gap-2" data-aos="fade-up" data-aos-delay="400">
+      {categories.map((category) => (
+        <button 
+          class={`category-filter px-4 py-2 rounded-full text-feid-light hover:text-feid-green transition-colors duration-300 ${category.id === 'all' ? 'active bg-feid-green/10' : ''}`}
+          data-category={category.id}
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
+    
+    <!-- Acordeón de proyectos por año -->
+    <div class="space-y-12" data-aos="fade-up" data-aos-delay="500">
+      {years.map((year, index) => (
+        <div class="project-year-section">
+          <!-- Encabezado del año -->
+          <div 
+            class="year-header relative flex items-center mb-8 cursor-pointer group"
+            data-year={year}
+          >
+            <h3 class="text-3xl font-bold relative z-10 px-6 py-3 text-feid-light bg-feid-dark">
+              Proyectos en <span class="neon-text">{year}</span>
+            </h3>
+            <div class="flex-grow h-0.5 bg-gradient-to-r from-feid-green to-feid-blue opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span class="year-toggle-icon ml-4 text-feid-light transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </div>
+          
+          <!-- Proyectos del año -->
+          <div class="year-projects grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectsByYear[year].map((project) => (
+              <div 
+                class="project-card card overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
+                data-category={project.category}
+              >
+                <!-- Imagen del proyecto con placeholder -->
+                <div class="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden group">
+                  <div class="w-full h-full flex items-center justify-center">
+                    <span class="text-4xl text-feid-light/20 font-semibold">{project.title.split(' ')[0]}</span>
+                  </div>
+                  
+                  <!-- Overlay con enlaces -->
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                    <a href={project.link} class="bg-feid-green/90 hover:bg-feid-green text-feid-dark font-medium p-2 rounded-full transition-colors duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    <a href={project.github} class="bg-feid-purple/90 hover:bg-feid-purple text-white font-medium p-2 rounded-full transition-colors duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.167 6.839 9.489.5.092.682-.217.682-.48 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.934.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Información del proyecto -->
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold text-feid-light">{project.title}</h4>
+                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-feid-green/10 text-feid-green rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
+                  <p class="text-gray-300 text-sm mb-4">{project.description}</p>
+                  
+                  <!-- Tecnologías -->
+                  <div class="flex flex-wrap gap-1">
+                    {project.technologies.map((tech) => (
+                      <span class="inline-block px-2 py-0.5 text-xs bg-feid-dark text-gray-300 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Filtrado de proyectos por categoría
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    categoryFilters.forEach(filter => {
+      filter.addEventListener('click', function() {
+        // Actualizar clase active
+        categoryFilters.forEach(f => f.classList.remove('active', 'bg-feid-green/10'));
+        this.classList.add('active', 'bg-feid-green/10');
+        
+        const category = this.getAttribute('data-category');
+        
+        // Filtrar proyectos
+        projectCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          
+          if (category === 'all' || category === cardCategory) {
+            card.classList.remove('hidden');
+            
+            // Animación de entrada
+            setTimeout(() => {
+              (card as HTMLElement).style.opacity = '1';
+              (card as HTMLElement).style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            // Animación de salida
+            (card as HTMLElement).style.opacity = '0';
+            (card as HTMLElement).style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+              card.classList.add('hidden');
+            }, 300);
+          }
+        });
+      });
+    });
+    
+    // Acordeón para años de proyectos
+    const yearHeaders = document.querySelectorAll('.year-header');
+    yearHeaders.forEach(header => {
+      // Por defecto, abrir el primer año (el más reciente)
+      const isFirst = header === yearHeaders[0];
+      const projectsSection = header.nextElementSibling as HTMLElement;
+      const toggleIcon = header.querySelector('.year-toggle-icon') as HTMLElement;
+      
+      if (!isFirst) {
+        projectsSection.style.display = 'none';
+        toggleIcon.style.transform = 'rotate(-90deg)';
+      }
+      
+      header.addEventListener('click', () => {
+        const isVisible = projectsSection.style.display !== 'none';
+        
+        // Alternar visibilidad
+        if (isVisible) {
+          projectsSection.style.display = 'none';
+          toggleIcon.style.transform = 'rotate(-90deg)';
+        } else {
+          projectsSection.style.display = 'grid';
+          toggleIcon.style.transform = 'rotate(0)';
+        }
+      });
+    });
+  });
+</script> 

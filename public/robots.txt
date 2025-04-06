@@ -1,0 +1,10 @@
+# robots.txt para PortFeid
+
+User-agent: *
+Allow: /
+
+# Impedir la indexación de páginas específicas que no deberían ser indexadas
+# Disallow: /private/
+
+# Ubicación del sitemap
+Sitemap: https://www.portfeid.com/sitemap.xml 

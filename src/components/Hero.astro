@@ -1,0 +1,176 @@
+---
+// Hero.astro - Sección de presentación principal
+---
+
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Fondo de partículas -->
+  <div id="particles-bg" class="absolute inset-0 z-0"></div>
+  
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex flex-col items-center text-center">
+      <!-- Texto de bienvenida con animación -->
+      <h2 
+        class="text-xl md:text-2xl font-light mb-4 text-feid-dark dark:text-feid-light opacity-0" 
+        data-aos="fade-down" 
+        data-aos-delay="300"
+      >
+        Bienvenido a mi mundo digital
+      </h2>
+      
+      <!-- Nombre y título principal -->
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 relative">
+        <span class="block text-feid-dark dark:text-feid-light opacity-0" data-aos="fade-up" data-aos-delay="500">
+          Desarrollador
+        </span>
+        <span 
+          class="block neon-text mt-2 text-shadow-neon opacity-0" 
+          data-aos="fade-up" 
+          data-aos-delay="700"
+        >
+          Full Stack
+        </span>
+      </h1>
+      
+      <!-- Descripción profesional -->
+      <p 
+        class="max-w-xl text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 opacity-0" 
+        data-aos="fade-up" 
+        data-aos-delay="900"
+      >
+        Creando experiencias digitales únicas con código limpio y diseño minimalista. 
+        Especializado en desarrollo web moderno con un toque de estilo neón inspirado en Feid.
+      </p>
+      
+      <!-- Botones de acción -->
+      <div 
+        class="flex flex-col sm:flex-row gap-4 opacity-0" 
+        data-aos="fade-up" 
+        data-aos-delay="1100"
+      >
+        <a 
+          href="#projects" 
+          class="neon-button group"
+        >
+          Ver Proyectos
+          <span class="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+        
+        <a 
+          href="#contact" 
+          class="px-6 py-2 border-2 border-feid-dark dark:border-feid-light hover:border-feid-green dark:hover:border-feid-green rounded-lg transition-colors duration-300 text-feid-dark dark:text-feid-light hover:text-feid-green dark:hover:text-feid-green"
+        >
+          Contacto
+        </a>
+      </div>
+      
+      <!-- Flecha de scroll -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0" data-aos="fade-up" data-aos-delay="1300">
+        <div class="animate-bounce flex flex-col items-center">
+          <span class="text-sm text-feid-dark dark:text-feid-light mb-2">Scroll</span>
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="h-6 w-6 text-feid-dark dark:text-feid-light" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Importar y configurar tsParticles
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      // @ts-ignore - Cargar tsParticles desde CDN
+      await tsParticles.load("particles-bg", {
+        fullScreen: { enable: false },
+        fpsLimit: 60,
+        particles: {
+          number: {
+            value: 50,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: ["#00FF94", "#9D00FF", "#FF00C7", "#00C2FF"]
+          },
+          shape: {
+            type: "circle",
+          },
+          opacity: {
+            value: 0.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 0.1,
+              sync: false
+            }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#00FF94",
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab"
+            },
+            onclick: {
+              enable: true,
+              mode: "push"
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 0.5
+              }
+            },
+            push: {
+              particles_nb: 3
+            }
+          }
+        },
+        retina_detect: true
+      });
+    } catch (error) {
+      console.error("Error loading tsParticles:", error);
+    }
+  });
+</script> 

@@ -1,0 +1,341 @@
+---
+// AboutMe.astro - Sección de información personal
+---
+
+<section
+  id="about"
+  class="py-20 bg-gray-50 dark:bg-feid-dark-gray transition-colors duration-300"
+>
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Encabezado de sección -->
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-4 text-feid-dark dark:text-feid-light"
+          data-aos="fade-up"
+        >
+          Sobre <span class="neon-text">Mí</span>
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <!-- Foto e información personal -->
+        <div class="w-full md:w-2/5" data-aos="fade-right" data-aos-delay="300">
+          <div class="relative group">
+            <!-- Marco neón -->
+            <div
+              class="absolute -inset-2 bg-gradient-to-r from-feid-green via-feid-blue to-feid-purple rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition duration-300"
+            >
+            </div>
+
+            <!-- Contenedor de la imagen -->
+            <div
+              class="relative aspect-square overflow-hidden rounded-lg bg-white dark:bg-feid-dark-gray border-2 border-white dark:border-feid-dark"
+            >
+              <!-- Imagen de perfil (placeholder) -->
+              <div
+                class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center animate-on-scroll zoom-in"
+              >
+                <span class="text-9xl text-feid-dark/20 dark:text-feid-light/20"
+                  >F</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Información de contacto con animación personalizada de una sola vez -->
+          <div class="animate-on-scroll slide-up">
+            <div class="mt-6 space-y-2">
+              <div
+                class="flex items-center text-feid-dark dark:text-feid-light"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2 text-feid-green"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span>email@ejemplo.com</span>
+              </div>
+              <div
+                class="flex items-center text-feid-dark dark:text-feid-light"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2 text-feid-green"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Ciudad, País</span>
+              </div>
+              <div
+                class="flex items-center text-feid-dark dark:text-feid-light"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2 text-feid-green"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span>Desarrollador Full Stack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biografía y habilidades -->
+        <div class="w-full md:w-3/5" data-aos="fade-left" data-aos-delay="400">
+          <h3
+            class="text-2xl font-bold mb-4 text-feid-dark dark:text-feid-light"
+          >
+            Quién soy
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            Soy un desarrollador Full Stack apasionado por crear aplicaciones
+            web modernas y llamativas. Con experiencia en múltiples tecnologías
+            de frontend y backend, me especializo en construir experiencias de
+            usuario únicas que combinan estética y funcionalidad.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            Mi enfoque se basa en el código limpio, el diseño responsivo y la
+            optimización del rendimiento. Disfruto transformando ideas creativas
+            en productos digitales que destacan y generan impacto.
+          </p>
+
+          <!-- Habilidades -->
+          <div class="mt-8">
+            <h3
+              class="text-2xl font-bold mb-6 text-feid-dark dark:text-feid-light"
+            >
+              Mis habilidades
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Habilidad 1 -->
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
+                    >Frontend</span
+                  >
+                  <span class="text-sm font-medium text-feid-blue">90%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                >
+                  <div
+                    class="skill-bar-frontend h-2.5 rounded-full bg-gradient-to-r from-feid-green to-feid-blue"
+                    style="width: 0%"
+                  >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Habilidad 2 -->
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
+                    >Backend</span
+                  >
+                  <span class="text-sm font-medium text-feid-blue">85%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                >
+                  <div
+                    class="skill-bar-backend h-2.5 rounded-full bg-gradient-to-r from-feid-green to-feid-purple"
+                    style="width: 0%"
+                  >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Habilidad 3 -->
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
+                    >UI/UX Design</span
+                  >
+                  <span class="text-sm font-medium text-feid-blue">80%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                >
+                  <div
+                    class="skill-bar-ui h-2.5 rounded-full bg-gradient-to-r from-feid-purple to-feid-pink"
+                    style="width: 0%"
+                  >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Habilidad 4 -->
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
+                    >DevOps</span
+                  >
+                  <span class="text-sm font-medium text-feid-blue">75%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                >
+                  <div
+                    class="skill-bar-devops h-2.5 rounded-full bg-gradient-to-r from-feid-blue to-feid-purple"
+                    style="width: 0%"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud de tecnologías -->
+          <div class="mt-8" data-aos="fade-up" data-aos-delay="600">
+            <h3
+              class="text-2xl font-bold mb-4 text-feid-dark dark:text-feid-light"
+            >
+              Tecnologías
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-green dark:hover:border-feid-green transition-colors"
+                >HTML5</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-blue dark:hover:border-feid-blue transition-colors"
+                >CSS3</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-purple dark:hover:border-feid-purple transition-colors"
+                >JavaScript</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-pink dark:hover:border-feid-pink transition-colors"
+                >TypeScript</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-green dark:hover:border-feid-green transition-colors"
+                >React</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-blue dark:hover:border-feid-blue transition-colors"
+                >Vue</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-purple dark:hover:border-feid-purple transition-colors"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-pink dark:hover:border-feid-pink transition-colors"
+                >Express</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-green dark:hover:border-feid-green transition-colors"
+                >MongoDB</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-blue dark:hover:border-feid-blue transition-colors"
+                >SQL</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-purple dark:hover:border-feid-purple transition-colors"
+                >TailwindCSS</span
+              >
+              <span
+                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-pink dark:hover:border-feid-pink transition-colors"
+                >Git</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animación de barras de habilidades
+  document.addEventListener("DOMContentLoaded", () => {
+    // Configurar intersección para animar cuando sea visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animar todas las barras de habilidades
+            animateSkillBars();
+            // Dejar de observar una vez que se haya activado
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observar la sección de habilidades
+    const skillsSection = document.querySelector("#about");
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
+
+    // Función para animar las barras de habilidades
+    function animateSkillBars() {
+      const skillBars = {
+        ".skill-bar-frontend": "90%",
+        ".skill-bar-backend": "85%",
+        ".skill-bar-ui": "80%",
+        ".skill-bar-devops": "75%",
+      };
+
+      // Animar cada barra con un retraso escalonado
+      let delay = 0;
+      Object.entries(skillBars).forEach(([selector, width]) => {
+        setTimeout(() => {
+          const bar = document.querySelector(selector);
+          if (bar) {
+            (bar as HTMLElement).style.width = width;
+            (bar as HTMLElement).style.transition = "width 1s ease-in-out";
+          }
+        }, delay);
+        delay += 200;
+      });
+    }
+  });
+</script>

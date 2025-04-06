@@ -1,0 +1,155 @@
+---
+// Experience.astro - Sección de experiencia laboral con proyectos destacados
+
+// Datos simulados de experiencia laboral con proyectos destacados
+const experiences = [
+  {
+    company: "TechVibe Labs",
+    position: "Senior Full Stack Developer",
+    period: "2022 - Presente",
+    description: "Desarrollo de aplicaciones web escalables utilizando React, Node.js y bases de datos NoSQL.",
+    projects: [
+      {
+        name: "Dashboard Analytics",
+        description: "Panel de control para visualización de datos en tiempo real.",
+        image: "/images/projects/dashboard.webp",
+        technologies: ["React", "D3.js", "Node.js"]
+      },
+      {
+        name: "E-commerce Platform",
+        description: "Plataforma de comercio electrónico con integración de pagos.",
+        image: "/images/projects/ecommerce.webp",
+        technologies: ["Next.js", "MongoDB", "Stripe"]
+      }
+    ]
+  },
+  {
+    company: "Digital Pulse Inc.",
+    position: "Frontend Developer",
+    period: "2021 - 2022",
+    description: "Diseño y desarrollo de interfaces de usuario interactivas utilizando Vue.js y SASS.",
+    projects: [
+      {
+        name: "Music Streaming App",
+        description: "Aplicación de streaming con interfaz personalizada.",
+        image: "/images/projects/music-app.webp",
+        technologies: ["Vue.js", "TailwindCSS", "Web Audio API"]
+      }
+    ]
+  },
+  {
+    company: "Neon Future Solutions",
+    position: "Web Developer",
+    period: "2020 - 2021",
+    description: "Desarrollo de sitios web corporativos y aplicaciones para clientes.",
+    projects: [
+      {
+        name: "Corporate Website Redesign",
+        description: "Rediseño y desarrollo de sitio web corporativo.",
+        image: "/images/projects/corporate.webp",
+        technologies: ["WordPress", "JavaScript", "SCSS"]
+      }
+    ]
+  }
+];
+---
+
+<section id="experience" class="py-20 bg-feid-dark-gray transition-colors duration-300">
+  <div class="container mx-auto px-4">
+    <!-- Encabezado de sección -->
+    <div class="text-center mb-16">
+      <h2 
+        class="text-3xl md:text-4xl font-bold mb-4 text-feid-light"
+        data-aos="fade-up"
+      >
+        Mi <span class="neon-text">Experiencia</span>
+      </h2>
+      <div 
+        class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      ></div>
+      <p 
+        class="mt-4 max-w-2xl mx-auto text-gray-300"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Mi trayectoria profesional y proyectos destacados que he desarrollado durante mi carrera.
+      </p>
+    </div>
+    
+    <!-- Timeline de experiencia con proyectos -->
+    <div class="max-w-6xl mx-auto">
+      {experiences.map((experience, index) => (
+        <div class="mb-16 animate-on-scroll fade-in" style={`animation-delay: ${index * 150}ms`}>
+          <div class="relative">
+            <!-- Línea temporal (visible solo en desktop) -->
+            <div class="hidden md:block absolute left-1/3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-feid-green to-feid-blue opacity-25"></div>
+            
+            <!-- Contenido de la experiencia con proyectos -->
+            <div class="flex flex-col md:flex-row gap-8">
+              <!-- Información de la empresa -->
+              <div class="w-full md:w-1/3 relative">
+                <!-- Marcador de timeline (visible solo en desktop) -->
+                <div class="hidden md:block absolute right-0 top-6 w-4 h-4 rounded-full bg-feid-green -translate-x-1/2 transform z-10 shadow-glow-sm"></div>
+                
+                <div class="bg-feid-dark p-6 rounded-xl h-full">
+                  <span class="inline-block px-3 py-1 text-sm font-semibold bg-feid-green/10 text-feid-green rounded-full mb-3">
+                    {experience.period}
+                  </span>
+                  <h3 class="text-xl font-bold text-feid-light mb-1">
+                    {experience.position}
+                  </h3>
+                  <h4 class="text-lg font-medium text-feid-blue mb-4">
+                    {experience.company}
+                  </h4>
+                  <p class="text-gray-300 mb-4">
+                    {experience.description}
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Proyectos de esta experiencia -->
+              <div class="w-full md:w-2/3">
+                <h4 class="text-lg font-bold text-feid-light mb-4 flex items-center">
+                  <span class="inline-block w-4 h-4 rounded-full bg-feid-green mr-2"></span>
+                  Proyectos Destacados
+                </h4>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {experience.projects.map((project) => (
+                    <div class="card overflow-hidden group transform transition-all duration-300 hover:scale-105 hover:shadow-glow-sm">
+                      <!-- Imagen del proyecto -->
+                      <div class="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                          <span class="text-2xl text-feid-light/20">{project.name}</span>
+                        </div>
+                        
+                        <!-- Overlay con información -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-feid-dark/90 via-feid-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                          <h5 class="text-lg font-bold text-feid-light">{project.name}</h5>
+                          <p class="text-sm text-gray-300">{project.description}</p>
+                        </div>
+                      </div>
+                      
+                      <!-- Tecnologías usadas -->
+                      <div class="p-4">
+                        <div class="flex flex-wrap gap-2">
+                          {project.technologies.map((tech) => (
+                            <span class="inline-block px-2 py-0.5 text-xs font-medium bg-feid-dark text-feid-green rounded-full border border-feid-green/20">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

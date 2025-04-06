@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Certificates from '../components/Certificates.astro';
+import Contact from '../components/Contact.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Importación de scripts externos para partículas y animaciones
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="PortFeid | Desarrollador Web" description="Portafolio profesional de desarrollo web con estilo inspirado en Feid">
+	<!-- Sección Hero con animaciones y partículas -->
+	<Hero />
+	
+	<!-- Sección Sobre Mí con habilidades -->
+	<AboutMe />
+	
+	<!-- Sección Proyectos organizados por año -->
+	<Projects />
+	
+	<!-- Sección Experiencia con timeline -->
+	<Experience />
+	
+	<!-- Sección Certificados con carrusel -->
+	<Certificates />
+	
+	<!-- Sección Contacto con formulario -->
+	<Contact />
 </Layout>
+
+<!-- Script para tsParticles -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+
+<!-- Script para Three.js -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+
+<!-- Script para Chart.js -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.min.js"></script>
+
+<!-- Script para p5.js -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js"></script>

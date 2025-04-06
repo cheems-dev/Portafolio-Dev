@@ -1,0 +1,271 @@
+---
+// Certificates.astro - Sección de certificados y credenciales
+
+// Datos simulados de certificados
+const certificates = [
+  {
+    title: "Full Stack Web Development",
+    organization: "freeCodeCamp",
+    date: "2023",
+    image: "/images/certificates/freecodecamp.webp",
+    link: "#"
+  },
+  {
+    title: "React & Redux Expert",
+    organization: "Udemy",
+    date: "2022",
+    image: "/images/certificates/udemy.webp",
+    link: "#"
+  },
+  {
+    title: "JavaScript Algorithms & Data Structures",
+    organization: "freeCodeCamp",
+    date: "2022",
+    image: "/images/certificates/freecodecamp.webp",
+    link: "#"
+  },
+  {
+    title: "Advanced Node.js",
+    organization: "Coursera",
+    date: "2021",
+    image: "/images/certificates/coursera.webp",
+    link: "#"
+  },
+  {
+    title: "UI/UX Design Fundamentals",
+    organization: "Udemy",
+    date: "2021",
+    image: "/images/certificates/udemy.webp",
+    link: "#"
+  },
+  {
+    title: "AWS Certified Developer Associate",
+    organization: "Amazon Web Services",
+    date: "2020",
+    image: "/images/certificates/aws.webp",
+    link: "#"
+  }
+];
+---
+
+<section id="certificates" class="py-20">
+  <div class="container mx-auto px-4">
+    <!-- Encabezado de sección -->
+    <div class="text-center mb-16">
+      <h2 
+        class="text-3xl md:text-4xl font-bold mb-4 text-feid-light"
+        data-aos="fade-up"
+      >
+        Mis <span class="neon-text">Certificados</span>
+      </h2>
+      <div 
+        class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      ></div>
+      <p 
+        class="mt-4 max-w-2xl mx-auto text-gray-300"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Credenciales y certificaciones que acreditan mi formación técnica y compromiso
+        con el aprendizaje continuo.
+      </p>
+    </div>
+    
+    <!-- Carrusel de certificados -->
+    <div class="relative mx-auto max-w-6xl px-8" data-aos="fade-up" data-aos-delay="400">
+      <!-- Controles de navegación -->
+      <button id="prevCert" class="absolute top-1/2 left-0 -translate-y-1/2 z-10 bg-feid-dark-gray p-3 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 focus:outline-none hover:bg-feid-dark hover:text-feid-green">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-feid-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <button id="nextCert" class="absolute top-1/2 right-0 -translate-y-1/2 z-10 bg-feid-dark-gray p-3 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 focus:outline-none hover:bg-feid-dark hover:text-feid-green">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-feid-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+      <!-- Contenedor del carrusel -->
+      <div id="certificates-carousel" class="overflow-hidden">
+        <div id="certificates-track" class="flex transition-transform duration-500 ease-in-out">
+          {certificates.map((certificate, index) => (
+            <div class="certificate-slide w-full min-w-full sm:min-w-[50%] md:min-w-[33.333%] p-4">
+              <div class="card h-full overflow-hidden group">
+                <!-- Imagen placeholder del certificado -->
+                <div class="relative aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden group">
+                  <div class="w-full h-full flex flex-col items-center justify-center p-6">
+                    <span class="text-3xl text-feid-light/20 font-semibold mb-2">
+                      {certificate.organization}
+                    </span>
+                    <div class="w-24 h-1 bg-feid-light/10"></div>
+                  </div>
+                  
+                  <!-- Overlay con efecto neón -->
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                    <a 
+                      href={certificate.link}
+                      class="px-4 py-2 bg-feid-green/90 hover:bg-feid-green text-feid-dark font-medium rounded-lg transition-colors duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ver Certificado
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Información del certificado -->
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-feid-light mb-1">
+                    {certificate.title}
+                  </h3>
+                  <div class="flex justify-between items-center">
+                    <p class="text-feid-blue font-medium">
+                      {certificate.organization}
+                    </p>
+                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-feid-green/10 text-feid-green rounded-full">
+                      {certificate.date}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Indicadores -->
+      <div class="flex justify-center mt-8 space-x-2">
+        {certificates.map((_, index) => (
+          <button
+            class={`certificate-indicator w-3 h-3 rounded-full ${index === 0 ? 'bg-feid-green' : 'bg-gray-600'} hover:bg-feid-green transition-colors duration-300 focus:outline-none`}
+            data-index={index}
+            aria-label={`Ir al certificado ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Elementos del carrusel
+    const carousel = document.getElementById('certificates-carousel') as HTMLElement;
+    const track = document.getElementById('certificates-track') as HTMLElement;
+    const slides = document.querySelectorAll('.certificate-slide') as NodeListOf<HTMLElement>;
+    const indicators = document.querySelectorAll('.certificate-indicator') as NodeListOf<HTMLElement>;
+    const prevButton = document.getElementById('prevCert') as HTMLElement;
+    const nextButton = document.getElementById('nextCert') as HTMLElement;
+    
+    if (!carousel || !track || slides.length === 0) return;
+    
+    // Configuración
+    let currentIndex = 0;
+    let slidesPerView = 3; // Valor predeterminado para escritorio
+    
+    // Función para calcular el ancho del carrusel
+    const calculateSlideWidth = () => {
+      const carouselWidth = carousel.clientWidth;
+      
+      // Determinar cuántos slides mostrar según el ancho
+      if (window.innerWidth < 640) {
+        slidesPerView = 1; // Móvil
+      } else if (window.innerWidth < 1024) {
+        slidesPerView = 2; // Tablet
+      } else {
+        slidesPerView = 3; // Escritorio
+      }
+      
+      // Establecer ancho exacto para cada slide
+      const slideWidth = carouselWidth / slidesPerView;
+      
+      // Actualizar el ancho de cada slide
+      slides.forEach(slide => {
+        slide.style.minWidth = `${slideWidth}px`;
+        slide.style.width = `${slideWidth}px`;
+      });
+      
+      return slideWidth;
+    };
+    
+    // Inicializar los anchos
+    calculateSlideWidth();
+    
+    // Actualizar indicador activo
+    const updateIndicators = () => {
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('bg-feid-green');
+          indicator.classList.remove('bg-gray-600');
+        } else {
+          indicator.classList.remove('bg-feid-green');
+          indicator.classList.add('bg-gray-600');
+        }
+      });
+    };
+    
+    // Ir a un slide específico
+    const goToSlide = (index: number) => {
+      // Límites
+      const maxIndex = slides.length - slidesPerView;
+      currentIndex = Math.max(0, Math.min(index, maxIndex));
+      
+      // Calcular el desplazamiento
+      const slideWidth = calculateSlideWidth();
+      const offset = -currentIndex * slideWidth;
+      
+      // Aplicar transformación
+      track.style.transform = `translateX(${offset}px)`;
+      
+      // Actualizar indicadores
+      updateIndicators();
+    };
+    
+    // Event listeners para botones
+    prevButton?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextButton?.addEventListener('click', () => goToSlide(currentIndex + 1));
+    
+    // Event listeners para indicadores
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Event listener para redimensión de ventana
+    window.addEventListener('resize', () => {
+      calculateSlideWidth();
+      goToSlide(currentIndex);
+    });
+    
+    // Inicializar
+    goToSlide(0);
+    
+    // Auto-rotación opcional (descomenta para activar)
+    /*
+    let interval: number = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % (slides.length - slidesPerView + 1);
+      goToSlide(nextIndex);
+    }, 5000);
+    
+    // Detener auto-rotación al interactuar
+    const stopAutoRotation = () => {
+      clearInterval(interval);
+      // Reiniciar después de 10 segundos de inactividad
+      setTimeout(() => {
+        interval = setInterval(() => {
+          const nextIndex = (currentIndex + 1) % (slides.length - slidesPerView + 1);
+          goToSlide(nextIndex);
+        }, 5000);
+      }, 10000);
+    };
+    
+    prevButton?.addEventListener('click', stopAutoRotation);
+    nextButton?.addEventListener('click', stopAutoRotation);
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', stopAutoRotation);
+    });
+    */
+  });
+</script> 

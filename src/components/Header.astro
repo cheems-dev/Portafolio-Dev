@@ -1,0 +1,168 @@
+---
+// Importar los estilos y componentes necesarios
+---
+
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-feid-dark/80 backdrop-blur-md transition-colors duration-300"
+>
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center group">
+      <div
+        class="w-10 h-10 relative overflow-hidden group-hover:animate-pulse-slow"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-feid-green via-feid-blue to-feid-purple rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+        >
+        </div>
+        <div
+          class="absolute inset-0.5 bg-feid-dark rounded-lg flex items-center justify-center z-10"
+        >
+          <span class="text-2xl font-bold neon-text">F</span>
+        </div>
+      </div>
+      <span class="ml-2 text-xl font-bold text-feid-light transition-colors"
+        >PortFeid</span
+      >
+    </a>
+
+    <!-- Navegación para pantallas grandes -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a
+        href="#home"
+        class="text-feid-light hover:text-feid-green transition-colors"
+        >Inicio</a
+      >
+      <a
+        href="#about"
+        class="text-feid-light hover:text-feid-green transition-colors"
+        >Sobre mí</a
+      >
+      <a
+        href="#projects"
+        class="text-feid-light hover:text-feid-green transition-colors"
+        >Proyectos</a
+      >
+      <a
+        href="#experience"
+        class="text-feid-light hover:text-feid-green transition-colors"
+        >Experiencia</a
+      >
+      <a
+        href="#certificates"
+        class="text-feid-light hover:text-feid-green transition-colors"
+        >Certificados</a
+      >
+      <a href="#contact" class="neon-button">Contacto</a>
+    </nav>
+
+    <!-- Botón hamburguesa para móviles -->
+    <button
+      id="menuToggle"
+      class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+    >
+      <span class="w-6 h-0.5 bg-feid-light transition-transform duration-300"
+      ></span>
+      <span class="w-6 h-0.5 bg-feid-light transition-opacity duration-300"
+      ></span>
+      <span class="w-6 h-0.5 bg-feid-light transition-transform duration-300"
+      ></span>
+    </button>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobileMenu"
+    class="hidden md:hidden absolute top-full left-0 w-full bg-feid-dark shadow-lg py-4 px-6 transition-all duration-300 ease-in-out transform translate-y-0 opacity-0 border-t border-feid-dark-gray"
+  >
+    <nav class="flex flex-col space-y-4">
+      <a
+        href="#home"
+        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        >Inicio</a
+      >
+      <a
+        href="#about"
+        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        >Sobre mí</a
+      >
+      <a
+        href="#projects"
+        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        >Proyectos</a
+      >
+      <a
+        href="#experience"
+        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        >Experiencia</a
+      >
+      <a
+        href="#certificates"
+        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        >Certificados</a
+      >
+      <a href="#contact" class="neon-button w-full text-center py-2 my-2"
+        >Contacto</a
+      >
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Lógica para el menú móvil
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const toggleIcons = menuToggle?.querySelectorAll("span");
+
+    if (menuToggle && mobileMenu && toggleIcons) {
+      menuToggle.addEventListener("click", () => {
+        // Alternar la visibilidad del menú móvil
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("opacity-0");
+        mobileMenu.classList.toggle("opacity-100");
+
+        // Animar el icono de hamburguesa a X
+        toggleIcons[0].classList.toggle("rotate-45");
+        toggleIcons[0].classList.toggle("translate-y-2");
+        toggleIcons[1].classList.toggle("opacity-0");
+        toggleIcons[2].classList.toggle("-rotate-45");
+        toggleIcons[2].classList.toggle("-translate-y-2");
+      });
+
+      // Cerrar menú móvil al hacer clic en un enlace
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.add("opacity-0");
+          mobileMenu.classList.remove("opacity-100");
+
+          // Resetear icono de hamburguesa
+          toggleIcons[0].classList.remove("rotate-45", "translate-y-2");
+          toggleIcons[1].classList.remove("opacity-0");
+          toggleIcons[2].classList.remove("-rotate-45", "-translate-y-2");
+        });
+      });
+    }
+  });
+
+  // Navegación suave
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80, // Ajuste para el header fijo
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+</script>
+

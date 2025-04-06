@@ -1,0 +1,148 @@
+---
+// CustomCursor.astro
+---
+
+<!-- Cursor personalizado -->
+<div id="custom-cursor" class="custom-cursor hidden md:block"></div>
+<div id="cursor-particles" class="fixed top-0 left-0 w-full h-full pointer-events-none z-40"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Elementos del cursor
+    const customCursor = document.getElementById('custom-cursor');
+    const cursorParticles = document.getElementById('cursor-particles');
+    
+    if (!customCursor || !cursorParticles) return;
+    
+    // Variables para el seguimiento del cursor
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let isHoveringLink = false;
+    let particles: Particle[] = [];
+    
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      color: string;
+      alpha: number;
+      element: HTMLDivElement;
+      
+      constructor(x: number, y: number) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        
+        // Colores neón aleatorios inspirados en Feid
+        const colors = ['#00FF94', '#9D00FF', '#FF00C7', '#00C2FF'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        
+        this.alpha = 1;
+        
+        // Crear elemento visual de la partícula
+        this.element = document.createElement('div');
+        this.element.style.position = 'absolute';
+        this.element.style.width = `${this.size}px`;
+        this.element.style.height = `${this.size}px`;
+        this.element.style.backgroundColor = this.color;
+        this.element.style.borderRadius = '50%';
+        this.element.style.filter = 'blur(1px)';
+        this.element.style.opacity = '1';
+        this.element.style.transition = 'opacity 300ms ease';
+        this.element.style.boxShadow = `0 0 5px ${this.color}`;
+        
+        // Añadir al contenedor
+        cursorParticles.appendChild(this.element);
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= 0.01;
+        
+        this.element.style.transform = `translate(${this.x}px, ${this.y}px)`;
+        this.element.style.opacity = `${this.alpha}`;
+      }
+      
+      remove() {
+        this.element.remove();
+      }
+    }
+    
+    // Inicializar cursor
+    const initCursor = () => {
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Crear partículas ocasionalmente
+        if (Math.random() < 0.1 && isHoveringLink) {
+          createParticle(mouseX, mouseY);
+        }
+      });
+      
+      // Detectar si estamos sobre un enlace o botón
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          isHoveringLink = true;
+          customCursor.classList.add('scale-150');
+          customCursor.classList.add('border-feid-pink');
+          customCursor.classList.remove('border-feid-green');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          isHoveringLink = false;
+          customCursor.classList.remove('scale-150');
+          customCursor.classList.remove('border-feid-pink');
+          customCursor.classList.add('border-feid-green');
+        });
+      });
+      
+      // Actualizar la posición del cursor personalizado
+      const updateCursor = () => {
+        // Interpolación suave para movimiento fluido
+        const ease = 0.2;
+        cursorX += (mouseX - cursorX) * ease;
+        cursorY += (mouseY - cursorY) * ease;
+        
+        customCursor.style.left = `${mouseX}px`;
+        customCursor.style.top = `${mouseY}px`;
+        
+        // Actualizar partículas
+        particles.forEach((particle, index) => {
+          particle.update();
+          
+          // Eliminar partículas desvanecidas
+          if (particle.alpha <= 0) {
+            particle.remove();
+            particles.splice(index, 1);
+          }
+        });
+        
+        requestAnimationFrame(updateCursor);
+      };
+      
+      updateCursor();
+    };
+    
+    // Crear una nueva partícula
+    const createParticle = (x: number, y: number) => {
+      particles.push(new Particle(x, y));
+      
+      // Limitar número de partículas para rendimiento
+      if (particles.length > 30) {
+        particles[0].remove();
+        particles.shift();
+      }
+    };
+    
+    // Iniciar el cursor personalizado
+    initCursor();
+  });
+</script> 
