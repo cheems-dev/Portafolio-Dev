@@ -1,27 +1,72 @@
 ---
-// AboutMe.astro - Sección de información personal
+// AboutMe.astro - Sección de información personal con estilo Ferxxo
 ---
 
-<section
-  id="about"
-  class="py-20 bg-gray-50 dark:bg-feid-dark-gray transition-colors duration-300"
->
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto">
+<section id="about" class="py-20 bg-ferxxo-black relative overflow-hidden">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 opacity-20">
+    <div class="absolute w-full h-full noise-bg"></div>
+    <div
+      class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-ferxxo-pink/20 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-full h-40 bg-gradient-to-t from-ferxxo-blue/20 to-transparent"
+    >
+    </div>
+
+    <!-- Líneas horizontales -->
+    <div class="absolute top-1/4 left-0 w-full h-px bg-ferxxo-pink/20"></div>
+    <div class="absolute top-2/4 left-0 w-full h-px bg-ferxxo-blue/20"></div>
+    <div class="absolute top-3/4 left-0 w-full h-px bg-ferxxo-purple/20"></div>
+
+    <!-- Elementos gráficos -->
+    <svg
+      class="absolute bottom-10 left-5 w-40 h-40 text-ferxxo-pink/5"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill="currentColor" d="M50 5 L95 50 L50 95 L5 50 Z"></path>
+    </svg>
+    <svg
+      class="absolute top-10 right-5 w-40 h-40 text-ferxxo-blue/5"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="45"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="5"></circle>
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-5xl mx-auto">
       <!-- Encabezado de sección -->
       <div class="text-center mb-16">
         <h2
-          class="text-3xl md:text-4xl font-bold mb-4 text-feid-dark dark:text-feid-light"
+          class="text-5xl md:text-6xl font-bold mb-4 uppercase ferxxo-neon-pulse"
           data-aos="fade-up"
         >
-          Sobre <span class="neon-text">Mí</span>
+          SOBRE <span class="text-ferxxo-pink">MÍ</span>
         </h2>
         <div
-          class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+          class="w-32 h-1 bg-gradient-to-r from-ferxxo-pink via-ferxxo-purple to-ferxxo-blue mx-auto animate-on-scroll ferxxo-fade-in"
           data-aos="zoom-in"
           data-aos-delay="200"
         >
         </div>
+        <p
+          class="text-gray-300 mt-4 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          Creando experiencias digitales con el estilo rebelde y vibrante
+          inspirado en el mundo Ferxxo
+        </p>
       </div>
 
       <div class="flex flex-col md:flex-row gap-10 items-center">
@@ -30,89 +75,124 @@
           <div class="relative group">
             <!-- Marco neón -->
             <div
-              class="absolute -inset-2 bg-gradient-to-r from-feid-green via-feid-blue to-feid-purple rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition duration-300"
+              class="absolute -inset-2 bg-gradient-to-r from-ferxxo-green via-ferxxo-blue to-ferxxo-pink rounded-xl blur-md opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"
             >
             </div>
 
             <!-- Contenedor de la imagen -->
             <div
-              class="relative aspect-square overflow-hidden rounded-lg bg-white dark:bg-feid-dark-gray border-2 border-white dark:border-feid-dark"
+              class="relative aspect-square overflow-hidden rounded-lg bg-ferxxo-black border-2 border-white/10"
             >
-              <!-- Imagen de perfil (placeholder) -->
+              <!-- Imagen de perfil con efecto glitch -->
               <div
-                class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center animate-on-scroll zoom-in"
+                class="w-full h-full bg-gradient-to-br from-ferxxo-black to-ferxxo-black/80 flex items-center justify-center animate-on-scroll ferxxo-glitch"
               >
-                <span class="text-9xl text-feid-dark/20 dark:text-feid-light/20"
+                <span
+                  class="text-9xl font-bold text-ferxxo-pink/20 ferxxo-neon-pulse"
                   >F</span
                 >
+              </div>
+
+              <!-- Overlay con patrón de líneas -->
+              <div class="absolute inset-0 bg-scanline opacity-10"></div>
+
+              <!-- Efecto de borde brillante en hover -->
+              <div
+                class="absolute inset-0 border-2 border-transparent group-hover:border-ferxxo-pink/50 transition-colors duration-300"
+              >
               </div>
             </div>
           </div>
 
-          <!-- Información de contacto con animación personalizada de una sola vez -->
-          <div class="animate-on-scroll slide-up">
-            <div class="mt-6 space-y-2">
-              <div
-                class="flex items-center text-feid-dark dark:text-feid-light"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2 text-feid-green"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          <!-- Información de contacto con animación -->
+          <div class="animate-on-scroll ferxxo-slide-up mt-8">
+            <div
+              class="p-6 bg-ferxxo-black/50 backdrop-blur-md border border-ferxxo-pink/20 rounded-lg shadow-glow-sm"
+            >
+              <div class="space-y-4">
+                <div
+                  class="flex items-center text-white group transition-all duration-300"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                <span>email@ejemplo.com</span>
-              </div>
-              <div
-                class="flex items-center text-feid-dark dark:text-feid-light"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2 text-feid-green"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-ferxxo-pink/10 rounded-full mr-3 group-hover:bg-ferxxo-pink/20 transition-all duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 text-ferxxo-pink"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span
+                    class="group-hover:text-ferxxo-pink transition-colors duration-300"
+                    >email@ejemplo.com</span
+                  >
+                </div>
+                <div
+                  class="flex items-center text-white group transition-all duration-300"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <span>Ciudad, País</span>
-              </div>
-              <div
-                class="flex items-center text-feid-dark dark:text-feid-light"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2 text-feid-green"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-ferxxo-blue/10 rounded-full mr-3 group-hover:bg-ferxxo-blue/20 transition-all duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 text-ferxxo-blue"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <span
+                    class="group-hover:text-ferxxo-blue transition-colors duration-300"
+                    >Medellín, Colombia</span
+                  >
+                </div>
+                <div
+                  class="flex items-center text-white group transition-all duration-300"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                <span>Desarrollador Full Stack</span>
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-ferxxo-purple/10 rounded-full mr-3 group-hover:bg-ferxxo-purple/20 transition-all duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 text-ferxxo-purple"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span
+                    class="group-hover:text-ferxxo-purple transition-colors duration-300"
+                    >Desarrollador Full Stack</span
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -120,107 +200,106 @@
 
         <!-- Biografía y habilidades -->
         <div class="w-full md:w-3/5" data-aos="fade-left" data-aos-delay="400">
-          <h3
-            class="text-2xl font-bold mb-4 text-feid-dark dark:text-feid-light"
-          >
-            Quién soy
+          <h3 class="text-3xl font-bold mb-4 uppercase text-white">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple"
+              >QUIÉN SOY</span
+            >
           </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-6">
+          <p class="text-gray-300 mb-6 text-lg">
             Soy un desarrollador Full Stack apasionado por crear aplicaciones
-            web modernas y llamativas. Con experiencia en múltiples tecnologías
+            web modernas y llamativas con un estilo único inspirado en la
+            estética urbana futurista. Con experiencia en múltiples tecnologías
             de frontend y backend, me especializo en construir experiencias de
-            usuario únicas que combinan estética y funcionalidad.
+            usuario vibrantes que fusionan lo digital con lo urbano.
           </p>
-          <p class="text-gray-700 dark:text-gray-300 mb-6">
-            Mi enfoque se basa en el código limpio, el diseño responsivo y la
-            optimización del rendimiento. Disfruto transformando ideas creativas
-            en productos digitales que destacan y generan impacto.
+          <p class="text-gray-300 mb-6 text-lg">
+            Mi enfoque combina código limpio con diseños atrevidos y
+            disruptivos. Cada proyecto es una oportunidad para romper las reglas
+            convencionales y crear algo que resuene con la actitud rebelde y
+            sensual que caracteriza el estilo Ferxxo.
           </p>
 
           <!-- Habilidades -->
-          <div class="mt-8">
-            <h3
-              class="text-2xl font-bold mb-6 text-feid-dark dark:text-feid-light"
-            >
-              Mis habilidades
+          <div class="mt-10">
+            <h3 class="text-3xl font-bold mb-6 uppercase text-white">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-ferxxo-blue to-ferxxo-green"
+                >HABILIDADES</span
+              >
             </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Habilidad 1 -->
               <div class="mb-4">
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
-                    >Frontend</span
-                  >
-                  <span class="text-sm font-medium text-feid-blue">90%</span>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-white">FRONTEND</span>
+                  <span class="text-sm font-medium text-ferxxo-pink">90%</span>
                 </div>
                 <div
-                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                  class="w-full bg-ferxxo-black/50 rounded-full h-3 border border-ferxxo-pink/20"
                 >
                   <div
-                    class="skill-bar-frontend h-2.5 rounded-full bg-gradient-to-r from-feid-green to-feid-blue"
+                    class="skill-bar-frontend h-full rounded-full bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple relative overflow-hidden"
                     style="width: 0%"
                   >
+                    <div class="absolute inset-0 skill-glow"></div>
                   </div>
                 </div>
               </div>
 
               <!-- Habilidad 2 -->
               <div class="mb-4">
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
-                    >Backend</span
-                  >
-                  <span class="text-sm font-medium text-feid-blue">85%</span>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-white">BACKEND</span>
+                  <span class="text-sm font-medium text-ferxxo-blue">85%</span>
                 </div>
                 <div
-                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                  class="w-full bg-ferxxo-black/50 rounded-full h-3 border border-ferxxo-blue/20"
                 >
                   <div
-                    class="skill-bar-backend h-2.5 rounded-full bg-gradient-to-r from-feid-green to-feid-purple"
+                    class="skill-bar-backend h-full rounded-full bg-gradient-to-r from-ferxxo-blue to-ferxxo-purple relative overflow-hidden"
                     style="width: 0%"
                   >
+                    <div class="absolute inset-0 skill-glow"></div>
                   </div>
                 </div>
               </div>
 
               <!-- Habilidad 3 -->
               <div class="mb-4">
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
-                    >UI/UX Design</span
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-white"
+                    >UI/UX DESIGN</span
                   >
-                  <span class="text-sm font-medium text-feid-blue">80%</span>
+                  <span class="text-sm font-medium text-ferxxo-purple">80%</span
+                  >
                 </div>
                 <div
-                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                  class="w-full bg-ferxxo-black/50 rounded-full h-3 border border-ferxxo-purple/20"
                 >
                   <div
-                    class="skill-bar-ui h-2.5 rounded-full bg-gradient-to-r from-feid-purple to-feid-pink"
+                    class="skill-bar-ui h-full rounded-full bg-gradient-to-r from-ferxxo-purple to-ferxxo-pink relative overflow-hidden"
                     style="width: 0%"
                   >
+                    <div class="absolute inset-0 skill-glow"></div>
                   </div>
                 </div>
               </div>
 
               <!-- Habilidad 4 -->
               <div class="mb-4">
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="text-sm font-medium text-feid-dark dark:text-feid-light"
-                    >DevOps</span
-                  >
-                  <span class="text-sm font-medium text-feid-blue">75%</span>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-medium text-white">DEVOPS</span>
+                  <span class="text-sm font-medium text-ferxxo-green">75%</span>
                 </div>
                 <div
-                  class="w-full bg-gray-200 dark:bg-feid-dark rounded-full h-2.5"
+                  class="w-full bg-ferxxo-black/50 rounded-full h-3 border border-ferxxo-green/20"
                 >
                   <div
-                    class="skill-bar-devops h-2.5 rounded-full bg-gradient-to-r from-feid-blue to-feid-purple"
+                    class="skill-bar-devops h-full rounded-full bg-gradient-to-r from-ferxxo-green to-ferxxo-blue relative overflow-hidden"
                     style="width: 0%"
                   >
+                    <div class="absolute inset-0 skill-glow"></div>
                   </div>
                 </div>
               </div>
@@ -228,59 +307,60 @@
           </div>
 
           <!-- Cloud de tecnologías -->
-          <div class="mt-8" data-aos="fade-up" data-aos-delay="600">
-            <h3
-              class="text-2xl font-bold mb-4 text-feid-dark dark:text-feid-light"
-            >
-              Tecnologías
-            </h3>
-            <div class="flex flex-wrap gap-2">
+          <div class="mt-10" data-aos="fade-up" data-aos-delay="600">
+            <h3 class="text-3xl font-bold mb-6 uppercase text-white">
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-green dark:hover:border-feid-green transition-colors"
+                class="bg-clip-text text-transparent bg-gradient-to-r from-ferxxo-green to-ferxxo-pink"
+                >TECNOLOGÍAS</span
+              >
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-pink/40 hover:border-ferxxo-pink hover:bg-ferxxo-pink/10 hover:text-ferxxo-pink transition-all duration-300 shadow-glow-pink"
                 >HTML5</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-blue dark:hover:border-feid-blue transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-blue/40 hover:border-ferxxo-blue hover:bg-ferxxo-blue/10 hover:text-ferxxo-blue transition-all duration-300 shadow-glow-blue"
                 >CSS3</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-purple dark:hover:border-feid-purple transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-purple/40 hover:border-ferxxo-purple hover:bg-ferxxo-purple/10 hover:text-ferxxo-purple transition-all duration-300 shadow-glow-purple"
                 >JavaScript</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-pink dark:hover:border-feid-pink transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-pink/40 hover:border-ferxxo-pink hover:bg-ferxxo-pink/10 hover:text-ferxxo-pink transition-all duration-300 shadow-glow-pink"
                 >TypeScript</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-green dark:hover:border-feid-green transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-blue/40 hover:border-ferxxo-blue hover:bg-ferxxo-blue/10 hover:text-ferxxo-blue transition-all duration-300 shadow-glow-blue"
                 >React</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-blue dark:hover:border-feid-blue transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-purple/40 hover:border-ferxxo-purple hover:bg-ferxxo-purple/10 hover:text-ferxxo-purple transition-all duration-300 shadow-glow-purple"
                 >Vue</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-purple dark:hover:border-feid-purple transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-pink/40 hover:border-ferxxo-pink hover:bg-ferxxo-pink/10 hover:text-ferxxo-pink transition-all duration-300 shadow-glow-pink"
                 >Node.js</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-pink dark:hover:border-feid-pink transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-blue/40 hover:border-ferxxo-blue hover:bg-ferxxo-blue/10 hover:text-ferxxo-blue transition-all duration-300 shadow-glow-blue"
                 >Express</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-green dark:hover:border-feid-green transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-purple/40 hover:border-ferxxo-purple hover:bg-ferxxo-purple/10 hover:text-ferxxo-purple transition-all duration-300 shadow-glow-purple"
                 >MongoDB</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-blue dark:hover:border-feid-blue transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-pink/40 hover:border-ferxxo-pink hover:bg-ferxxo-pink/10 hover:text-ferxxo-pink transition-all duration-300 shadow-glow-pink"
                 >SQL</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-purple dark:hover:border-feid-purple transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-blue/40 hover:border-ferxxo-blue hover:bg-ferxxo-blue/10 hover:text-ferxxo-blue transition-all duration-300 shadow-glow-blue"
                 >TailwindCSS</span
               >
               <span
-                class="px-3 py-1 bg-white dark:bg-feid-dark text-feid-dark dark:text-feid-light rounded-full text-sm border border-gray-200 dark:border-feid-dark-gray hover:border-feid-pink dark:hover:border-feid-pink transition-colors"
+                class="px-4 py-2 bg-ferxxo-black/50 text-white rounded-full text-sm border border-ferxxo-purple/40 hover:border-ferxxo-purple hover:bg-ferxxo-purple/10 hover:text-ferxxo-purple transition-all duration-300 shadow-glow-purple"
                 >Git</span
               >
             </div>
@@ -290,6 +370,76 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* Efectos visuales para el estilo Ferxxo */
+
+  /* Fondo con ruido */
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+  }
+
+  /* Efecto de líneas de escaneo */
+  .bg-scanline {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 100% 4px;
+  }
+
+  /* Sombras de glow para las etiquetas de tecnologías */
+  .shadow-glow-pink {
+    box-shadow: 0 0 10px rgba(255, 45, 158, 0);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-glow-pink:hover {
+    box-shadow: 0 0 15px rgba(255, 45, 158, 0.3);
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-glow-blue:hover {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: 0 0 10px rgba(160, 32, 240, 0);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-glow-purple:hover {
+    box-shadow: 0 0 15px rgba(160, 32, 240, 0.3);
+  }
+
+  /* Glow para barras de habilidades */
+  .skill-glow {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: skill-glow 2s infinite;
+    transform: skewX(-20deg);
+  }
+
+  @keyframes skill-glow {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+</style>
 
 <script>
   // Animación de barras de habilidades
@@ -306,7 +456,7 @@
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     // Observar la sección de habilidades
@@ -331,10 +481,11 @@
           const bar = document.querySelector(selector);
           if (bar) {
             (bar as HTMLElement).style.width = width;
-            (bar as HTMLElement).style.transition = "width 1s ease-in-out";
+            (bar as HTMLElement).style.transition =
+              "width 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67)";
           }
         }, delay);
-        delay += 200;
+        delay += 300;
       });
     }
   });

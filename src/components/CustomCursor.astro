@@ -1,27 +1,54 @@
 ---
-// CustomCursor.astro
+// CustomCursor.astro - Cursor personalizado con estilo Ferxxo
 ---
 
-<!-- Cursor personalizado -->
-<div id="custom-cursor" class="custom-cursor hidden md:block"></div>
-<div id="cursor-particles" class="fixed top-0 left-0 w-full h-full pointer-events-none z-40"></div>
+<!-- Cursor personalizado con estilo Ferxxo -->
+<div id="custom-cursor" class="custom-cursor hidden md:block opacity-0">
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+</div>
+<div
+  id="cursor-particles"
+  class="fixed top-0 left-0 w-full h-full pointer-events-none z-40 hidden md:block"
+>
+</div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    // Verificar si es un dispositivo táctil
+    const isTouchDevice = () => {
+      return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    };
+
+    // No mostrar cursor personalizado en dispositivos táctiles
+    if (isTouchDevice()) return;
+
     // Elementos del cursor
-    const customCursor = document.getElementById('custom-cursor');
-    const cursorParticles = document.getElementById('cursor-particles');
-    
-    if (!customCursor || !cursorParticles) return;
-    
+    const customCursor = document.getElementById(
+      "custom-cursor"
+    ) as HTMLElement;
+    const cursorDot = customCursor?.querySelector(".cursor-dot") as HTMLElement;
+    const cursorOutline = customCursor?.querySelector(
+      ".cursor-outline"
+    ) as HTMLElement;
+    const cursorParticles = document.getElementById(
+      "cursor-particles"
+    ) as HTMLElement;
+
+    if (!customCursor || !cursorParticles || !cursorDot || !cursorOutline)
+      return;
+
     // Variables para el seguimiento del cursor
     let mouseX = 0;
     let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
+    let dotX = 0;
+    let dotY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
     let isHoveringLink = false;
+    let isClicking = false;
     let particles: Particle[] = [];
-    
+
     class Particle {
       x: number;
       y: number;
@@ -31,118 +58,263 @@
       color: string;
       alpha: number;
       element: HTMLDivElement;
-      
+
       constructor(x: number, y: number) {
         this.x = x;
         this.y = y;
         this.size = Math.random() * 5 + 1;
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
-        
-        // Colores neón aleatorios inspirados en Feid
-        const colors = ['#00FF94', '#9D00FF', '#FF00C7', '#00C2FF'];
+
+        // Colores neón Ferxxo
+        const colors = ["#FF2D9E", "#00F0FF", "#A020F0", "#00FF7F"];
         this.color = colors[Math.floor(Math.random() * colors.length)];
-        
+
         this.alpha = 1;
-        
+
         // Crear elemento visual de la partícula
-        this.element = document.createElement('div');
-        this.element.style.position = 'absolute';
+        this.element = document.createElement("div");
+        this.element.style.position = "absolute";
         this.element.style.width = `${this.size}px`;
         this.element.style.height = `${this.size}px`;
         this.element.style.backgroundColor = this.color;
-        this.element.style.borderRadius = '50%';
-        this.element.style.filter = 'blur(1px)';
-        this.element.style.opacity = '1';
-        this.element.style.transition = 'opacity 300ms ease';
-        this.element.style.boxShadow = `0 0 5px ${this.color}`;
-        
+        this.element.style.borderRadius = "50%";
+        this.element.style.filter = "blur(1px)";
+        this.element.style.opacity = "1";
+        this.element.style.boxShadow = `0 0 8px ${this.color}`;
+        this.element.style.transform = `translate(${this.x}px, ${this.y}px)`;
+
         // Añadir al contenedor
         cursorParticles.appendChild(this.element);
       }
-      
+
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
-        this.alpha -= 0.01;
-        
+        this.alpha -= 0.02;
+
         this.element.style.transform = `translate(${this.x}px, ${this.y}px)`;
         this.element.style.opacity = `${this.alpha}`;
       }
-      
+
       remove() {
         this.element.remove();
       }
     }
-    
+
     // Inicializar cursor
     const initCursor = () => {
-      document.addEventListener('mousemove', (e) => {
+      // Mostrar el cursor después de cargarlo
+      customCursor.classList.remove("opacity-0");
+      customCursor.classList.add("opacity-100");
+
+      // Actualizar posición del mouse
+      document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
-        // Crear partículas ocasionalmente
+
+        // Crear partículas ocasionalmente al pasar por enlaces
         if (Math.random() < 0.1 && isHoveringLink) {
           createParticle(mouseX, mouseY);
         }
       });
-      
-      // Detectar si estamos sobre un enlace o botón
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          isHoveringLink = true;
-          customCursor.classList.add('scale-150');
-          customCursor.classList.add('border-feid-pink');
-          customCursor.classList.remove('border-feid-green');
-        });
-        
-        el.addEventListener('mouseleave', () => {
-          isHoveringLink = false;
-          customCursor.classList.remove('scale-150');
-          customCursor.classList.remove('border-feid-pink');
-          customCursor.classList.add('border-feid-green');
-        });
+
+      // Efecto al hacer clic
+      document.addEventListener("mousedown", () => {
+        isClicking = true;
+        customCursor.classList.add("cursor-clicking");
+
+        // Efecto de explosión al hacer clic
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => createParticle(mouseX, mouseY), i * 20);
+        }
       });
-      
+
+      document.addEventListener("mouseup", () => {
+        isClicking = false;
+        customCursor.classList.remove("cursor-clicking");
+      });
+
+      // Efecto de velocidad
+      let prevX = 0;
+      let prevY = 0;
+      let moveSpeed = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        // Calcular velocidad del movimiento
+        moveSpeed = Math.sqrt(
+          Math.pow(e.clientX - prevX, 2) + Math.pow(e.clientY - prevY, 2)
+        );
+
+        // Crear estela al mover rápido
+        if (moveSpeed > 8) {
+          createParticle(mouseX, mouseY);
+        }
+
+        prevX = e.clientX;
+        prevY = e.clientY;
+      });
+
+      // Detectar si estamos sobre un enlace o botón
+      document
+        .querySelectorAll("a, button, input, textarea, .clickable")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            isHoveringLink = true;
+            customCursor.classList.add("cursor-hover");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            isHoveringLink = false;
+            customCursor.classList.remove("cursor-hover");
+          });
+        });
+
+      // Detectar si estamos sobre texto
+      document
+        .querySelectorAll("p, h1, h2, h3, h4, h5, h6, span")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            customCursor.classList.add("cursor-text");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            customCursor.classList.remove("cursor-text");
+          });
+        });
+
       // Actualizar la posición del cursor personalizado
       const updateCursor = () => {
         // Interpolación suave para movimiento fluido
-        const ease = 0.2;
-        cursorX += (mouseX - cursorX) * ease;
-        cursorY += (mouseY - cursorY) * ease;
-        
-        customCursor.style.left = `${mouseX}px`;
-        customCursor.style.top = `${mouseY}px`;
-        
+        const dotEase = 0.2;
+        const outlineEase = 0.12;
+
+        dotX += (mouseX - dotX) * dotEase;
+        dotY += (mouseY - dotY) * dotEase;
+
+        outlineX += (mouseX - outlineX) * outlineEase;
+        outlineY += (mouseY - outlineY) * outlineEase;
+
+        // Actualizar posiciones con transformación
+        cursorDot.style.transform = `translate(calc(${dotX}px - 50%), calc(${dotY}px - 50%))`;
+        cursorOutline.style.transform = `translate(calc(${outlineX}px - 50%), calc(${outlineY}px - 50%))`;
+
         // Actualizar partículas
         particles.forEach((particle, index) => {
           particle.update();
-          
+
           // Eliminar partículas desvanecidas
           if (particle.alpha <= 0) {
             particle.remove();
             particles.splice(index, 1);
           }
         });
-        
+
         requestAnimationFrame(updateCursor);
       };
-      
+
       updateCursor();
     };
-    
+
     // Crear una nueva partícula
     const createParticle = (x: number, y: number) => {
       particles.push(new Particle(x, y));
-      
+
       // Limitar número de partículas para rendimiento
       if (particles.length > 30) {
         particles[0].remove();
         particles.shift();
       }
     };
-    
+
     // Iniciar el cursor personalizado
     initCursor();
   });
-</script> 
+</script>
+
+<style>
+  .custom-cursor {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transition:
+      width 0.2s,
+      height 0.2s,
+      background-color 0.2s;
+  }
+
+  .cursor-outline {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition:
+      width 0.3s,
+      height 0.3s,
+      border-color 0.3s,
+      transform 0.3s;
+  }
+
+  /* Estilo al hacer clic */
+  .cursor-clicking .cursor-dot {
+    background-color: var(--ferxxo-pink);
+    width: 12px;
+    height: 12px;
+  }
+
+  .cursor-clicking .cursor-outline {
+    width: 30px;
+    height: 30px;
+    border-color: var(--ferxxo-pink);
+    border-width: 3px;
+    box-shadow: 0 0 20px var(--ferxxo-pink);
+  }
+
+  /* Estilo al pasar por enlaces/botones */
+  .cursor-hover .cursor-dot {
+    background-color: var(--ferxxo-blue);
+  }
+
+  .cursor-hover .cursor-outline {
+    width: 48px;
+    height: 48px;
+    border-color: var(--ferxxo-blue);
+    box-shadow: 0 0 20px var(--ferxxo-blue);
+  }
+
+  /* Estilo al pasar por texto */
+  .cursor-text .cursor-dot {
+    width: 4px;
+    height: 16px;
+    border-radius: 2px;
+  }
+
+  .cursor-text .cursor-outline {
+    opacity: 0.2;
+  }
+
+  /* Ocultar cursor nativo en desktop */
+  @media (min-width: 768px) {
+    html,
+    body,
+    a,
+    button,
+    input,
+    textarea,
+    .clickable {
+      cursor: none !important;
+    }
+  }
+</style>

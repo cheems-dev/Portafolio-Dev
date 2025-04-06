@@ -1,176 +1,419 @@
 ---
-// Hero.astro - Sección de presentación principal
+// Hero.astro - Sección principal del sitio con temática Ferxxo
 ---
 
-<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Fondo de partículas -->
-  <div id="particles-bg" class="absolute inset-0 z-0"></div>
-  
-  <!-- Contenido principal -->
+<section
+  id="home"
+  class="relative overflow-hidden bg-ferxxo-black min-h-screen flex items-center justify-center pt-20 pb-16"
+>
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0">
+    <!-- Gradiente superior -->
+    <div
+      class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-ferxxo-purple/20 to-transparent"
+    >
+    </div>
+
+    <!-- Grilla futurista -->
+    <div
+      class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsIDQ1LCAxNTgsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMzAgMzBtLTI5IDBhMjkgMjkgMCAxIDAgNTggMCAyOSAyOSAwIDEgMC01OCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjQgMGEyNCAyNCAwIDEgMCA0OCAwIDI0IDI0IDAgMSAwLTQ4IDB6Ii8+PHBhdGggZD0iTTMwIDMwbS0xOSAwYTE5IDE5IDAgMSAwIDM4IDAgMTkgMTkgMCAxIDAtMzggMHoiLz48cGF0aCBkPSJNMzAgMzBtLTE0IDBhMTQgMTQgMCAxIDAgMjggMCAxNCAxNCAwIDEgMC0yOCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tOSAwYTkgOSAwIDEgMCAxOCAwIDkgOSAwIDEgMC0xOCAweiIvPjwvZz48L2c+PC9zdmc+')]"
+    >
+    </div>
+
+    <!-- Lluvia de píxeles -->
+    <div class="absolute inset-0 overflow-hidden opacity-20">
+      <div class="pixel-rain"></div>
+    </div>
+
+    <!-- Efectos de distorsión horizontal -->
+    <div
+      class="absolute top-1/4 left-0 right-0 h-px bg-ferxxo-pink/30 glitch-line"
+    >
+    </div>
+    <div
+      class="absolute top-1/3 left-0 right-0 h-px bg-ferxxo-blue/30 glitch-line delay-300"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-0 right-0 h-px bg-ferxxo-purple/30 glitch-line delay-700"
+    >
+    </div>
+    <div
+      class="absolute top-2/3 left-0 right-0 h-px bg-ferxxo-green/30 glitch-line delay-1100"
+    >
+    </div>
+
+    <!-- Elementos gráficos -->
+    <div
+      class="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-ferxxo-pink/10 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-ferxxo-blue/10 blur-3xl"
+    >
+    </div>
+  </div>
+
   <div class="container mx-auto px-4 relative z-10">
-    <div class="flex flex-col items-center text-center">
-      <!-- Texto de bienvenida con animación -->
-      <h2 
-        class="text-xl md:text-2xl font-light mb-4 text-feid-dark dark:text-feid-light opacity-0" 
-        data-aos="fade-down" 
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- Contenido textual -->
+        <div class="w-full md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+          <!-- Texto principal con efecto glitch -->
+          <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-none">
+            <span class="block glitch-effect" data-text="FERXXO">
+              <span class="text-ferxxo-pink text-shadow-neon-pink">FERXXO</span>
+            </span>
+            <span class="block text-4xl sm:text-6xl mt-2">
+              <span class="text-white">VISUAL</span>
+              <span class="text-ferxxo-blue text-shadow-neon-blue">STYLE</span>
+            </span>
+          </h1>
+
+          <div
+            class="h-1 w-32 bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple mb-6"
+          >
+          </div>
+
+          <p class="text-gray-300 text-lg mb-8 max-w-xl">
+            Diseño vibrante inspirado en el estilo único de Feid, mezclando
+            elementos urbanos, neón y estética digital para crear experiencias
+            visuales impactantes.
+          </p>
+
+          <!-- Botones de acción -->
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="group relative">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-200"
+              >
+              </div>
+              <button
+                class="relative bg-ferxxo-black px-6 py-3 rounded-lg text-white font-bold uppercase tracking-wider group-hover:text-ferxxo-pink transition duration-200"
+              >
+                Ver Proyectos
+              </button>
+            </a>
+
+            <a
+              href="#about"
+              class="relative px-6 py-3 border border-ferxxo-blue/50 text-ferxxo-blue hover:text-white hover:bg-ferxxo-blue/20 rounded-lg font-bold uppercase tracking-wider transition duration-200"
+            >
+              Sobre Mi
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen/Gráfico con elementos Feid -->
+        <div
+          class="w-full md:w-1/2 relative"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <div class="aspect-square relative max-w-md mx-auto">
+            <!-- Marco con borde distorsionado -->
+            <div class="absolute inset-0 distortion-border rounded-2xl"></div>
+
+            <!-- Contenedor del artwork -->
+            <div
+              class="absolute inset-2 bg-ferxxo-black rounded-2xl overflow-hidden flex items-center justify-center"
+            >
+              <!-- Elementos gráficos del artwork -->
+              <div
+                class="city-silhouette absolute bottom-0 left-0 right-0 h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDEyMCI+PHBhdGggZmlsbD0iIzIyMiIgZD0iTTAgMGgxMjAwdjEyMEgweiIvPjxwYXRoIGZpbGw9IiMxMTEiIGQ9Ik0zIDBoNDV2MzVIM3ptNjAgMGg0MHY1MEg2M3ptNzAgMGgzMHY3MGgzMHY1MGgtNjB6bTE0MCAwaDQwdjQwSDI3M3ptMTEwIDBoMzV2OTBoLTM1em02MCAwaDQ1djcwaDIwdjUwaC02NXptMTUwIDBsMzUgNDAgMzUgMzB2NTBoLTcwem0xNTAgMGg0MHYxMjBoLTQwem03MCAwaDMwdjQwaDIwdjgwaC01MHoiLz48cGF0aCBmaWxsPSIjMDAwIiBkPSJNMCAxMjBsMTAwLTIwIDEwMC0yMCAxMDAtMTAgMTAwLTEwIDEwMC01IDEwMC01IDEwMC0xMCAxMDAtMTAgMTAwLTIwIDEwMC0yMGgzMDAiLz48L3N2Zz4=')]"
+              >
+              </div>
+
+              <!-- Corazón roto neón -->
+              <div
+                class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32"
+              >
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <path
+                    class="heart-path"
+                    d="M50,80C40,60 10,40 10,25C10,10 20,5 30,5C40,5 50,10 50,20"
+                    stroke="rgba(255,45,158,0.8)"
+                    stroke-width="3"
+                    fill="none"></path>
+                  <path
+                    class="heart-path"
+                    d="M50,80C60,60 90,40 90,25C90,10 80,5 70,5C60,5 50,10 50,20"
+                    stroke="rgba(255,45,158,0.8)"
+                    stroke-width="3"
+                    fill="none"></path>
+                  <path
+                    class="heart-break"
+                    d="M50,30L60,20L50,40L40,30"
+                    stroke="rgba(0,240,255,0.9)"
+                    stroke-width="2"
+                    fill="none"></path>
+                </svg>
+              </div>
+
+              <!-- Texto FERXXO -->
+              <div class="absolute bottom-10 w-full text-center">
+                <span
+                  class="inline-block ferxxo-logo text-4xl tracking-widest transform -rotate-2 text-shadow-neon-pink"
+                >
+                  FERXXO
+                </span>
+              </div>
+
+              <!-- Micrófono -->
+              <div class="absolute bottom-1/4 right-10 w-10 h-24">
+                <div
+                  class="w-10 h-10 rounded-full bg-gray-700 shadow-inner flex items-center justify-center"
+                >
+                  <div
+                    class="w-6 h-6 rounded-full bg-gradient-to-br from-ferxxo-blue to-ferxxo-purple animate-pulse"
+                  >
+                  </div>
+                </div>
+                <div class="w-2 h-14 mx-auto bg-gray-700"></div>
+              </div>
+
+              <!-- Círculos decorativos -->
+              <div
+                class="absolute top-10 left-10 w-16 h-16 rounded-full border-2 border-ferxxo-green opacity-70"
+              >
+              </div>
+              <div
+                class="absolute top-14 left-14 w-8 h-8 rounded-full border border-ferxxo-pink opacity-70"
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Iconos de redes sociales -->
+      <div
+        class="flex justify-center mt-10 gap-6"
+        data-aos="fade-up"
         data-aos-delay="300"
       >
-        Bienvenido a mi mundo digital
-      </h2>
-      
-      <!-- Nombre y título principal -->
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 relative">
-        <span class="block text-feid-dark dark:text-feid-light opacity-0" data-aos="fade-up" data-aos-delay="500">
-          Desarrollador
-        </span>
-        <span 
-          class="block neon-text mt-2 text-shadow-neon opacity-0" 
-          data-aos="fade-up" 
-          data-aos-delay="700"
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-700 hover:border-ferxxo-pink text-gray-400 hover:text-ferxxo-pink transition-colors duration-300"
         >
-          Full Stack
-        </span>
-      </h1>
-      
-      <!-- Descripción profesional -->
-      <p 
-        class="max-w-xl text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 opacity-0" 
-        data-aos="fade-up" 
-        data-aos-delay="900"
-      >
-        Creando experiencias digitales únicas con código limpio y diseño minimalista. 
-        Especializado en desarrollo web moderno con un toque de estilo neón inspirado en Feid.
-      </p>
-      
-      <!-- Botones de acción -->
-      <div 
-        class="flex flex-col sm:flex-row gap-4 opacity-0" 
-        data-aos="fade-up" 
-        data-aos-delay="1100"
-      >
-        <a 
-          href="#projects" 
-          class="neon-button group"
-        >
-          Ver Proyectos
-          <span class="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-        </a>
-        
-        <a 
-          href="#contact" 
-          class="px-6 py-2 border-2 border-feid-dark dark:border-feid-light hover:border-feid-green dark:hover:border-feid-green rounded-lg transition-colors duration-300 text-feid-dark dark:text-feid-light hover:text-feid-green dark:hover:text-feid-green"
-        >
-          Contacto
-        </a>
-      </div>
-      
-      <!-- Flecha de scroll -->
-      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0" data-aos="fade-up" data-aos-delay="1300">
-        <div class="animate-bounce flex flex-col items-center">
-          <span class="text-sm text-feid-dark dark:text-feid-light mb-2">Scroll</span>
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            class="h-6 w-6 text-feid-dark dark:text-feid-light" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path
+              d="M22.67 3.33a4.73 4.73 0 0 1-1.4.41 2.61 2.61 0 0 0 1.11-1.49 4.89 4.89 0 0 1-1.57.63 2.48 2.48 0 0 0-4.31 2.28A7.13 7.13 0 0 1 5.48 2a2.59 2.59 0 0 0-.35 1.3 2.59 2.59 0 0 0 1.13 2.21 2.42 2.42 0 0 1-1.13-.33v.04A2.58 2.58 0 0 0 7.2 7.78a2.41 2.41 0 0 1-1.16.05 2.53 2.53 0 0 0 2.39 1.83 5 5 0 0 1-3.74 1.11 7.08 7.08 0 0 0 3.92 1.21 7.32 7.32 0 0 0 7.47-7.81c0-.12 0-.24-.2-.36A5.19 5.19 0 0 0 22.67 3.33z"
+            ></path>
           </svg>
-        </div>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-700 hover:border-ferxxo-blue text-gray-400 hover:text-ferxxo-blue transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 16c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm5-13.5c0 .83-.67 1.5-1.5 1.5S14 5.33 14 4.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"
+            ></path>
+            <path d="M12 9c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-700 hover:border-ferxxo-green text-gray-400 hover:text-ferxxo-green transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08c-1.29 1.94-3.5 3.22-6 3.22z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-700 hover:border-ferxxo-purple text-gray-400 hover:text-ferxxo-purple transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21.3 7.5c-.1-1.2-.4-2.1-.9-2.9-.5-.7-1.1-1.3-1.8-1.8-.7-.5-1.6-.8-2.9-.9C14.5 1.8 14.3 1.8 12 1.8s-2.5 0-3.7.1c-1.2.1-2.1.4-2.9.9-.7.5-1.3 1.1-1.8 1.8-.5.7-.8 1.6-.9 2.9C2.6 8.7 2.6 8.9 2.6 11.2s0 2.5.1 3.7c.1 1.2.4 2.1.9 2.9.5.7 1.1 1.3 1.8 1.8.7.5 1.6.8 2.9.9 1.2.1 1.4.1 3.7.1s2.5 0 3.7-.1c1.2-.1 2.1-.4 2.9-.9.7-.5 1.3-1.1 1.8-1.8.5-.7.8-1.6.9-2.9.1-1.2.1-1.4.1-3.7s0-2.5-.1-3.7zM12 16.5c-2.9 0-5.2-2.3-5.2-5.2S9.1 6.1 12 6.1s5.2 2.3 5.2 5.2-2.3 5.2-5.2 5.2zm5.4-9.4c-.7 0-1.2-.5-1.2-1.2s.5-1.2 1.2-1.2 1.2.5 1.2 1.2-.5 1.2-1.2 1.2z"
+            ></path>
+            <path
+              d="M12 8.1c-1.7 0-3.2 1.4-3.2 3.2 0 1.7 1.4 3.2 3.2 3.2 1.7 0 3.2-1.4 3.2-3.2 0-1.8-1.5-3.2-3.2-3.2z"
+            ></path>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+<style>
+  .pixel-rain {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        1px 1px at calc(100% * var(--x-1)) calc(100% * var(--y-1)),
+        var(--ferxxo-pink),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at calc(100% * var(--x-2)) calc(100% * var(--y-2)),
+        var(--ferxxo-blue),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at calc(100% * var(--x-3)) calc(100% * var(--y-3)),
+        var(--ferxxo-purple),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at calc(100% * var(--x-4)) calc(100% * var(--y-4)),
+        var(--ferxxo-green),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at calc(100% * var(--x-5)) calc(100% * var(--y-5)),
+        var(--ferxxo-pink),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at calc(100% * var(--x-6)) calc(100% * var(--y-6)),
+        var(--ferxxo-blue),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at calc(100% * var(--x-7)) calc(100% * var(--y-7)),
+        var(--ferxxo-purple),
+        transparent
+      );
+    background-size: 200% 200%;
+    animation: rain 8s linear infinite;
+  }
+
+  .glitch-line {
+    opacity: 0;
+    animation: glitch-line 4s infinite;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  .delay-1100 {
+    animation-delay: 1.1s;
+  }
+
+  .heart-path {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px rgba(255, 45, 158, 0.8));
+    animation: pulse 3s infinite;
+  }
+
+  .heart-break {
+    opacity: 0;
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8));
+    animation: break-heart 3s infinite;
+  }
+
+  @keyframes rain {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  @keyframes glitch-line {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    10%,
+    30% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.3;
+      transform: translateX(0);
+    }
+    70%,
+    90% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes break-heart {
+    0%,
+    20%,
+    100% {
+      opacity: 0;
+    }
+    50%,
+    70% {
+      opacity: 1;
+    }
+  }
+</style>
+
 <script>
-  // Importar y configurar tsParticles
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      // @ts-ignore - Cargar tsParticles desde CDN
-      await tsParticles.load("particles-bg", {
-        fullScreen: { enable: false },
-        fpsLimit: 60,
-        particles: {
-          number: {
-            value: 50,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: ["#00FF94", "#9D00FF", "#FF00C7", "#00C2FF"]
-          },
-          shape: {
-            type: "circle",
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false
-            }
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 2,
-              size_min: 0.1,
-              sync: false
-            }
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#00FF94",
-            opacity: 0.2,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "grab"
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
-            },
-            resize: true
-          },
-          modes: {
-            grab: {
-              distance: 140,
-              line_linked: {
-                opacity: 0.5
-              }
-            },
-            push: {
-              particles_nb: 3
-            }
-          }
-        },
-        retina_detect: true
+  // Generar coordenadas aleatorias para píxeles de lluvia
+  document.addEventListener("DOMContentLoaded", () => {
+    // Crear variables CSS para posiciones aleatorias de píxeles
+    const root = document.documentElement;
+
+    for (let i = 1; i <= 7; i++) {
+      root.style.setProperty(`--x-${i}`, Math.random().toFixed(2));
+      root.style.setProperty(`--y-${i}`, Math.random().toFixed(2));
+    }
+
+    // Efecto de distorsión en hover para el texto FERXXO
+    const ferxxoLogo = document.querySelector(".ferxxo-logo");
+
+    if (ferxxoLogo) {
+      ferxxoLogo.addEventListener("mouseover", () => {
+        ferxxoLogo.classList.add("glitch-effect");
+        setTimeout(() => {
+          ferxxoLogo.classList.remove("glitch-effect");
+        }, 1000);
       });
-    } catch (error) {
-      console.error("Error loading tsParticles:", error);
     }
   });
-</script> 
+</script>
+

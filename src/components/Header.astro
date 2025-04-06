@@ -1,71 +1,91 @@
 ---
-// Importar los estilos y componentes necesarios
+// Header.astro - Barra de navegación estilo Ferxxo
 ---
 
 <header
-  class="fixed top-0 left-0 w-full z-50 bg-feid-dark/80 backdrop-blur-md transition-colors duration-300"
+  class="fixed top-0 left-0 w-full z-50 bg-ferxxo-black/80 backdrop-blur-md transition-colors duration-300 border-b border-ferxxo-pink/20"
 >
-  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+  <div
+    class="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between"
+  >
     <!-- Logo -->
     <a href="/" class="flex items-center group">
       <div
-        class="w-10 h-10 relative overflow-hidden group-hover:animate-pulse-slow"
+        class="w-10 h-10 md:w-12 md:h-12 relative overflow-hidden group-hover:animate-pulse"
       >
         <div
-          class="absolute inset-0 bg-gradient-to-br from-feid-green via-feid-blue to-feid-purple rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+          class="absolute inset-0 bg-gradient-to-br from-ferxxo-pink via-ferxxo-purple to-ferxxo-blue rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"
         >
         </div>
         <div
-          class="absolute inset-0.5 bg-feid-dark rounded-lg flex items-center justify-center z-10"
+          class="absolute inset-0.5 bg-ferxxo-black rounded-lg flex items-center justify-center z-10"
         >
-          <span class="text-2xl font-bold neon-text">F</span>
+          <span class="text-2xl md:text-3xl font-bold ferxxo-logo">F</span>
         </div>
       </div>
-      <span class="ml-2 text-xl font-bold text-feid-light transition-colors"
-        >PortFeid</span
-      >
+      <div class="ml-2 md:ml-3 flex flex-col">
+        <span
+          class="text-lg md:text-xl font-bold text-ferxxo-pink tracking-wider"
+        >
+          FERXXO
+        </span>
+        <span class="text-[10px] md:text-xs text-ferxxo-blue tracking-wider"
+          >DESIGN SYSTEM</span
+        >
+      </div>
     </a>
 
     <!-- Navegación para pantallas grandes -->
-    <nav class="hidden md:flex items-center space-x-8">
+    <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
       <a
         href="#home"
-        class="text-feid-light hover:text-feid-green transition-colors"
-        >Inicio</a
+        class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
+        >INICIO</a
       >
       <a
         href="#about"
-        class="text-feid-light hover:text-feid-green transition-colors"
-        >Sobre mí</a
+        class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
+        >SOBRE MÍ</a
       >
       <a
         href="#projects"
-        class="text-feid-light hover:text-feid-green transition-colors"
-        >Proyectos</a
+        class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
+        >PROYECTOS</a
       >
       <a
         href="#experience"
-        class="text-feid-light hover:text-feid-green transition-colors"
-        >Experiencia</a
+        class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
+        >EXPERIENCIA</a
       >
       <a
         href="#certificates"
-        class="text-feid-light hover:text-feid-green transition-colors"
-        >Certificados</a
+        class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
+        >CERTIFICADOS</a
       >
-      <a href="#contact" class="neon-button">Contacto</a>
+      <a href="#contact" class="relative group overflow-hidden">
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
+        ></span>
+        <span
+          class="relative px-4 lg:px-6 py-2 inline-block bg-ferxxo-black border border-ferxxo-pink text-ferxxo-pink font-bold uppercase tracking-wider text-sm lg:text-base group-hover:text-white transition-colors duration-300"
+        >
+          Contacto
+        </span>
+      </a>
     </nav>
 
     <!-- Botón hamburguesa para móviles -->
     <button
       id="menuToggle"
-      class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none border border-ferxxo-pink/30 rounded-lg p-2 touch-target"
+      aria-label="Menú principal"
+      aria-expanded="false"
     >
-      <span class="w-6 h-0.5 bg-feid-light transition-transform duration-300"
+      <span class="w-6 h-0.5 bg-ferxxo-pink transition-transform duration-300"
       ></span>
-      <span class="w-6 h-0.5 bg-feid-light transition-opacity duration-300"
+      <span class="w-6 h-0.5 bg-ferxxo-pink transition-opacity duration-300"
       ></span>
-      <span class="w-6 h-0.5 bg-feid-light transition-transform duration-300"
+      <span class="w-6 h-0.5 bg-ferxxo-pink transition-transform duration-300"
       ></span>
     </button>
   </div>
@@ -73,40 +93,95 @@
   <!-- Menú móvil -->
   <div
     id="mobileMenu"
-    class="hidden md:hidden absolute top-full left-0 w-full bg-feid-dark shadow-lg py-4 px-6 transition-all duration-300 ease-in-out transform translate-y-0 opacity-0 border-t border-feid-dark-gray"
+    class="hidden md:hidden absolute top-full left-0 w-full bg-ferxxo-black/90 shadow-lg py-4 px-6 transition-all duration-300 ease-in-out transform opacity-0 border-t border-ferxxo-pink/20 backdrop-blur-md"
+    aria-hidden="true"
   >
+    <div
+      class="glitch-line absolute top-0 left-0 right-0 h-px bg-ferxxo-pink/30"
+    >
+    </div>
+
     <nav class="flex flex-col space-y-4">
       <a
         href="#home"
-        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
         >Inicio</a
       >
       <a
         href="#about"
-        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
         >Sobre mí</a
       >
       <a
         href="#projects"
-        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
         >Proyectos</a
       >
       <a
         href="#experience"
-        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
         >Experiencia</a
       >
       <a
         href="#certificates"
-        class="text-feid-light hover:text-feid-green transition-colors py-2"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
         >Certificados</a
       >
-      <a href="#contact" class="neon-button w-full text-center py-2 my-2"
-        >Contacto</a
+      <a
+        href="#contact"
+        class="w-full bg-ferxxo-black border border-ferxxo-pink py-3 my-2 text-ferxxo-pink font-bold text-center uppercase tracking-wider hover:bg-ferxxo-pink/10 transition-colors touch-target"
       >
+        Contacto
+      </a>
     </nav>
   </div>
 </header>
+
+<style>
+  .glitch-line {
+    opacity: 0;
+    animation: glitch-line 4s infinite;
+  }
+
+  @keyframes glitch-line {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    10%,
+    30% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.3;
+      transform: translateX(0);
+    }
+    70%,
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  /* Media query para mejorar accesibilidad en pantallas pequeñas */
+  @media (max-width: 360px) {
+    .container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  /* Prevenimos scroll horizontal en dispositivos móviles */
+  @media (max-width: 768px) {
+    #mobileMenu {
+      overflow-y: auto;
+      max-height: calc(100vh - 70px);
+    }
+  }
+</style>
 
 <script>
   // Lógica para el menú móvil
@@ -116,7 +191,12 @@
     const toggleIcons = menuToggle?.querySelectorAll("span");
 
     if (menuToggle && mobileMenu && toggleIcons) {
-      menuToggle.addEventListener("click", () => {
+      // Función para abrir/cerrar el menú
+      const toggleMenu = () => {
+        const isExpanded = menuToggle?.getAttribute("aria-expanded") === "true";
+        menuToggle?.setAttribute("aria-expanded", (!isExpanded).toString());
+        mobileMenu.setAttribute("aria-hidden", isExpanded.toString());
+
         // Alternar la visibilidad del menú móvil
         mobileMenu.classList.toggle("hidden");
         mobileMenu.classList.toggle("opacity-0");
@@ -128,41 +208,75 @@
         toggleIcons[1].classList.toggle("opacity-0");
         toggleIcons[2].classList.toggle("-rotate-45");
         toggleIcons[2].classList.toggle("-translate-y-2");
-      });
+
+        // Prevenir scroll cuando el menú está abierto
+        if (!isExpanded) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      };
+
+      menuToggle.addEventListener("click", toggleMenu);
 
       // Cerrar menú móvil al hacer clic en un enlace
       const mobileLinks = mobileMenu.querySelectorAll("a");
       mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          mobileMenu.classList.add("opacity-0");
-          mobileMenu.classList.remove("opacity-100");
-
-          // Resetear icono de hamburguesa
-          toggleIcons[0].classList.remove("rotate-45", "translate-y-2");
-          toggleIcons[1].classList.remove("opacity-0");
-          toggleIcons[2].classList.remove("-rotate-45", "-translate-y-2");
+          toggleMenu();
         });
+      });
+
+      // Cerrar menú al presionar Escape
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          menuToggle?.getAttribute("aria-expanded") === "true"
+        ) {
+          toggleMenu();
+        }
+      });
+
+      // Cerrar menú al redimensionar a desktop
+      window.addEventListener("resize", () => {
+        if (
+          window.innerWidth >= 768 &&
+          menuToggle?.getAttribute("aria-expanded") === "true"
+        ) {
+          toggleMenu();
+        }
       });
     }
   });
 
   // Navegación suave
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+    const handleClick = (e: Event) => {
       e.preventDefault();
 
-      const targetId = this.getAttribute("href");
+      const link = e.currentTarget as HTMLAnchorElement;
+      const targetId = link.getAttribute("href");
       if (targetId === "#") return;
 
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
+        // Usar scroll padding del CSS
+        const scrollPadding = parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--scroll-padding"
+          ) || "80px"
+        );
+
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Ajuste para el header fijo
+          top:
+            targetElement.getBoundingClientRect().top +
+            window.scrollY -
+            scrollPadding,
           behavior: "smooth",
         });
       }
-    });
+    };
+
+    anchor.addEventListener("click", handleClick);
   });
 </script>
-

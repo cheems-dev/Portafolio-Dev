@@ -54,23 +54,42 @@ const experiences = [
 ];
 ---
 
-<section id="experience" class="py-20 bg-feid-dark-gray transition-colors duration-300">
-  <div class="container mx-auto px-4">
+<section id="experience" class="py-20 bg-ferxxo-black relative overflow-hidden">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
+    <!-- Gradiente diagonal -->
+    <div class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-ferxxo-purple/20 via-transparent to-transparent"></div>
+    
+    <!-- Grid futurista -->
+    <div class="absolute inset-0 grid grid-cols-6 md:grid-cols-12">
+      {Array.from({ length: 12 }).map(() => (
+        <div class="border-r border-ferxxo-blue/5"></div>
+      ))}
+    </div>
+    
+    <!-- Líneas horizontales -->
+    <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-ferxxo-pink/10 to-transparent"></div>
+    
+    <!-- Círculos decorativos -->
+    <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-ferxxo-blue/5 blur-3xl opacity-30"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
     <!-- Encabezado de sección -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-12 md:mb-16">
       <h2 
-        class="text-3xl md:text-4xl font-bold mb-4 text-feid-light"
+        class="text-4xl md:text-5xl font-bold mb-4 uppercase text-white"
         data-aos="fade-up"
       >
-        Mi <span class="neon-text">Experiencia</span>
+        Mi <span class="text-ferxxo-pink ferxxo-glow">Experiencia</span>
       </h2>
       <div 
-        class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+        class="w-32 h-1 bg-gradient-to-r from-ferxxo-pink via-ferxxo-purple to-ferxxo-blue mx-auto"
         data-aos="zoom-in"
         data-aos-delay="200"
       ></div>
       <p 
-        class="mt-4 max-w-2xl mx-auto text-gray-300"
+        class="mt-6 max-w-2xl mx-auto text-gray-300 md:text-lg"
         data-aos="fade-up"
         data-aos-delay="300"
       >
@@ -81,62 +100,77 @@ const experiences = [
     <!-- Timeline de experiencia con proyectos -->
     <div class="max-w-6xl mx-auto">
       {experiences.map((experience, index) => (
-        <div class="mb-16 animate-on-scroll fade-in" style={`animation-delay: ${index * 150}ms`}>
+        <div class="mb-16 md:mb-24 ferxxo-fade-in" data-aos="fade-up" data-aos-delay={index * 150}>
           <div class="relative">
-            <!-- Línea temporal (visible solo en desktop) -->
-            <div class="hidden md:block absolute left-1/3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-feid-green to-feid-blue opacity-25"></div>
+            <!-- Línea temporal (visible en tablets y desktop) -->
+            <div class="hidden sm:block absolute left-16 md:left-1/3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-ferxxo-blue via-ferxxo-purple to-ferxxo-pink opacity-30"></div>
             
             <!-- Contenido de la experiencia con proyectos -->
-            <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex flex-col sm:flex-row gap-8">
               <!-- Información de la empresa -->
-              <div class="w-full md:w-1/3 relative">
-                <!-- Marcador de timeline (visible solo en desktop) -->
-                <div class="hidden md:block absolute right-0 top-6 w-4 h-4 rounded-full bg-feid-green -translate-x-1/2 transform z-10 shadow-glow-sm"></div>
+              <div class="w-full sm:w-56 md:w-1/3 relative">
+                <!-- Marcador de timeline (visible en tablets y desktop) -->
+                <div class="hidden sm:flex absolute right-0 top-6 w-8 h-8 -translate-x-[calc(50%-0.125rem)] transform z-10 items-center justify-center">
+                  <span class="w-3 h-3 rounded-full bg-ferxxo-blue absolute"></span>
+                  <span class="w-5 h-5 rounded-full bg-ferxxo-blue/30 absolute animate-ping"></span>
+                </div>
                 
-                <div class="bg-feid-dark p-6 rounded-xl h-full">
-                  <span class="inline-block px-3 py-1 text-sm font-semibold bg-feid-green/10 text-feid-green rounded-full mb-3">
+                <div class="bg-ferxxo-black/70 backdrop-blur-sm p-6 rounded-xl border border-ferxxo-blue/20 hover:border-ferxxo-blue/40 transition-all duration-300 h-full hover:shadow-[0_0_15px_rgba(0,240,255,0.15)]">
+                  <span class="inline-block px-3 py-1 text-sm font-semibold bg-ferxxo-pink/10 text-ferxxo-pink rounded-full mb-3 border border-ferxxo-pink/30">
                     {experience.period}
                   </span>
-                  <h3 class="text-xl font-bold text-feid-light mb-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-white mb-2">
                     {experience.position}
                   </h3>
-                  <h4 class="text-lg font-medium text-feid-blue mb-4">
+                  <h4 class="text-lg font-medium text-ferxxo-blue mb-4">
                     {experience.company}
                   </h4>
-                  <p class="text-gray-300 mb-4">
+                  <p class="text-gray-300 text-sm md:text-base mb-4">
                     {experience.description}
                   </p>
                 </div>
               </div>
               
               <!-- Proyectos de esta experiencia -->
-              <div class="w-full md:w-2/3">
-                <h4 class="text-lg font-bold text-feid-light mb-4 flex items-center">
-                  <span class="inline-block w-4 h-4 rounded-full bg-feid-green mr-2"></span>
+              <div class="w-full sm:flex-1 md:w-2/3 pl-0 sm:pl-12 md:pl-6">
+                <h4 class="text-lg md:text-xl font-bold text-white mb-6 flex items-center">
+                  <span class="inline-block w-5 h-0.5 bg-ferxxo-pink mr-3"></span>
                   Proyectos Destacados
                 </h4>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
                   {experience.projects.map((project) => (
-                    <div class="card overflow-hidden group transform transition-all duration-300 hover:scale-105 hover:shadow-glow-sm">
+                    <div class="project-card group bg-ferxxo-black/60 backdrop-blur-sm rounded-xl overflow-hidden border border-ferxxo-blue/20 hover:border-ferxxo-blue/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]">
                       <!-- Imagen del proyecto -->
-                      <div class="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                          <span class="text-2xl text-feid-light/20">{project.name}</span>
+                      <div class="relative h-48 bg-gradient-to-br from-ferxxo-black to-ferxxo-black/80 overflow-hidden">
+                        <!-- Líneas de cuadrícula para efecto tecnológico -->
+                        <div class="absolute inset-0 grid grid-cols-8 opacity-10">
+                          {Array.from({ length: 8 }).map(() => (
+                            <div class="border-r border-ferxxo-blue/50"></div>
+                          ))}
+                        </div>
+                        <div class="absolute inset-0 grid grid-rows-8 opacity-10">
+                          {Array.from({ length: 8 }).map(() => (
+                            <div class="border-b border-ferxxo-blue/50"></div>
+                          ))}
+                        </div>
+                        
+                        <div class="absolute inset-0 flex items-center justify-center p-6">
+                          <span class="text-2xl text-ferxxo-blue/30 font-bold">{project.name.split(' ')[0]}</span>
                         </div>
                         
                         <!-- Overlay con información -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-feid-dark/90 via-feid-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                          <h5 class="text-lg font-bold text-feid-light">{project.name}</h5>
-                          <p class="text-sm text-gray-300">{project.description}</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black/90 via-ferxxo-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                          <h5 class="text-lg md:text-xl font-bold text-white mb-2">{project.name}</h5>
+                          <p class="text-sm md:text-base text-gray-300">{project.description}</p>
                         </div>
                       </div>
                       
                       <!-- Tecnologías usadas -->
-                      <div class="p-4">
+                      <div class="p-4 md:p-5">
                         <div class="flex flex-wrap gap-2">
                           {project.technologies.map((tech) => (
-                            <span class="inline-block px-2 py-0.5 text-xs font-medium bg-feid-dark text-feid-green rounded-full border border-feid-green/20">
+                            <span class="inline-block px-2 py-1 text-xs bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30">
                               {tech}
                             </span>
                           ))}
@@ -152,4 +186,39 @@ const experiences = [
       ))}
     </div>
   </div>
-</section> 
+</section>
+
+<style>
+  .ferxxo-glow {
+    position: relative;
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  @keyframes neon-flicker {
+    0%, 100% { opacity: 1; }
+    41.99% { opacity: 1; }
+    42% { opacity: 0.8; }
+    43% { opacity: 1; }
+    47% { opacity: 1; }
+    47.1% { opacity: 0.9; }
+    47.2% { opacity: 1; }
+    60.99% { opacity: 1; }
+    61% { opacity: 0.8; }
+    61.5% { opacity: 1; }
+  }
+  
+  .project-card {
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  @media (max-width: 640px) {
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+  }
+</style> 

@@ -48,18 +48,27 @@ const certificates = [
 ];
 ---
 
-<section id="certificates" class="py-20">
-  <div class="container mx-auto px-4">
+<section id="certificates" class="py-20 bg-ferxxo-black relative overflow-hidden">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 z-0 opacity-10">
+    <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-ferxxo-blue/20 to-transparent"></div>
+    <div class="absolute bottom-0 right-0 w-full h-40 bg-gradient-to-t from-ferxxo-pink/20 to-transparent"></div>
+    
+    <!-- Líneas horizontales -->
+    <div class="absolute top-1/3 left-0 w-full h-px bg-ferxxo-blue/20"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
     <!-- Encabezado de sección -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-12 md:mb-16">
       <h2 
-        class="text-3xl md:text-4xl font-bold mb-4 text-feid-light"
+        class="text-4xl md:text-5xl font-bold mb-4 uppercase"
         data-aos="fade-up"
       >
-        Mis <span class="neon-text">Certificados</span>
+        Mis <span class="text-ferxxo-blue">Certificados</span>
       </h2>
       <div 
-        class="w-24 h-1 bg-gradient-to-r from-feid-green to-feid-blue mx-auto"
+        class="w-32 h-1 bg-gradient-to-r from-ferxxo-blue via-ferxxo-purple to-ferxxo-pink mx-auto"
         data-aos="zoom-in"
         data-aos-delay="200"
       ></div>
@@ -74,40 +83,60 @@ const certificates = [
     </div>
     
     <!-- Carrusel de certificados -->
-    <div class="relative mx-auto max-w-6xl px-8" data-aos="fade-up" data-aos-delay="400">
+    <div class="relative mx-auto max-w-6xl px-4 md:px-8" data-aos="fade-up" data-aos-delay="400">
       <!-- Controles de navegación -->
-      <button id="prevCert" class="absolute top-1/2 left-0 -translate-y-1/2 z-10 bg-feid-dark-gray p-3 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 focus:outline-none hover:bg-feid-dark hover:text-feid-green">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-feid-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <button 
+        id="prevCert" 
+        class="absolute top-1/2 -left-2 md:left-0 -translate-y-1/2 z-10 bg-ferxxo-black/90 p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none hover:bg-ferxxo-black border border-ferxxo-blue/30 hover:border-ferxxo-blue text-ferxxo-blue touch-target"
+        aria-label="Certificado anterior"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       
-      <button id="nextCert" class="absolute top-1/2 right-0 -translate-y-1/2 z-10 bg-feid-dark-gray p-3 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 focus:outline-none hover:bg-feid-dark hover:text-feid-green">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-feid-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <button 
+        id="nextCert" 
+        class="absolute top-1/2 -right-2 md:right-0 -translate-y-1/2 z-10 bg-ferxxo-black/90 p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none hover:bg-ferxxo-black border border-ferxxo-blue/30 hover:border-ferxxo-blue text-ferxxo-blue touch-target"
+        aria-label="Certificado siguiente"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </button>
       
       <!-- Contenedor del carrusel -->
-      <div id="certificates-carousel" class="overflow-hidden">
-        <div id="certificates-track" class="flex transition-transform duration-500 ease-in-out">
+      <div id="certificates-carousel" class="overflow-hidden rounded-lg border border-ferxxo-blue/20">
+        <div id="certificates-track" class="flex transition-transform duration-500 ease-out">
           {certificates.map((certificate, index) => (
-            <div class="certificate-slide w-full min-w-full sm:min-w-[50%] md:min-w-[33.333%] p-4">
-              <div class="card h-full overflow-hidden group">
-                <!-- Imagen placeholder del certificado -->
-                <div class="relative aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden group">
+            <div class="certificate-slide w-full min-w-full sm:min-w-[50%] md:min-w-[33.333%] p-3 md:p-4">
+              <div class="relative h-full bg-ferxxo-black/70 backdrop-blur-sm rounded-lg overflow-hidden group border border-ferxxo-blue/20 hover:border-ferxxo-blue/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                <!-- Imagen placeholder del certificado con efecto neón -->
+                <div class="relative aspect-[4/3] bg-gradient-to-br from-ferxxo-black to-ferxxo-black/90 overflow-hidden group">
                   <div class="w-full h-full flex flex-col items-center justify-center p-6">
-                    <span class="text-3xl text-feid-light/20 font-semibold mb-2">
+                    <span class="text-2xl md:text-3xl text-ferxxo-blue/30 font-semibold mb-2">
                       {certificate.organization}
                     </span>
-                    <div class="w-24 h-1 bg-feid-light/10"></div>
+                    <div class="w-24 h-1 bg-ferxxo-blue/20"></div>
+                  </div>
+                  
+                  <!-- Líneas de cuadrícula para efecto tecnológico -->
+                  <div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-10">
+                    {Array.from({ length: 8 }).map((_, i) => (
+                      <div class="border-r border-ferxxo-blue/50"></div>
+                    ))}
+                  </div>
+                  <div class="absolute inset-0 grid grid-rows-8 pointer-events-none opacity-10">
+                    {Array.from({ length: 8 }).map((_, i) => (
+                      <div class="border-b border-ferxxo-blue/50"></div>
+                    ))}
                   </div>
                   
                   <!-- Overlay con efecto neón -->
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-ferxxo-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
                     <a 
                       href={certificate.link}
-                      class="px-4 py-2 bg-feid-green/90 hover:bg-feid-green text-feid-dark font-medium rounded-lg transition-colors duration-300"
+                      class="px-4 py-2 bg-ferxxo-blue/10 hover:bg-ferxxo-blue/20 text-ferxxo-blue border border-ferxxo-blue font-medium rounded-lg transition-colors duration-300 text-sm md:text-base"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -117,15 +146,15 @@ const certificates = [
                 </div>
                 
                 <!-- Información del certificado -->
-                <div class="p-6">
-                  <h3 class="text-lg font-bold text-feid-light mb-1">
+                <div class="p-4 md:p-6">
+                  <h3 class="text-base md:text-lg font-bold text-white mb-1 line-clamp-2">
                     {certificate.title}
                   </h3>
-                  <div class="flex justify-between items-center">
-                    <p class="text-feid-blue font-medium">
+                  <div class="flex justify-between items-center flex-wrap gap-2">
+                    <p class="text-ferxxo-blue font-medium text-sm md:text-base">
                       {certificate.organization}
                     </p>
-                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-feid-green/10 text-feid-green rounded-full">
+                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30">
                       {certificate.date}
                     </span>
                   </div>
@@ -137,10 +166,10 @@ const certificates = [
       </div>
       
       <!-- Indicadores -->
-      <div class="flex justify-center mt-8 space-x-2">
+      <div class="flex justify-center mt-6 md:mt-8 space-x-2">
         {certificates.map((_, index) => (
           <button
-            class={`certificate-indicator w-3 h-3 rounded-full ${index === 0 ? 'bg-feid-green' : 'bg-gray-600'} hover:bg-feid-green transition-colors duration-300 focus:outline-none`}
+            class={`certificate-indicator w-2 h-2 md:w-3 md:h-3 rounded-full ${index === 0 ? 'bg-ferxxo-blue' : 'bg-ferxxo-blue/30'} hover:bg-ferxxo-blue transition-colors duration-300 focus:outline-none`}
             data-index={index}
             aria-label={`Ir al certificado ${index + 1}`}
           ></button>
@@ -149,6 +178,25 @@ const certificates = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Efectos visuales para el certificado */
+  @keyframes pulse-border {
+    0%, 100% { border-color: rgba(0, 240, 255, 0.3); }
+    50% { border-color: rgba(0, 240, 255, 0.7); }
+  }
+  
+  /* Ajustes responsivos para carrusel en pantallas pequeñas */
+  @media (max-width: 640px) {
+    .certificate-slide {
+      padding: 0.75rem;
+    }
+    
+    #prevCert, #nextCert {
+      transform: scale(0.9) translateY(-50%);
+    }
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -165,9 +213,13 @@ const certificates = [
     // Configuración
     let currentIndex = 0;
     let slidesPerView = 3; // Valor predeterminado para escritorio
+    let isDragging = false;
+    let startPosition = 0;
+    let currentTranslate = 0;
+    let previousTranslate = 0;
     
-    // Función para calcular el ancho del carrusel
-    const calculateSlideWidth = () => {
+    // Función para calcular el ancho de un slide
+    const getSlideWidth = () => {
       const carouselWidth = carousel.clientWidth;
       
       // Determinar cuántos slides mostrar según el ancho
@@ -181,6 +233,12 @@ const certificates = [
       
       // Establecer ancho exacto para cada slide
       const slideWidth = carouselWidth / slidesPerView;
+      return slideWidth;
+    };
+    
+    // Actualizar anchos de slides
+    const updateSlideWidths = () => {
+      const slideWidth = getSlideWidth();
       
       // Actualizar el ancho de cada slide
       slides.forEach(slide => {
@@ -192,17 +250,19 @@ const certificates = [
     };
     
     // Inicializar los anchos
-    calculateSlideWidth();
+    updateSlideWidths();
     
     // Actualizar indicador activo
     const updateIndicators = () => {
       indicators.forEach((indicator, index) => {
         if (index === currentIndex) {
-          indicator.classList.add('bg-feid-green');
-          indicator.classList.remove('bg-gray-600');
+          indicator.classList.add('bg-ferxxo-blue');
+          indicator.classList.remove('bg-ferxxo-blue/30');
+          indicator.setAttribute('aria-current', 'true');
         } else {
-          indicator.classList.remove('bg-feid-green');
-          indicator.classList.add('bg-gray-600');
+          indicator.classList.remove('bg-ferxxo-blue');
+          indicator.classList.add('bg-ferxxo-blue/30');
+          indicator.removeAttribute('aria-current');
         }
       });
     };
@@ -214,58 +274,161 @@ const certificates = [
       currentIndex = Math.max(0, Math.min(index, maxIndex));
       
       // Calcular el desplazamiento
-      const slideWidth = calculateSlideWidth();
+      const slideWidth = getSlideWidth();
       const offset = -currentIndex * slideWidth;
+      previousTranslate = offset;
       
-      // Aplicar transformación
+      // Aplicar transformación con animación
       track.style.transform = `translateX(${offset}px)`;
       
       // Actualizar indicadores
       updateIndicators();
+      
+      // Actualizar estado de los botones
+      updateButtons();
+    };
+    
+    // Actualizar estado de botones (desactivar cuando estemos en el límite)
+    const updateButtons = () => {
+      if (currentIndex <= 0) {
+        prevButton.classList.add('opacity-50', 'cursor-not-allowed');
+        prevButton.setAttribute('disabled', 'true');
+      } else {
+        prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        prevButton.removeAttribute('disabled');
+      }
+      
+      const maxIndex = slides.length - slidesPerView;
+      if (currentIndex >= maxIndex) {
+        nextButton.classList.add('opacity-50', 'cursor-not-allowed');
+        nextButton.setAttribute('disabled', 'true');
+      } else {
+        nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        nextButton.removeAttribute('disabled');
+      }
     };
     
     // Event listeners para botones
-    prevButton?.addEventListener('click', () => goToSlide(currentIndex - 1));
-    nextButton?.addEventListener('click', () => goToSlide(currentIndex + 1));
+    prevButton?.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      }
+    });
+    
+    nextButton?.addEventListener('click', () => {
+      const maxIndex = slides.length - slidesPerView;
+      if (currentIndex < maxIndex) {
+        goToSlide(currentIndex + 1);
+      }
+    });
     
     // Event listeners para indicadores
     indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => goToSlide(index));
+      indicator.addEventListener('click', () => {
+        goToSlide(index);
+      });
     });
     
     // Event listener para redimensión de ventana
     window.addEventListener('resize', () => {
-      calculateSlideWidth();
-      goToSlide(currentIndex);
+      // Guardar el slide actual
+      const currentSlide = currentIndex;
+      
+      // Recalcular anchos y volver al mismo slide
+      updateSlideWidths();
+      goToSlide(currentSlide);
     });
     
     // Inicializar
     goToSlide(0);
     
-    // Auto-rotación opcional (descomenta para activar)
-    /*
-    let interval: number = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % (slides.length - slidesPerView + 1);
-      goToSlide(nextIndex);
-    }, 5000);
-    
-    // Detener auto-rotación al interactuar
-    const stopAutoRotation = () => {
-      clearInterval(interval);
-      // Reiniciar después de 10 segundos de inactividad
-      setTimeout(() => {
-        interval = setInterval(() => {
-          const nextIndex = (currentIndex + 1) % (slides.length - slidesPerView + 1);
-          goToSlide(nextIndex);
-        }, 5000);
-      }, 10000);
+    // Soporte táctil para deslizar
+    const touchStart = (event: MouseEvent | TouchEvent) => {
+      isDragging = true;
+      startPosition = getTouchPosition(event);
+      track.style.transition = 'none';
     };
     
-    prevButton?.addEventListener('click', stopAutoRotation);
-    nextButton?.addEventListener('click', stopAutoRotation);
-    indicators.forEach(indicator => {
-      indicator.addEventListener('click', stopAutoRotation);
+    const touchMove = (event: MouseEvent | TouchEvent) => {
+      if (!isDragging) return;
+      
+      const currentPosition = getTouchPosition(event);
+      currentTranslate = previousTranslate + (currentPosition - startPosition);
+      
+      // Limitar el deslizamiento
+      const maxTranslate = 0;
+      const minTranslate = -(slides.length - slidesPerView) * getSlideWidth();
+      
+      if (currentTranslate > maxTranslate) {
+        currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.3;
+      } else if (currentTranslate < minTranslate) {
+        currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.3;
+      }
+      
+      track.style.transform = `translateX(${currentTranslate}px)`;
+    };
+    
+    const touchEnd = () => {
+      isDragging = false;
+      
+      const movedBy = currentTranslate - previousTranslate;
+      
+      track.style.transition = 'transform 0.5s ease-out';
+      
+      // Si el usuario deslizó lo suficiente, cambiar de slide
+      if (Math.abs(movedBy) > getSlideWidth() * 0.2) {
+        if (movedBy < 0) {
+          // Deslizó hacia la izquierda -> siguiente slide
+          const maxIndex = slides.length - slidesPerView;
+          const newIndex = Math.min(currentIndex + 1, maxIndex);
+          goToSlide(newIndex);
+        } else {
+          // Deslizó hacia la derecha -> slide anterior
+          const newIndex = Math.max(currentIndex - 1, 0);
+          goToSlide(newIndex);
+        }
+      } else {
+        // No deslizó lo suficiente, volver al slide actual
+        goToSlide(currentIndex);
+      }
+    };
+    
+    // Obtener posición del evento táctil
+    const getTouchPosition = (event: MouseEvent | TouchEvent): number => {
+      return 'type' in event && event.type.includes('mouse') 
+        ? (event as MouseEvent).pageX 
+        : (event as TouchEvent).touches[0].clientX;
+    };
+    
+    // Agregar eventos táctiles
+    carousel.addEventListener('mousedown', touchStart);
+    carousel.addEventListener('touchstart', touchStart);
+    
+    carousel.addEventListener('mousemove', touchMove);
+    carousel.addEventListener('touchmove', touchMove);
+    
+    carousel.addEventListener('mouseup', touchEnd);
+    carousel.addEventListener('touchend', touchEnd);
+    carousel.addEventListener('mouseleave', touchEnd);
+    
+    // Prevenir comportamiento predeterminado de arrastrar
+    carousel.addEventListener('dragstart', (e: DragEvent) => e.preventDefault());
+    
+    // Navegación con teclado
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        if (currentIndex > 0) {
+          goToSlide(currentIndex - 1);
+        }
+      } else if (e.key === 'ArrowRight') {
+        const maxIndex = slides.length - slidesPerView;
+        if (currentIndex < maxIndex) {
+          goToSlide(currentIndex + 1);
+        }
+      }
     });
-    */
+    
+    // Hacer que el carrusel sea focusable
+    carousel.setAttribute('tabindex', '0');
   });
 </script> 
