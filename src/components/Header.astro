@@ -1,5 +1,6 @@
 ---
 // Header.astro - Barra de navegación estilo Ferxxo
+import { Icon } from "astro-icon/components";
 ---
 
 <header
@@ -77,16 +78,15 @@
     <!-- Botón hamburguesa para móviles -->
     <button
       id="menuToggle"
-      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none border border-ferxxo-pink/30 rounded-lg p-2 touch-target"
+      class="md:hidden flex items-center justify-center w-10 h-10 focus:outline-none border border-ferxxo-pink/30 rounded-lg p-2 touch-target"
       aria-label="Menú principal"
       aria-expanded="false"
     >
-      <span class="w-6 h-0.5 bg-ferxxo-pink transition-transform duration-300"
-      ></span>
-      <span class="w-6 h-0.5 bg-ferxxo-pink transition-opacity duration-300"
-      ></span>
-      <span class="w-6 h-0.5 bg-ferxxo-pink transition-transform duration-300"
-      ></span>
+      <Icon name="mdi:menu" class="h-6 w-6 text-ferxxo-pink open-icon" />
+      <Icon
+        name="mdi:close"
+        class="h-6 w-6 text-ferxxo-pink hidden close-icon"
+      />
     </button>
   </div>
 
@@ -188,9 +188,10 @@
   document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
-    const toggleIcons = menuToggle?.querySelectorAll("span");
+    const openIcon = document.querySelector(".open-icon");
+    const closeIcon = document.querySelector(".close-icon");
 
-    if (menuToggle && mobileMenu && toggleIcons) {
+    if (menuToggle && mobileMenu && openIcon && closeIcon) {
       // Función para abrir/cerrar el menú
       const toggleMenu = () => {
         const isExpanded = menuToggle?.getAttribute("aria-expanded") === "true";
@@ -198,46 +199,39 @@
         mobileMenu.setAttribute("aria-hidden", isExpanded.toString());
 
         // Alternar la visibilidad del menú móvil
-        mobileMenu.classList.toggle("hidden");
-        mobileMenu.classList.toggle("opacity-0");
-        mobileMenu.classList.toggle("opacity-100");
-
-        // Animar el icono de hamburguesa a X
-        toggleIcons[0].classList.toggle("rotate-45");
-        toggleIcons[0].classList.toggle("translate-y-2");
-        toggleIcons[1].classList.toggle("opacity-0");
-        toggleIcons[2].classList.toggle("-rotate-45");
-        toggleIcons[2].classList.toggle("-translate-y-2");
-
-        // Prevenir scroll cuando el menú está abierto
-        if (!isExpanded) {
-          document.body.style.overflow = "hidden";
+        if (isExpanded) {
+          mobileMenu.classList.add("hidden", "opacity-0");
+          mobileMenu.classList.remove("opacity-100");
+          openIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
         } else {
-          document.body.style.overflow = "";
+          mobileMenu.classList.remove("hidden");
+          // Forzar un reflow antes de añadir la opacidad para que la animación funcione
+          void mobileMenu.offsetWidth;
+          mobileMenu.classList.add("opacity-100");
+          mobileMenu.classList.remove("opacity-0");
+          openIcon.classList.add("hidden");
+          closeIcon.classList.remove("hidden");
         }
       };
 
+      // Event listener para el botón de menú
       menuToggle.addEventListener("click", toggleMenu);
 
-      // Cerrar menú móvil al hacer clic en un enlace
+      // Cerrar menú al hacer clic en un enlace
       const mobileLinks = mobileMenu.querySelectorAll("a");
       mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
-          toggleMenu();
+          if (
+            menuToggle?.getAttribute("aria-expanded") === "true" &&
+            window.innerWidth < 768
+          ) {
+            toggleMenu();
+          }
         });
       });
 
-      // Cerrar menú al presionar Escape
-      document.addEventListener("keydown", (e) => {
-        if (
-          e.key === "Escape" &&
-          menuToggle?.getAttribute("aria-expanded") === "true"
-        ) {
-          toggleMenu();
-        }
-      });
-
-      // Cerrar menú al redimensionar a desktop
+      // Cerrar menú al redimensionar ventana a desktop
       window.addEventListener("resize", () => {
         if (
           window.innerWidth >= 768 &&

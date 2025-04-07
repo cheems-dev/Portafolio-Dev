@@ -1,60 +1,218 @@
 ---
 // Experience.astro - Sección de experiencia laboral con proyectos destacados
 
+// Importar las imágenes de los proyectos
+import aeroAdministratorImg from '../assets/img/aero-administrator.webp';
+import ayphuImg from '../assets/img/ayphu.webp';
+import groupImg05 from '../assets/img/group-05.webp';
+import groupImg06 from '../assets/img/group-06.webp';
+import groupImg07 from '../assets/img/group-07.webp';
+import groupImg08 from '../assets/img/group-08.webp';
+import groupImg16 from '../assets/img/group-16.webp';
+import groupImg17 from '../assets/img/group-17.webp';
+import groupImg18 from '../assets/img/group-18.webp';
+import konectaImg from '../assets/img/konecta.webp';
+import liveSubastasImg from '../assets/img/live-subastas.webp';
+
+// Importar componente de ícono de Astro
+import { Icon } from 'astro-icon/components';
+
 // Datos simulados de experiencia laboral con proyectos destacados
 const experiences = [
   {
-    company: "TechVibe Labs",
-    position: "Senior Full Stack Developer",
-    period: "2022 - Presente",
-    description: "Desarrollo de aplicaciones web escalables utilizando React, Node.js y bases de datos NoSQL.",
+    company: "Universidad Peruana Cayetano Heredia",
+    position: "Frontend Developer",
+    period: "2024 - Presente",
+    description: "Desarrollo de aplicaciones web para institución educativa de prestigio en Perú, especializada en ciencias de la salud y biomedicina.",
     projects: [
       {
-        name: "Dashboard Analytics",
-        description: "Panel de control para visualización de datos en tiempo real.",
-        image: "/images/projects/dashboard.webp",
-        technologies: ["React", "D3.js", "Node.js"]
+        name: "Linkedin Campus",
+        description: "Desarrollo frontend para plataforma educativa.",
+        image: groupImg16,
+        technologies: ["React", "Typescript", "Bootstrap", "AWS-SDK", "Zustand"],
+        link: "https://upch-0002-cv-front.vercel.app/"
       },
       {
-        name: "E-commerce Platform",
-        description: "Plataforma de comercio electrónico con integración de pagos.",
-        image: "/images/projects/ecommerce.webp",
-        technologies: ["Next.js", "MongoDB", "Stripe"]
+        name: "Campus Cayetano",
+        description: "Sistema de gestión para la universidad.",
+        image: groupImg18,
+        technologies: ["React", "Typescript", "Bootstrap", "AWS-SDK", "Zustand"],
+        link: "https://develop-starqui.dpz5ufoq6bhno.amplifyapp.com/"
+      },
+       {
+        name: "BackOffice",
+        description: "Sistema de gestión para la universidad.",
+        image: groupImg18,
+        technologies: ["React", "Typescript", "Bootstrap", "AWS-SDK", "Zustand"],
+        link: "https://develop-starqui.dpz5ufoq6bhno.amplifyapp.com/"
       }
     ]
   },
   {
-    company: "Digital Pulse Inc.",
+    company: "Workana",
+    position: "React Native Developer",
+    period: "2024",
+    description: "Desarrollo de aplicaciones móviles para plataforma líder de freelance en Latinoamérica.",
+    projects: [
+      {
+        name: "App Workana",
+        description: "Aplicación móvil para la plataforma de freelancers.",
+        image: groupImg17,
+        technologies: ["React Native", "Typescript", "Eva Design", "Node.js"],
+        link: "https://www.workana.com/freelancer/0f8e699b6770c2a46231b001719b3d22"
+      }
+    ]
+  },
+  {
+    company: "RPA Latam",
+    position: "Frontend Developer & React Native Developer",
+    period: "2023",
+    description: "Desarrollo de plataformas digitales para medios de comunicación internacionales.",
+    projects: [
+      {
+        name: "Sitio Web Radio Fórmula",
+        description: "Plataforma informativa sobre economía y política.",
+        image: groupImg08,
+        technologies: ["React", "Typescript", "Sass", "Tailwindcss", "Arc XP"],
+        link: "https://www.radioformula.com.mx/"
+      },
+      {
+        name: "Radio Fútbol",
+        description: "Sitio especializado en noticias deportivas.",
+        image: groupImg07,
+        technologies: ["React", "Typescript", "Sass", "Tailwindcss", "Arc XP", "LightHouse"],
+        link: "https://futbol.radioformula.com.mx/"
+      },
+      {
+        name: "App El Club El Universo",
+        description: "Aplicación móvil para suscriptores con beneficios y geolocalización.",
+        image: groupImg06,
+        technologies: ["React Native", "Typescript", "Zustand", "Node.js"],
+        link: "https://www.eluniverso.com/"
+      },
+      {
+        name: "Sitio Web El Universo",
+        description: "Plataforma digital del periódico ecuatoriano.",
+        image: groupImg05,
+        technologies: ["React", "Javascript", "Sass", "Tailwindcss", "Arc XP", "LightHouse"],
+        link: "https://www.eluniverso.com/"
+      }
+    ]
+  },
+  {
+    company: "Live Subastas",
     position: "Frontend Developer",
-    period: "2021 - 2022",
-    description: "Diseño y desarrollo de interfaces de usuario interactivas utilizando Vue.js y SASS.",
+    period: "2022",
+    description: "Desarrollo de plataforma de subastas en tiempo real.",
     projects: [
       {
-        name: "Music Streaming App",
-        description: "Aplicación de streaming con interfaz personalizada.",
-        image: "/images/projects/music-app.webp",
-        technologies: ["Vue.js", "TailwindCSS", "Web Audio API"]
+        name: "Plataforma Live Subastas",
+        description: "Sistema completo de subastas con perfiles y métodos de pago.",
+        image: liveSubastasImg,
+        technologies: ["React", "Typescript", "Styled Components", "React Query", "Material UI"],
+        link: "#"
       }
     ]
   },
   {
-    company: "Neon Future Solutions",
-    position: "Web Developer",
-    period: "2020 - 2021",
-    description: "Desarrollo de sitios web corporativos y aplicaciones para clientes.",
+    company: "Konecta",
+    position: "Frontend Developer",
+    period: "2022",
+    description: "Desarrollo de plataforma para sector bancario.",
     projects: [
       {
-        name: "Corporate Website Redesign",
-        description: "Rediseño y desarrollo de sitio web corporativo.",
-        image: "/images/projects/corporate.webp",
-        technologies: ["WordPress", "JavaScript", "SCSS"]
+        name: "Sistema Konecta",
+        description: "Plataforma de gestión de pagos y deudas.",
+        image: konectaImg,
+        technologies: ["React Query", "Material UI", "React", "Typescript", "Styled Components"],
+        link: "https://andremogrovejom.github.io/CodiShark/"
+      }
+    ]
+  },
+  {
+    company: "Aero Administrator",
+    position: "Frontend Developer",
+    period: "2022",
+    description: "Desarrollo de plataforma para sector aeronáutico.",
+    projects: [
+      {
+        name: "Plataforma Aero Administrator",
+        description: "Sistema para evento FIAL 2023 con panel administrativo.",
+        image: aeroAdministratorImg,
+        technologies: ["Material UI", "Javascript", "React", "Styled Components", "Swiper.js"],
+        link: "https://aeroadministrator.vercel.app/"
+      }
+    ]
+  },
+  {
+    company: "Ayphu",
+    position: "Frontend Developer",
+    period: "2022",
+    description: "Desarrollo de plataforma de servicios en la nube.",
+    projects: [
+      {
+        name: "Plataforma Ayphu",
+        description: "Sistema de gestión de servidores con métricas en tiempo real.",
+        image: ayphuImg,
+        technologies: ["Next.js", "Material UI", "Javascript", "Styled Components", "Chart JS"],
+        link: "https://ayphu.com"
       }
     ]
   }
 ];
+
+// Redes sociales para la barra lateral
+const socialLinks = [
+  { name: "github", url: "https://github.com/yourusername", icon: "simple-icons:github" },
+  { name: "linkedin", url: "https://linkedin.com/in/yourusername", icon: "simple-icons:linkedin" },
+  { name: "twitter", url: "https://twitter.com/yourusername", icon: "simple-icons:twitter" },
+  { name: "instagram", url: "https://instagram.com/yourusername", icon: "simple-icons:instagram" }
+];
 ---
 
 <section id="experience" class="py-20 bg-ferxxo-black relative overflow-hidden">
+  <!-- Barra lateral de redes sociales (sticky) -->
+  <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
+    <div class="social-sidebar bg-ferxxo-black/80 backdrop-blur-sm p-3 rounded-r-xl border-r border-t border-b border-ferxxo-pink/30">
+      <ul class="flex flex-col gap-4">
+        {socialLinks.map((social) => (
+          <li>
+            <a 
+              href={social.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="social-icon-link block p-2 rounded-full bg-ferxxo-black/50 border border-ferxxo-blue/20 hover:border-ferxxo-pink transition-all duration-300 hover:scale-110 hover:rotate-6"
+              aria-label={`Visitar ${social.name}`}
+            >
+              <Icon name={social.icon} class="w-5 h-5 text-ferxxo-blue social-icon-glow" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Barra de redes sociales móvil (bottom) -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div class="social-mobile bg-ferxxo-black/90 backdrop-blur-md p-2 border-t border-ferxxo-pink/30">
+      <ul class="flex justify-center gap-6">
+        {socialLinks.map((social) => (
+          <li>
+            <a 
+              href={social.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="social-icon-link block p-2 rounded-full bg-ferxxo-black/50 border border-ferxxo-blue/20 hover:border-ferxxo-pink transition-all duration-300"
+              aria-label={`Visitar ${social.name}`}
+            >
+              <Icon name={social.icon} class="w-5 h-5 text-ferxxo-blue social-icon-glow" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
   <!-- Elementos decorativos de fondo -->
   <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
     <!-- Gradiente diagonal -->
@@ -155,14 +313,38 @@ const experiences = [
                           ))}
                         </div>
                         
-                        <div class="absolute inset-0 flex items-center justify-center p-6">
-                          <span class="text-2xl text-ferxxo-blue/30 font-bold">{project.name.split(' ')[0]}</span>
+                        <!-- Capa de fondo oscuro para mejorar contraste -->
+                        <div class="absolute inset-0 bg-ferxxo-black/60 z-10"></div>
+                        
+                        <!-- Imagen del proyecto - ahora usando la Variable de la imagen importada -->
+                        <img 
+                          src={project.image.src} 
+                          alt={project.name}
+                          width={project.image.width}
+                          height={project.image.height}
+                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        
+                        <!-- Nombre del proyecto con mejor contraste -->
+                        <div class="absolute inset-0 flex items-center justify-center p-6 z-20">
+                          <span class="text-2xl text-ferxxo-blue font-bold project-title">
+                            {project.name.split(' ')[0]}
+                          </span>
                         </div>
                         
-                        <!-- Overlay con información -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black/90 via-ferxxo-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                          <h5 class="text-lg md:text-xl font-bold text-white mb-2">{project.name}</h5>
-                          <p class="text-sm md:text-base text-gray-300">{project.description}</p>
+                        <!-- Overlay con información - Mejorado para mayor legibilidad -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black via-ferxxo-black/80 to-ferxxo-black/40 flex flex-col justify-end p-6 z-30 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                          <div class="ferxxo-neon-card backdrop-blur-sm p-3 rounded-lg border border-ferxxo-pink/50 bg-ferxxo-black/40">
+                            <div class="neon-glow-bg"></div>
+                            <h5 class="text-lg md:text-xl font-bold text-white mb-2 text-shadow ferxxo-neon-text">{project.name}</h5>
+                            <p class="text-sm md:text-base text-gray-200 text-shadow-sm">{project.description}</p>
+                            <div class="mt-2 flex items-center">
+                              <Icon name="mdi:link-variant" class="w-4 h-4 text-ferxxo-pink" />
+                              <a href={project.link} target="_blank" rel="noopener noreferrer" class="ml-1 text-xs text-ferxxo-blue hover:text-ferxxo-pink transition-colors">Ver proyecto</a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       
@@ -214,6 +396,83 @@ const experiences = [
   
   .project-card:hover {
     transform: translateY(-8px);
+  }
+  
+  .project-title {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5);
+    animation: pulse 2s infinite;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  .ferxxo-neon-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+  }
+  
+  .ferxxo-neon-text {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 
+      0 0 5px #ff00ff,
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff;
+    animation: neon-text-pulse 2s infinite alternate;
+  }
+  
+  .neon-glow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(80, 0, 255, 0.1));
+    opacity: 0.5;
+    z-index: -1;
+    filter: blur(8px);
+    animation: glow-pulse 3s infinite alternate;
+  }
+  
+  .social-icon-glow {
+    filter: drop-shadow(0 0 2px currentColor);
+    transition: all 0.3s;
+  }
+  
+  .social-icon-link:hover .social-icon-glow {
+    filter: drop-shadow(0 0 5px #ff00ff);
+    color: #ff00ff;
+  }
+  
+  .social-sidebar {
+    box-shadow: 4px 0 15px rgba(255, 0, 128, 0.2);
+    animation: sidebar-glow 4s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  
+  @keyframes neon-text-pulse {
+    0% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+    100% { text-shadow: 0 0 2px #ff00ff, 0 0 5px #ff00ff, 0 0 10px #ff00ff; }
+  }
+  
+  @keyframes glow-pulse {
+    0% { opacity: 0.3; filter: blur(8px); }
+    100% { opacity: 0.7; filter: blur(12px); }
+  }
+  
+  @keyframes sidebar-glow {
+    0% { box-shadow: 4px 0 15px rgba(255, 0, 128, 0.2); }
+    50% { box-shadow: 4px 0 15px rgba(0, 240, 255, 0.2); }
+    100% { box-shadow: 4px 0 15px rgba(255, 0, 128, 0.2); }
   }
   
   @media (max-width: 640px) {
