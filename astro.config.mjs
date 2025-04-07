@@ -45,10 +45,10 @@ export default defineConfig({
           "star",
           "heart",
           "home",
+          "github",
+          "link",
+          "open-in-new",
         ],
-
-        // Iconos heroicons para UI alternativa
-        heroicons: ["envelope", "map-pin", "phone", "arrow-up", "bars-3"],
       },
     }),
   ],

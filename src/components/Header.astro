@@ -21,17 +21,47 @@ import { Icon } from "astro-icon/components";
         <div
           class="absolute inset-0.5 bg-ferxxo-black rounded-lg flex items-center justify-center z-10"
         >
-          <span class="text-2xl md:text-3xl font-bold ferxxo-logo">F</span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 43 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 md:w-7 md:h-7"
+          >
+            <rect x="9" y="11" width="13" height="3" fill="currentColor"></rect>
+            <rect x="9" width="3" height="14" fill="currentColor"></rect>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M22 0C18.134 0 15 3.13401 15 7C15 10.866 18.134 14 22 14C24.748 14 27.1262 12.4165 28.2718 10.1122L25.6246 8.69408C24.9868 10.0564 23.6036 11 22 11C19.7909 11 18 9.20914 18 7C18 4.79086 19.7909 3 22 3C23.5773 3 24.9413 3.91288 25.5926 5.23911L28.5042 4.40723C27.4738 1.82482 24.95 0 22 0Z"
+              fill="currentColor"></path>
+            <path
+              d="M30 14.0001L27 14.0001L33 6.1904e-05L36 6.26908e-05L30 14.0001Z"
+              fill="currentColor"></path>
+            <path
+              d="M4.79998 6.67526e-05L8 6.16296e-05L3.2 7.00006L-1.08793e-06 7.00006L4.79998 6.67526e-05Z"
+              fill="currentColor"></path>
+            <path
+              d="M4.79998 14.0001L8 14.0001L3.2 7.00006L6.79955e-07 7.00006L4.79998 14.0001Z"
+              fill="currentColor"></path>
+            <path
+              d="M38.2 14.0001L35 14.0001L39.8 7.00006L43 7.00007L38.2 14.0001Z"
+              fill="currentColor"></path>
+            <path
+              d="M38.2 6.43922e-05L35 5.76956e-05L39.8 7.00006L43 7.00006L38.2 6.43922e-05Z"
+              fill="currentColor"></path>
+          </svg>
         </div>
       </div>
       <div class="ml-2 md:ml-3 flex flex-col">
         <span
           class="text-lg md:text-xl font-bold text-ferxxo-pink tracking-wider"
         >
-          FERXXO
+          Luis
         </span>
         <span class="text-[10px] md:text-xs text-ferxxo-blue tracking-wider"
-          >DESIGN SYSTEM</span
+          >Ccalluchi</span
         >
       </div>
     </a>
@@ -43,11 +73,11 @@ import { Icon } from "astro-icon/components";
         class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
         >INICIO</a
       >
-      <a
+      <!--  <a
         href="#about"
         class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
         >SOBRE MÍ</a
-      >
+      > -->
       <a
         href="#projects"
         class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
@@ -63,7 +93,7 @@ import { Icon } from "astro-icon/components";
         class="text-white hover:text-ferxxo-pink transition-colors tracking-wider font-medium text-sm lg:text-base"
         >CERTIFICADOS</a
       >
-      <a href="#contact" class="relative group overflow-hidden">
+      <!--   <a href="#contact" class="relative group overflow-hidden">
         <span
           class="absolute inset-0 bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
         ></span>
@@ -72,7 +102,7 @@ import { Icon } from "astro-icon/components";
         >
           Contacto
         </span>
-      </a>
+      </a> -->
     </nav>
 
     <!-- Botón hamburguesa para móviles -->

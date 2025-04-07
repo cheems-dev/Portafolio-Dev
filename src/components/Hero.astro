@@ -63,11 +63,18 @@ import { Icon } from "astro-icon/components";
           <!-- Texto principal con efecto glitch -->
           <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-none">
             <span class="block glitch-effect" data-text="FERXXO">
-              <span class="text-ferxxo-pink text-shadow-neon-pink">FERXXO</span>
+              <span class="text-ferxxo-pink text-shadow-neon-pink"
+                >Desarrollador</span
+              >
             </span>
-            <span class="block text-4xl sm:text-6xl mt-2">
-              <span class="text-white">VISUAL</span>
-              <span class="text-ferxxo-blue text-shadow-neon-blue">STYLE</span>
+            <span class="block text-4xl sm:text-6xl mt-2"> </span>
+            <span
+              class="block text-xl sm:text-3xl mt-4 glitch-effect-subtle"
+              data-text="Desarrollador Full Stack"
+            >
+              <span class="text-ferxxo-pink text-shadow-neon-pink-subtle"
+                >Desarrollador Full Stack</span
+              >
             </span>
           </h1>
 
@@ -77,31 +84,33 @@ import { Icon } from "astro-icon/components";
           </div>
 
           <p class="text-gray-300 text-lg mb-8 max-w-xl">
-            Diseño vibrante inspirado en el estilo único de Feid, mezclando
-            elementos urbanos, neón y estética digital para crear experiencias
-            visuales impactantes.
+            ¡Hola! Soy Luis Ccalluchi López, desarrollador Full Stack con más de
+            +3 años de experiencia construyendo productos digitales centrados en
+            el usuario. He tenido la oportunidad de trabajar en proyectos
+            internacionales colaborando con equipos de Perú, Argentina, México y
+            Ecuador.
           </p>
 
           <!-- Botones de acción -->
           <div class="flex flex-wrap gap-4">
-            <a href="#projects" class="group relative">
+            <a href="#experience" class="group relative">
               <div
                 class="absolute -inset-0.5 bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-200"
               >
               </div>
               <button
-                class="relative bg-ferxxo-black px-6 py-3 rounded-lg text-white font-bold uppercase tracking-wider group-hover:text-ferxxo-pink transition duration-200"
+                class="relative border border-ferxxo-pink bg-ferxxo-black px-6 py-3 rounded-lg text-white font-bold uppercase tracking-wider group-hover:text-ferxxo-pink transition duration-200"
               >
-                Ver Proyectos
+                Ver Experiencia
               </button>
             </a>
 
-            <a
+            <!--  <a
               href="#about"
               class="relative px-6 py-3 border border-ferxxo-blue/50 text-ferxxo-blue hover:text-white hover:bg-ferxxo-blue/20 rounded-lg font-bold uppercase tracking-wider transition duration-200"
             >
               Sobre Mi
-            </a>
+            </a> -->
           </div>
         </div>
 
@@ -193,12 +202,12 @@ import { Icon } from "astro-icon/components";
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        <a
+        <!--  <a
           href="#"
           class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-700 hover:border-ferxxo-pink text-gray-400 hover:text-ferxxo-pink transition-colors duration-300"
         >
           <Icon name="simple-icons:twitter" class="h-5 w-5" />
-        </a>
+        </a> -->
         <a
           href="#"
           class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-700 hover:border-ferxxo-blue text-gray-400 hover:text-ferxxo-blue transition-colors duration-300"
@@ -297,6 +306,208 @@ import { Icon } from "astro-icon/components";
     animation: break-heart 3s infinite;
   }
 
+  /* Efecto glitch para "Desarrollador Full Stack" */
+  .text-shadow-neon-green {
+    text-shadow:
+      0 0 10px rgba(0, 255, 128, 0.8),
+      0 0 20px rgba(0, 255, 128, 0.5);
+  }
+
+  .glitch-effect-alt {
+    position: relative;
+    display: inline-block;
+    animation: glitch-animation 3s infinite;
+  }
+
+  .glitch-effect-alt::before,
+  .glitch-effect-alt::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  .glitch-effect-alt::before {
+    animation: glitch-alt-1 0.8s infinite;
+    color: #0ff;
+    z-index: -1;
+  }
+
+  .glitch-effect-alt::after {
+    animation: glitch-alt-2 1.2s infinite;
+    color: #f0f;
+    z-index: -2;
+  }
+
+  @keyframes glitch-animation {
+    0%,
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+    7% {
+      transform: skew(-0.5deg, -0.9deg);
+      opacity: 0.75;
+    }
+    10% {
+      transform: none;
+      opacity: 1;
+    }
+    27% {
+      transform: none;
+      opacity: 1;
+    }
+    30% {
+      transform: skew(0.8deg, -0.1deg);
+      opacity: 0.75;
+    }
+    35% {
+      transform: none;
+      opacity: 1;
+    }
+    52% {
+      transform: none;
+      opacity: 1;
+    }
+    55% {
+      transform: skew(-1deg, 0.2deg);
+      opacity: 0.75;
+    }
+    50% {
+      transform: none;
+      opacity: 1;
+    }
+    72% {
+      transform: none;
+      opacity: 1;
+    }
+    75% {
+      transform: skew(0.4deg, 1deg);
+      opacity: 0.75;
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes glitch-alt-1 {
+    0% {
+      transform: none;
+      opacity: 0.25;
+    }
+    7% {
+      transform: translate(-2px, -3px);
+      opacity: 0.5;
+    }
+    10% {
+      transform: none;
+      opacity: 0.25;
+    }
+    27% {
+      transform: none;
+      opacity: 0.25;
+    }
+    30% {
+      transform: translate(-5px, -2px);
+      opacity: 0.5;
+    }
+    35% {
+      transform: none;
+      opacity: 0.25;
+    }
+    52% {
+      transform: none;
+      opacity: 0.25;
+    }
+    55% {
+      transform: translate(-5px, -1px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: none;
+      opacity: 0.25;
+    }
+    72% {
+      transform: none;
+      opacity: 0.25;
+    }
+    75% {
+      transform: translate(-2px, -6px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: none;
+      opacity: 0.25;
+    }
+    100% {
+      transform: none;
+      opacity: 0.25;
+    }
+  }
+
+  @keyframes glitch-alt-2 {
+    0% {
+      transform: none;
+      opacity: 0.25;
+    }
+    7% {
+      transform: translate(2px, 3px);
+      opacity: 0.5;
+    }
+    10% {
+      transform: none;
+      opacity: 0.25;
+    }
+    27% {
+      transform: none;
+      opacity: 0.25;
+    }
+    30% {
+      transform: translate(5px, 2px);
+      opacity: 0.5;
+    }
+    35% {
+      transform: none;
+      opacity: 0.25;
+    }
+    52% {
+      transform: none;
+      opacity: 0.25;
+    }
+    55% {
+      transform: translate(5px, 1px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: none;
+      opacity: 0.25;
+    }
+    72% {
+      transform: none;
+      opacity: 0.25;
+    }
+    75% {
+      transform: translate(2px, 6px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: none;
+      opacity: 0.25;
+    }
+    100% {
+      transform: none;
+      opacity: 0.25;
+    }
+  }
+
   @keyframes rain {
     0% {
       background-position: 0% 0%;
@@ -348,6 +559,126 @@ import { Icon } from "astro-icon/components";
     50%,
     70% {
       opacity: 1;
+    }
+  }
+
+  /* Efecto glitch sutil para "Desarrollador Full Stack" */
+  .text-shadow-neon-pink-subtle {
+    text-shadow:
+      0 0 8px rgba(255, 45, 158, 0.6),
+      0 0 12px rgba(255, 45, 158, 0.3);
+  }
+
+  .glitch-effect-subtle {
+    position: relative;
+    display: inline-block;
+    animation: glitch-subtle 8s infinite;
+  }
+
+  .glitch-effect-subtle::before,
+  .glitch-effect-subtle::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+
+  .glitch-effect-subtle::before {
+    animation: glitch-subtle-1 4s infinite;
+    color: rgba(255, 45, 158, 0.7);
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-1px, 0);
+  }
+
+  .glitch-effect-subtle::after {
+    animation: glitch-subtle-2 3s infinite;
+    color: rgba(255, 45, 158, 0.7);
+    z-index: -2;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate(1px, 0);
+  }
+
+  @keyframes glitch-subtle {
+    0%,
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+    99.9% {
+      transform: none;
+      opacity: 1;
+    }
+    10% {
+      transform: skew(0.2deg, 0);
+      opacity: 0.9;
+    }
+    30% {
+      transform: none;
+      opacity: 1;
+    }
+    40% {
+      transform: skew(-0.1deg, 0);
+      opacity: 0.9;
+    }
+    45% {
+      transform: none;
+      opacity: 1;
+    }
+    60% {
+      transform: none;
+      opacity: 1;
+    }
+    70% {
+      transform: skew(0.3deg, 0);
+      opacity: 0.9;
+    }
+    75% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes glitch-subtle-1 {
+    0%,
+    100% {
+      transform: translate(-1px, 0);
+      opacity: 0.3;
+    }
+    30% {
+      transform: translate(-1.5px, 0);
+      opacity: 0.4;
+    }
+    60% {
+      transform: translate(-1px, 0);
+      opacity: 0.3;
+    }
+    90% {
+      transform: translate(-1.2px, 0);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes glitch-subtle-2 {
+    0%,
+    100% {
+      transform: translate(1px, 0);
+      opacity: 0.3;
+    }
+    30% {
+      transform: translate(1.2px, 0);
+      opacity: 0.4;
+    }
+    60% {
+      transform: translate(1.5px, 0);
+      opacity: 0.3;
+    }
+    80% {
+      transform: translate(1px, 0);
+      opacity: 0.4;
     }
   }
 </style>

@@ -1,51 +1,10 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo del favicon con efecto neón -->
-  <rect width="64" height="64" rx="12" fill="#0A0A0A"/>
-  
-  <!-- Letra F con gradiente neón -->
-  <path d="M24 18H40V26H28V32H38V40H28V48H24V18Z" fill="url(#feid-gradient)" stroke="white" stroke-width="1"/>
-  
-  <!-- Efectos de neón -->
-  <g filter="url(#neon-glow)">
-    <path d="M24 18H40V26H28V32H38V40H28V48H24V18Z" fill="url(#feid-gradient)" fill-opacity="0.5"/>
-  </g>
-  
-  <!-- Definiciones de gradientes y filtros -->
-  <defs>
-    <linearGradient id="feid-gradient" x1="24" y1="18" x2="40" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#00FF94"/>
-      <stop offset="0.5" stop-color="#00C2FF"/>
-      <stop offset="1" stop-color="#9D00FF"/>
-    </linearGradient>
-    
-    <filter id="neon-glow" x="16" y="10" width="32" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset/>
-      <feGaussianBlur stdDeviation="4"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 1 0 0 0 0 0.58 0 0 0 0.7 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-    </filter>
-  </defs>
-  
-  <!-- Script para detectar modo oscuro y ajustar colores -->
-  <script>
-    const favicon = document.querySelector('link[rel="icon"]');
-    const modeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    function updateFavicon(isDark) {
-      const svgElement = favicon.parentNode;
-      const rect = svgElement.querySelector('rect');
-      
-      if (isDark) {
-        rect.setAttribute('fill', '#0A0A0A');
-      } else {
-        rect.setAttribute('fill', '#FFFFFF');
-      }
-    }
-    
-    updateFavicon(modeWatcher.matches);
-    modeWatcher.addEventListener('change', e => updateFavicon(e.matches));
-  </script>
+<svg width="43" height="14" viewBox="0 0 43 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="9" y="11" width="13" height="3" fill="black"/>
+<rect x="9" width="3" height="14" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 0C18.134 0 15 3.13401 15 7C15 10.866 18.134 14 22 14C24.748 14 27.1262 12.4165 28.2718 10.1122L25.6246 8.69408C24.9868 10.0564 23.6036 11 22 11C19.7909 11 18 9.20914 18 7C18 4.79086 19.7909 3 22 3C23.5773 3 24.9413 3.91288 25.5926 5.23911L28.5042 4.40723C27.4738 1.82482 24.95 0 22 0Z" fill="black"/>
+<path d="M30 14.0001L27 14.0001L33 6.1904e-05L36 6.26908e-05L30 14.0001Z" fill="black"/>
+<path d="M4.79998 6.67526e-05L8 6.16296e-05L3.2 7.00006L-1.08793e-06 7.00006L4.79998 6.67526e-05Z" fill="black"/>
+<path d="M4.79998 14.0001L8 14.0001L3.2 7.00006L6.79955e-07 7.00006L4.79998 14.0001Z" fill="black"/>
+<path d="M38.2 14.0001L35 14.0001L39.8 7.00006L43 7.00007L38.2 14.0001Z" fill="black"/>
+<path d="M38.2 6.43922e-05L35 5.76956e-05L39.8 7.00006L43 7.00006L38.2 6.43922e-05Z" fill="black"/>
 </svg>
