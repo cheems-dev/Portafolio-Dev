@@ -7,20 +7,18 @@ import { Icon } from "astro-icon/components";
   id="home"
   class="relative overflow-hidden bg-ferxxo-black min-h-screen flex items-center justify-center pt-20 pb-16"
 >
+  <!-- Efecto de fondo animado con CSS -->
+  <div class="absolute inset-0 z-0 bg-gradient-radial"></div>
+
+  <!-- Efectos de brillos neón -->
+  <div class="absolute inset-0 z-0 neon-glow-effect"></div>
+
   <!-- Elementos decorativos de fondo -->
   <div class="absolute inset-0 z-0">
-    <!-- Gradiente superior -->
     <div
       class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-ferxxo-purple/20 to-transparent"
     >
     </div>
-
-    <!-- Grilla futurista -->
-    <div
-      class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsIDQ1LCAxNTgsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMzAgMzBtLTI5IDBhMjkgMjkgMCAxIDAgNTggMCAyOSAyOSAwIDEgMC01OCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjQgMGEyNCAyNCAwIDEgMCA0OCAwIDI0IDI0IDAgMSAwLTQ4IDB6Ii8+PHBhdGggZD0iTTMwIDMwbS0xOSAwYTE5IDE5IDAgMSAwIDM4IDAgMTkgMTkgMCAxIDAtMzggMHoiLz48cGF0aCBkPSJNMzAgMzBtLTE0IDBhMTQgMTQgMCAxIDAgMjggMCAxNCAxNCAwIDEgMC0yOCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tOSAwYTkgOSAwIDEgMCAxOCAwIDkgOSAwIDEgMC0xOCAweiIvPjwvZz48L2c+PC9zdmc+')]"
-    >
-    </div>
-
     <!-- Lluvia de píxeles -->
     <div class="absolute inset-0 overflow-hidden opacity-20">
       <div class="pixel-rain"></div>
@@ -62,11 +60,6 @@ import { Icon } from "astro-icon/components";
         <div class="w-full md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
           <!-- Texto principal con efecto glitch -->
           <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-none">
-            <span class="block glitch-effect" data-text="FERXXO">
-              <span class="text-ferxxo-pink text-shadow-neon-pink"
-                >Desarrollador</span
-              >
-            </span>
             <span class="block text-4xl sm:text-6xl mt-2"> </span>
             <span
               class="block text-xl sm:text-3xl mt-4 glitch-effect-subtle"
@@ -277,6 +270,72 @@ import { Icon } from "astro-icon/components";
     animation: rain 8s linear infinite;
   }
 
+  /* Nuevos efectos de fondo */
+  .bg-gradient-radial {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(160, 32, 240, 0.1),
+      rgba(255, 45, 158, 0.05),
+      rgba(0, 240, 255, 0.07),
+      transparent 70%
+    );
+    opacity: 0.7;
+    animation: pulse-gradient 15s ease infinite;
+  }
+
+  .neon-glow-effect {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .neon-glow-effect::before,
+  .neon-glow-effect::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    filter: blur(60px);
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    animation: float 10s ease-in-out infinite alternate;
+  }
+
+  .neon-glow-effect::before {
+    background: var(--ferxxo-pink);
+    animation-delay: 0s;
+  }
+
+  .neon-glow-effect::after {
+    background: var(--ferxxo-blue);
+    animation-delay: -5s;
+    animation-duration: 15s;
+  }
+
+  .distortion-border {
+    border: 2px solid transparent;
+    background: linear-gradient(
+        90deg,
+        var(--ferxxo-pink) 0%,
+        var(--ferxxo-blue) 35%,
+        var(--ferxxo-purple) 65%,
+        var(--ferxxo-green) 100%
+      )
+      border-box;
+    mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0.8;
+    animation: border-shift 8s linear infinite;
+  }
+
   .glitch-line {
     opacity: 0;
     animation: glitch-line 4s infinite;
@@ -313,6 +372,12 @@ import { Icon } from "astro-icon/components";
       0 0 20px rgba(0, 255, 128, 0.5);
   }
 
+  .text-shadow-neon-pink {
+    text-shadow:
+      0 0 10px rgba(255, 45, 158, 0.8),
+      0 0 20px rgba(255, 45, 158, 0.5);
+  }
+
   .glitch-effect-alt {
     position: relative;
     display: inline-block;
@@ -340,6 +405,40 @@ import { Icon } from "astro-icon/components";
     animation: glitch-alt-2 1.2s infinite;
     color: #f0f;
     z-index: -2;
+  }
+
+  /* Animaciones para los nuevos efectos */
+  @keyframes pulse-gradient {
+    0%,
+    100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+    }
+    50% {
+      transform: translate(-60%, -40%) rotate(180deg) translateY(-20px);
+    }
+    100% {
+      transform: translate(-40%, -60%) rotate(360deg) translateY(0);
+    }
+  }
+
+  @keyframes border-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
   }
 
   @keyframes glitch-animation {
@@ -684,11 +783,12 @@ import { Icon } from "astro-icon/components";
 </style>
 
 <script>
-  // Generar coordenadas aleatorias para píxeles de lluvia
+  // Script simplificado para manejar efectos CSS
   document.addEventListener("DOMContentLoaded", () => {
-    // Crear variables CSS para posiciones aleatorias de píxeles
-    const root = document.documentElement;
+    console.log("Inicializando efectos CSS del Hero...");
 
+    // Código para lluvia de píxeles - mantener esto del script original
+    const root = document.documentElement;
     for (let i = 1; i <= 7; i++) {
       root.style.setProperty(`--x-${i}`, Math.random().toFixed(2));
       root.style.setProperty(`--y-${i}`, Math.random().toFixed(2));
@@ -696,7 +796,6 @@ import { Icon } from "astro-icon/components";
 
     // Efecto de distorsión en hover para el texto FERXXO
     const ferxxoLogo = document.querySelector(".ferxxo-logo");
-
     if (ferxxoLogo) {
       ferxxoLogo.addEventListener("mouseover", () => {
         ferxxoLogo.classList.add("glitch-effect");
@@ -705,5 +804,110 @@ import { Icon } from "astro-icon/components";
         }, 1000);
       });
     }
+
+    // Efecto de movimiento 3D en el artwork
+    const artworkContainer = document.querySelector(
+      ".aspect-square"
+    ) as HTMLElement;
+    if (artworkContainer) {
+      // Manejar movimiento 3D suave al mover el mouse
+      document.addEventListener("mousemove", (e) => {
+        const { clientX, clientY } = e;
+        const xPercent = clientX / window.innerWidth - 0.5;
+        const yPercent = clientY / window.innerHeight - 0.5;
+
+        // Límite de rotación de -5 a 5 grados
+        const rotateX = yPercent * -10;
+        const rotateY = xPercent * 10;
+
+        // Aplicar transformación con suavizado
+        artworkContainer.style.transition = "transform 0.1s ease-out";
+        artworkContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      // Resetear posición cuando el mouse sale del área
+      document.addEventListener("mouseleave", () => {
+        artworkContainer.style.transition = "transform 0.5s ease-out";
+        artworkContainer.style.transform =
+          "perspective(1000px) rotateX(0) rotateY(0)";
+      });
+    }
+
+    // Añadir movimiento de partículas en la imagen del artwork
+    const addParticles = () => {
+      const artwork = document.querySelector(
+        ".absolute.inset-2"
+      ) as HTMLElement;
+      if (artwork) {
+        // Crear contenedor de partículas
+        const particlesContainer = document.createElement("div");
+        particlesContainer.className =
+          "absolute inset-0 overflow-hidden pointer-events-none z-10";
+
+        // Añadir partículas
+        for (let i = 0; i < 25; i++) {
+          const particle = document.createElement("div");
+          const size = Math.random() * 3 + 1;
+          const x = Math.random() * 100;
+          const y = Math.random() * 100;
+          const duration = Math.random() * 20 + 10;
+          const delay = Math.random() * 5;
+          const color =
+            i % 4 === 0
+              ? "#FF2D9E"
+              : i % 4 === 1
+                ? "#00F0FF"
+                : i % 4 === 2
+                  ? "#A020F0"
+                  : "#00FF7F";
+
+          particle.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            background: ${color};
+            border-radius: 50%;
+            opacity: 0.4;
+            top: ${y}%;
+            left: ${x}%;
+            filter: blur(1px);
+            box-shadow: 0 0 5px ${color};
+            animation: float-particle ${duration}s infinite ease-in-out ${delay}s;
+          `;
+
+          particlesContainer.appendChild(particle);
+        }
+
+        // Añadir estilo para animación de partículas
+        const style = document.createElement("style");
+        style.textContent = `
+          @keyframes float-particle {
+            0%, 100% {
+              transform: translateY(0) translateX(0);
+              opacity: 0.2;
+            }
+            25% {
+              transform: translateY(-20px) translateX(10px);
+              opacity: 0.5;
+            }
+            50% {
+              transform: translateY(-30px) translateX(-10px);
+              opacity: 0.3;
+            }
+            75% {
+              transform: translateY(-10px) translateX(5px);
+              opacity: 0.4;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+
+        // Añadir partículas al artwork
+        artwork.appendChild(particlesContainer);
+      }
+    };
+
+    // Iniciar efecto de partículas
+    addParticles();
   });
 </script>

@@ -63,66 +63,83 @@ const {
     <Header />
 
     <main>
+      <div class="absolute inset-0 z-0"></div>
+      <!-- Gradiente superior -->
+      <!-- <div
+        class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-ferxxo-purple/20 to-transparent"
+      >
+      </div> -->
+
+      <!-- Grilla futurista -->
+      <div
+        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsIDQ1LCAxNTgsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMzAgMzBtLTI5IDBhMjkgMjkgMCAxIDAgNTggMCAyOSAyOSAwIDEgMC01OCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjQgMGEyNCAyNCAwIDEgMCA0OCAwIDI0IDI0IDAgMSAwLTQ4IDB6Ii8+PHBhdGggZD0iTTMwIDMwbS0xOSAwYTE5IDE5IDAgMSAwIDM4IDAgMTkgMTkgMCAxIDAtMzggMHoiLz48cGF0aCBkPSJNMzAgMzBtLTE0IDBhMTQgMTQgMCAxIDAgMjggMCAxNCAxNCAwIDEgMC0yOCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tOSAwYTkgOSAwIDEgMCAxOCAwIDkgOSAwIDEgMC0xOCAweiIvPjwvZz48L2c+PC9zdmc+')]"
+      >
+      </div>
       <slot />
     </main>
-
-    <Footer />
-
-    <!-- Scripts para animaciones AOS -->
-    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script is:inline>
-      document.addEventListener("DOMContentLoaded", () => {
-        AOS.init({
-          duration: 800,
-          easing: "ease-out",
-          once: true,
-          mirror: false,
-          offset: 50,
-        });
-      });
-    </script>
-
-    <!-- Script para animaciones personalizadas que se ejecutan una sola vez al hacer scroll -->
-    <script>
-      import "../utils/scrollAnimations.js";
-    </script>
-
-    <!-- Script para efectos adicionales -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Configuración de variables CSS aleatorias para efectos
-        const root = document.documentElement;
-
-        // Variables para efectos de distorsión
-        for (let i = 1; i <= 5; i++) {
-          root.style.setProperty(`--glitch-x-${i}`, `${Math.random() * 100}%`);
-          root.style.setProperty(`--glitch-y-${i}`, `${Math.random() * 100}%`);
-        }
-
-        // Efecto de cursor personalizado
-        const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-        if (cursor) {
-          document.addEventListener("mousemove", (e) => {
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-          });
-
-          // Añadir escala al hacer hover sobre enlaces
-          document.querySelectorAll("a, button").forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-              cursor.classList.add("scale-150");
-              cursor.classList.add("border-ferxxo-pink");
-            });
-
-            el.addEventListener("mouseleave", () => {
-              cursor.classList.remove("scale-150");
-              cursor.classList.remove("border-ferxxo-pink");
-            });
-          });
-        }
-      });
-    </script>
   </body>
+
+  <Footer />
+
+  <!-- Scripts para animaciones AOS -->
+  <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({
+        duration: 800,
+        easing: "ease-out",
+        once: true,
+        mirror: false,
+        offset: 50,
+      });
+    });
+  </script>
+
+  <!-- Script para animaciones personalizadas que se ejecutan una sola vez al hacer scroll -->
+  <script>
+    import "../utils/scrollAnimations.js";
+  </script>
+
+  <!-- Script para el fondo futurista con círculos luminosos -->
+  <script>
+    import "../scripts/backgroundEffects.js";
+  </script>
+
+  <!-- Script para efectos adicionales -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Configuración de variables CSS aleatorias para efectos
+      const root = document.documentElement;
+
+      // Variables para efectos de distorsión
+      for (let i = 1; i <= 5; i++) {
+        root.style.setProperty(`--glitch-x-${i}`, `${Math.random() * 100}%`);
+        root.style.setProperty(`--glitch-y-${i}`, `${Math.random() * 100}%`);
+      }
+
+      // Efecto de cursor personalizado
+      const cursor = document.querySelector(".custom-cursor") as HTMLElement;
+      if (cursor) {
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Añadir escala al hacer hover sobre enlaces
+        document.querySelectorAll("a, button").forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursor.classList.add("scale-150");
+            cursor.classList.add("border-ferxxo-pink");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("scale-150");
+            cursor.classList.remove("border-ferxxo-pink");
+          });
+        });
+      }
+    });
+  </script>
 </html>
 
 <style is:global>

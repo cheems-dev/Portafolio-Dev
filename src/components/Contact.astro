@@ -270,10 +270,22 @@ import { Icon } from "astro-icon/components";
               <div
                 class="h-32 w-10 bg-ferxxo-black border-t border-l border-r border-ferxxo-pink/30 rounded-t-lg mx-0.5"
               >
+                <div class="flex justify-center mt-2">
+                  <Icon
+                    name="mdi:home-city-outline"
+                    class="h-4 w-4 text-ferxxo-pink/60"
+                  />
+                </div>
               </div>
               <div
                 class="h-48 w-12 bg-ferxxo-black border-t border-l border-r border-ferxxo-blue/30 rounded-t-lg mx-0.5"
               >
+                <div class="flex justify-center mt-2">
+                  <Icon
+                    name="mdi:office-building"
+                    class="h-4 w-4 text-ferxxo-blue/60"
+                  />
+                </div>
               </div>
               <div
                 class="h-64 w-6 bg-ferxxo-black border-t border-l border-r border-ferxxo-purple/30 rounded-t-lg mx-0.5"
@@ -282,6 +294,12 @@ import { Icon } from "astro-icon/components";
               <div
                 class="h-40 w-12 bg-ferxxo-black border-t border-l border-r border-ferxxo-green/30 rounded-t-lg mx-0.5"
               >
+                <div class="flex justify-center mt-2">
+                  <Icon
+                    name="mdi:antenna"
+                    class="h-4 w-4 text-ferxxo-green/60"
+                  />
+                </div>
               </div>
               <div
                 class="h-56 w-8 bg-ferxxo-black border-t border-l border-r border-ferxxo-pink/30 rounded-t-lg mx-0.5"
@@ -290,6 +308,12 @@ import { Icon } from "astro-icon/components";
               <div
                 class="h-32 w-14 bg-ferxxo-black border-t border-l border-r border-ferxxo-blue/30 rounded-t-lg mx-0.5"
               >
+                <div class="flex justify-center mt-2">
+                  <Icon
+                    name="mdi:city-variant-outline"
+                    class="h-4 w-4 text-ferxxo-blue/60"
+                  />
+                </div>
               </div>
               <div
                 class="h-48 w-10 bg-ferxxo-black border-t border-l border-r border-ferxxo-purple/30 rounded-t-lg mx-0.5"
@@ -298,6 +322,12 @@ import { Icon } from "astro-icon/components";
               <div
                 class="h-72 w-8 bg-ferxxo-black border-t border-l border-r border-ferxxo-pink/30 rounded-t-lg mx-0.5"
               >
+                <div class="flex justify-center mt-2">
+                  <Icon
+                    name="mdi:tower-fire"
+                    class="h-4 w-4 text-ferxxo-pink/60"
+                  />
+                </div>
               </div>
               <div
                 class="h-40 w-16 bg-ferxxo-black border-t border-l border-r border-ferxxo-green/30 rounded-t-lg mx-0.5"
@@ -306,6 +336,12 @@ import { Icon } from "astro-icon/components";
               <div
                 class="h-56 w-8 bg-ferxxo-black border-t border-l border-r border-ferxxo-blue/30 rounded-t-lg mx-0.5"
               >
+                <div class="flex justify-center mt-2">
+                  <Icon
+                    name="mdi:hospital-building"
+                    class="h-4 w-4 text-ferxxo-blue/60"
+                  />
+                </div>
               </div>
             </div>
 
@@ -353,7 +389,7 @@ import { Icon } from "astro-icon/components";
               <div
                 class="w-6 h-6 bg-ferxxo-black border-2 border-ferxxo-pink rounded-full flex items-center justify-center"
               >
-                <div class="w-2 h-2 bg-ferxxo-pink rounded-full"></div>
+                <Icon name="mdi:map-marker" class="h-3 w-3 text-ferxxo-pink" />
               </div>
             </div>
           </div>
@@ -425,6 +461,24 @@ import { Icon } from "astro-icon/components";
     }
     50% {
       opacity: 1;
+    }
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.7);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
     }
   }
 </style>

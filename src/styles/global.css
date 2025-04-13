@@ -1,12 +1,12 @@
-@import "tailwindcss";
-/* @import "tailwindcss/preflight";
-@import "tailwindcss/utilities"; */
-
 /* Importar fuentes */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@import "tailwindcss";
+/* @import "tailwindcss/preflight";
+@import "tailwindcss/utilities"; */
 
 :root {
   /* Colores base */
@@ -82,7 +82,8 @@
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
     overflow-x: hidden;
-    background-image: radial-gradient(
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsIDQ1LCAxNTgsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMzAgMzBtLTI5IDBhMjkgMjkgMCAxIDAgNTggMCAyOSAyOSAwIDEgMC01OCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjQgMGEyNCAyNCAwIDEgMCA0OCAwIDI0IDI0IDAgMSAwLTQ4IDB6Ii8+PHBhdGggZD0iTTMwIDMwbS0xOSAwYTE5IDE5IDAgMSAwIDM4IDAgMTkgMTkgMCAxIDAtMzggMHoiLz48cGF0aCBkPSJNMzAgMzBtLTE0IDBhMTQgMTQgMCAxIDAgMjggMCAxNCAxNCAwIDEgMC0yOCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tOSAwYTkgOSAwIDEgMCAxOCAwIDkgOSAwIDEgMC0xOCAweiIvPjwvZz48L2c+PC9zdmc+"),
+      radial-gradient(
         circle at 100% 20%,
         rgba(160, 32, 240, calc(0.3 * var(--effect-opacity))) 0%,
         transparent 25%
@@ -93,9 +94,37 @@
         transparent 30%
       );
     background-attachment: fixed;
+    background-position: center;
+    background-size: 20px 20px, cover, cover;
     min-height: 100vh;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(0, 240, 255, 0.03) 0px,
+        rgba(0, 240, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 30px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0, 240, 255, 0.03) 0px,
+        rgba(0, 240, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 30px
+      );
+    pointer-events: none;
+    z-index: 0;
   }
 
   /* Tipografía responsiva */
@@ -146,11 +175,15 @@
   section {
     padding-top: var(--section-padding-y);
     padding-bottom: var(--section-padding-y);
+    position: relative;
+    z-index: 1;
   }
 
   .container {
     padding-left: var(--container-padding-x);
     padding-right: var(--container-padding-x);
+    position: relative;
+    z-index: 2;
   }
 
   /* Comportamiento táctil mejorado para móviles */
@@ -386,6 +419,44 @@
     position: relative;
     z-index: 10;
   }
+
+  /* Elementos decorativos para el fondo futurista */
+  .ferxxo-grid-background {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsIDQ1LCAxNTgsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMzAgMzBtLTI5IDBhMjkgMjkgMCAxIDAgNTggMCAyOSAyOSAwIDEgMC01OCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tMjQgMGEyNCAyNCAwIDEgMCA0OCAwIDI0IDI0IDAgMSAwLTQ4IDB6Ii8+PHBhdGggZD0iTTMwIDMwbS0xOSAwYTE5IDE5IDAgMSAwIDM4IDAgMTkgMTkgMCAxIDAtMzggMHoiLz48cGF0aCBkPSJNMzAgMzBtLTE0IDBhMTQgMTQgMCAxIDAgMjggMCAxNCAxNCAwIDEgMC0yOCAweiIvPjxwYXRoIGQ9Ik0zMCAzMG0tOSAwYTkgOSAwIDEgMCAxOCAwIDkgOSAwIDEgMC0xOCAweiIvPjwvZz48L2c+PC9zdmc+");
+    background-size: 300px 300px;
+    background-position: center;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+  }
+
+  .ferxxo-neon-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at center,
+      var(--ferxxo-pink) 0%,
+      transparent 70%
+    );
+    opacity: 0.15;
+    animation: pulse-slow calc(30s * var(--animation-speed)) infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: calc(0.15 * var(--effect-opacity));
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: calc(0.08 * var(--effect-opacity));
+    }
+  }
 }
 
 /* Utilidades para adaptación a pantallas pequeñas */
@@ -448,4 +519,10 @@
       scroll-behavior: auto !important;
     }
   }
+}
+
+/* Componente principal */
+main {
+  position: relative;
+  z-index: 1;
 }
