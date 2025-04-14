@@ -2,17 +2,14 @@
 // Experience.astro - Sección de experiencia laboral con proyectos destacados
 
 // Importar las imágenes de los proyectos
-import aeroAdministratorImg from '../assets/img/aero-administrator.webp';
 import ayphuImg from '../assets/img/ayphu.webp';
 import groupImg05 from '../assets/img/group-05.webp';
 import groupImg06 from '../assets/img/group-06.webp';
 import groupImg07 from '../assets/img/group-07.webp';
 import groupImg08 from '../assets/img/group-08.webp';
 import groupImg16 from '../assets/img/group-16.webp';
-import groupImg17 from '../assets/img/group-17.webp';
 import groupImg18 from '../assets/img/group-18.webp';
 import konectaImg from '../assets/img/konecta.webp';
-import liveSubastasImg from '../assets/img/live-subastas.webp';
 
 // Importar componente de ícono de Astro
 import { Icon } from 'astro-icon/components';
@@ -171,8 +168,8 @@ const socialLinks = [
 
 <section id="experience" class="py-20 bg-ferxxo-black relative overflow-hidden">
   <!-- Barra lateral de redes sociales (sticky) -->
-  <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
-    <div class="social-sidebar bg-ferxxo-black/80 backdrop-blur-sm p-3 rounded-r-xl border-r border-t border-b border-ferxxo-pink/30">
+  <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-[9999] hidden md:block" style="z-index: 9999 !important;">
+    <div class="social-sidebar bg-ferxxo-black/80 backdrop-blur-sm p-3 rounded-r-xl border-r border-t border-b border-ferxxo-pink/30 mx-2 my-4">
       <ul class="flex flex-col gap-4">
         {socialLinks.map((social) => (
           <li>
@@ -192,8 +189,8 @@ const socialLinks = [
   </div>
 
   <!-- Barra de redes sociales móvil (bottom) -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-    <div class="social-mobile bg-ferxxo-black/90 backdrop-blur-md p-2 border-t border-ferxxo-pink/30">
+  <div class="fixed bottom-0 left-0 right-0 z-[9999] md:hidden" style="z-index: 9999 !important;">
+    <div class="social-mobile bg-ferxxo-black/90 backdrop-blur-md p-2 border-t border-ferxxo-pink/30 mx-2 my-2 rounded-t-xl">
       <ul class="flex justify-center gap-6">
         {socialLinks.map((social) => (
           <li>
@@ -231,7 +228,7 @@ const socialLinks = [
     <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-ferxxo-blue/5 blur-3xl opacity-30"></div>
   </div>
 
-  <div class="container mx-auto px-4 relative z-10">
+  <div class="container mx-auto px-4 md:ml-16 relative z-10">
     <!-- Encabezado de sección -->
     <div class="text-center mb-12 md:mb-16">
       <h2 
@@ -297,23 +294,23 @@ const socialLinks = [
                 
                 <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
                   {experience.projects.map((project) => (
-                    <div class="project-card group bg-ferxxo-black/60 backdrop-blur-sm rounded-xl overflow-hidden border border-ferxxo-blue/20 hover:border-ferxxo-blue/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                    <div class="project-card group bg-ferxxo-black/60 backdrop-blur-sm rounded-xl overflow-hidden border border-ferxxo-blue/20 hover:border-ferxxo-blue/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]" style="z-index: 1 !important;">
                       <!-- Imagen del proyecto -->
                       <div class="relative h-48 bg-gradient-to-br from-ferxxo-black to-ferxxo-black/80 overflow-hidden">
                         <!-- Líneas de cuadrícula para efecto tecnológico -->
-                        <div class="absolute inset-0 grid grid-cols-8 opacity-10">
+                        <div class="absolute inset-0 grid grid-cols-8 opacity-10" style="z-index: 1 !important;">
                           {Array.from({ length: 8 }).map(() => (
                             <div class="border-r border-ferxxo-blue/50"></div>
                           ))}
                         </div>
-                        <div class="absolute inset-0 grid grid-rows-8 opacity-10">
+                        <div class="absolute inset-0 grid grid-rows-8 opacity-10" style="z-index: 1 !important;">
                           {Array.from({ length: 8 }).map(() => (
                             <div class="border-b border-ferxxo-blue/50"></div>
                           ))}
                         </div>
                         
                         <!-- Capa de fondo oscuro para mejorar contraste -->
-                        <div class="absolute inset-0 bg-ferxxo-black/60 z-10"></div>
+                        <div class="absolute inset-0 bg-ferxxo-black/60 z-10" style="z-index: 1 !important;"></div>
                         
                         <!-- Imagen del proyecto - ahora usando la Variable de la imagen importada -->
                         <img 
@@ -324,17 +321,18 @@ const socialLinks = [
                           class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300"
                           loading="lazy"
                           decoding="async"
+                          style="z-index: 0 !important;"
                         />
                         
                         <!-- Nombre del proyecto con mejor contraste -->
-                        <div class="absolute inset-0 flex items-center justify-center p-6 z-20">
+                        <div class="absolute inset-0 flex items-center justify-center p-6 z-20" style="z-index: 2 !important;">
                           <span class="text-2xl text-ferxxo-blue font-bold project-title">
                             {project.name.split(' ')[0]}
                           </span>
                         </div>
                         
                         <!-- Overlay con información - Mejorado para mayor legibilidad -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black via-ferxxo-black/80 to-ferxxo-black/40 flex flex-col justify-end p-6 z-30 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black via-ferxxo-black/80 to-ferxxo-black/40 flex flex-col justify-end p-6 z-30 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style="z-index: 3 !important;">
                           <div class="ferxxo-neon-card backdrop-blur-sm p-3 rounded-lg border border-ferxxo-pink/50 bg-ferxxo-black/40">
                             <div class="neon-glow-bg"></div>
                             <h5 class="text-lg md:text-xl font-bold text-white mb-2 text-shadow ferxxo-neon-text">{project.name}</h5>
@@ -391,10 +389,23 @@ const socialLinks = [
   .project-card {
     transform: translateY(0);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1 !important;
   }
   
   .project-card:hover {
     transform: translateY(-8px);
+    z-index: 1 !important;
+  }
+  
+  /* Forzar todos los elementos absolute a tener z-index bajo */
+  section#experience .absolute {
+    z-index: 1 !important;
+  }
+  
+  /* Pero dar prioridad a las barras sociales */
+  .social-sidebar, .social-mobile {
+    z-index: 9999 !important;
   }
   
   .project-title {
@@ -451,6 +462,7 @@ const socialLinks = [
   .social-sidebar {
     box-shadow: 4px 0 15px rgba(255, 0, 128, 0.2);
     animation: sidebar-glow 4s infinite alternate;
+    margin: 0 0.5rem;
   }
   
   @keyframes pulse {

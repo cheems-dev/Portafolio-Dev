@@ -457,6 +457,94 @@
       opacity: calc(0.08 * var(--effect-opacity));
     }
   }
+
+  /* Sistema de z-index para evitar superposiciones no deseadas */
+  .fixed-ui-element {
+    position: fixed;
+    z-index: 9999 !important; /* Para elementos de UI fijos como la barra social */
+  }
+
+  .social-sidebar,
+  .social-mobile {
+    z-index: 9999 !important; /* Asegurar que la barra social tenga mayor prioridad absoluta */
+  }
+
+  /* Ajustes para el menú móvil */
+  #mobileMenu {
+    z-index: 10000 !important; /* Mayor prioridad que la barra social */
+  }
+
+  #mobileMenu nav {
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 45, 158, 0.5);
+  }
+
+  #mobileMenu nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9),
+      rgba(15, 15, 15, 0.9)
+    );
+    z-index: -1;
+    border-radius: 0.5rem;
+  }
+
+  #mobileMenu a {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 10px rgba(255, 45, 158, 0.7),
+      0 0 20px rgba(255, 45, 158, 0.5);
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 45, 158, 0.2);
+  }
+
+  #mobileMenu a:last-child {
+    border-bottom: none;
+  }
+
+  #mobileMenu a:hover,
+  #mobileMenu a:active {
+    color: var(--ferxxo-pink);
+    text-shadow: 0 0 10px rgba(255, 45, 158, 0.9),
+      0 0 20px rgba(255, 45, 158, 0.7);
+  }
+
+  /* Ajustes de márgenes para la barra social */
+  .social-sidebar {
+    margin: 0.5rem 0.5rem; /* Asegurar que tenga un espacio consistente */
+  }
+
+  .social-mobile {
+    margin: 0.5rem 0.5rem;
+    border-radius: 0.75rem 0.75rem 0 0; /* Redondeado en la parte superior */
+  }
+
+  /* Cards y elementos interactivos dentro del contenido principal */
+  .content-card,
+  .projects-project-card,
+  .projects-freelance-card {
+    position: relative;
+    z-index: 1 !important; /* Valor bajo para no interferir con elementos de UI fijos */
+    isolation: isolate;
+  }
+
+  .content-card:hover,
+  .projects-project-card:hover,
+  .projects-freelance-card:hover {
+    z-index: 1 !important; /* Mantener bajo incluso en hover */
+  }
+
+  /* Overlay en cards */
+  .card-overlay {
+    z-index: 2 !important; /* Para overlays dentro de cards, mayor que la card pero menor que UI fijos */
+  }
 }
 
 /* Utilidades para adaptación a pantallas pequeñas */

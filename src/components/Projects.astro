@@ -1,5 +1,5 @@
 ---
-// Projects.astro - Sección de proyectos destacados
+// Projects.astro - Sección de proyectos destacados y trabajos freelance
 import { Icon } from "astro-icon/components";
 
 // Seleccionar solo 3 proyectos destacados
@@ -33,19 +33,62 @@ const featuredProjects = [
   }
 ];
 
+// Seleccionar trabajos freelance destacados
+const featuredFreelance = [
+  {
+    title: "E-commerce Redesign",
+    description: "Rediseño completo de la interfaz de usuario para una tienda online de moda.",
+    image: "/images/projects/freelance-1.webp",
+    category: "ui-ux",
+    technologies: ["Figma", "Adobe XD", "HTML/CSS", "JavaScript"],
+    client: "Fashion Store Inc.",
+    testimonial: "El rediseño aumentó nuestras conversiones en un 35% en los primeros tres meses."
+  },
+  {
+    title: "App Móvil Financiera",
+    description: "Desarrollo de una aplicación para gestión de finanzas personales.",
+    image: "/images/projects/freelance-2.webp",
+    category: "mobile",
+    technologies: ["React Native", "Redux", "Firebase", "Stripe API"],
+    client: "FinTech Solutions",
+    testimonial: "La app superó nuestras expectativas, con excelente UX y rendimiento."
+  },
+  {
+    title: "Dashboard Analítico",
+    description: "Panel de control para visualización de métricas de marketing digital.",
+    image: "/images/projects/freelance-3.webp",
+    category: "frontend",
+    technologies: ["Vue.js", "D3.js", "TailwindCSS", "REST API"],
+    client: "Marketing Pro Agency",
+    testimonial: "Ha transformado la forma en que analizamos datos y tomamos decisiones."
+  }
+];
+
 // Categorías de proyectos para filtrar
-const categories = [
+const projectCategories = [
   { id: "all", name: "Todos" },
   { id: "frontend", name: "Frontend" },
   { id: "backend", name: "Backend" },
   { id: "full-stack", name: "Full Stack" },
   { id: "mobile", name: "Mobile" }
 ];
+
+// Categorías de freelance para filtrar
+const freelanceCategories = [
+  { id: "all", name: "Todos" },
+  { id: "ui-ux", name: "UI/UX" },
+  { id: "frontend", name: "Frontend" },
+  { id: "mobile", name: "Mobile" },
+  { id: "backend", name: "Backend" }
+];
+
+// Identificador único para este componente
+const componentId = "projects-" + Math.random().toString(36).substring(2, 9);
 ---
 
-<section id="projects" class="py-20 bg-ferxxo-black relative overflow-hidden">
+<section id="projects" class="py-20 bg-ferxxo-black relative overflow-hidden" data-component-id={componentId} style="z-index: 1; isolation: isolate;">
   <!-- Elementos decorativos de fondo -->
-  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="z-index: -1 !important;">
     <!-- Gradiente superior -->
     <div class="absolute top-0 left-0 w-full h-60 bg-gradient-to-b from-ferxxo-pink/20 to-transparent"></div>
     
@@ -65,14 +108,14 @@ const categories = [
     <div class="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-ferxxo-blue/20 to-transparent"></div>
   </div>
 
-  <div class="container mx-auto px-4 relative z-10">
+  <div class="container mx-auto px-4 md:ml-16 relative" style="z-index: 1;">
     <!-- Encabezado de sección -->
     <div class="text-center mb-12 md:mb-16">
       <h2 
         class="text-4xl md:text-5xl font-bold mb-4 uppercase text-white"
         data-aos="fade-up"
       >
-        Mis <span class="text-ferxxo-pink relative ferxxo-glow">Proyectos</span>
+        Mi <span class="text-ferxxo-pink relative ferxxo-glow">Trabajo</span>
       </h2>
       <div 
         class="w-32 h-1 bg-gradient-to-r from-ferxxo-pink via-ferxxo-purple to-ferxxo-blue mx-auto"
@@ -84,110 +127,202 @@ const categories = [
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        Una selección de mis trabajos más destacados. Cada proyecto representa mi pasión
+        Una selección de mis proyectos personales y trabajos freelance. Cada uno representa mi pasión
         por crear experiencias digitales innovadoras.
       </p>
     </div>
     
-    <!-- Filtros de proyectos -->
-    <div class="flex flex-wrap justify-center mb-10 md:mb-12 gap-2 md:gap-3" 
-         data-aos="fade-up" 
-         data-aos-delay="400">
-      {categories.map((category) => (
+    <!-- Tabs para alternar entre Proyectos y Freelance -->
+    <div class="flex justify-center mb-10 md:mb-12" data-aos="fade-up" data-aos-delay="300">
+      <div class="inline-flex p-1 bg-ferxxo-black/80 border border-ferxxo-blue/20 rounded-lg overflow-hidden">
         <button 
-          class={`category-filter px-4 py-2 rounded-full text-white border transition-all duration-300 text-sm md:text-base hover:shadow-[0_0_10px_rgba(255,45,158,0.5)] ${category.id === 'all' ? 'bg-ferxxo-pink/10 border-ferxxo-pink' : 'border-ferxxo-blue/30 hover:border-ferxxo-pink'}`}
-          data-category={category.id}
+          class="projects-work-tab px-6 py-3 text-white font-medium rounded-lg transition-colors duration-300 bg-ferxxo-pink/10 border border-ferxxo-pink text-sm md:text-base"
+          data-tab="projects"
         >
-          {category.name}
+          Proyectos
         </button>
-      ))}
+        <button 
+          class="projects-work-tab px-6 py-3 text-white font-medium rounded-lg transition-colors duration-300 text-sm md:text-base"
+          data-tab="freelance"
+        >
+          Freelance
+        </button>
+      </div>
     </div>
     
-    <!-- Grid de proyectos destacados -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="500">
-      {featuredProjects.map((project) => (
-        <div 
-          class="project-card relative group overflow-hidden bg-ferxxo-black/60 backdrop-blur-sm border border-ferxxo-blue/20 hover:border-ferxxo-blue/80 transition-all duration-300 rounded-xl hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]"
-          data-category={project.category}
-        >
-          <!-- Imagen del proyecto con placeholder -->
-          <div class="relative aspect-video bg-gradient-to-br from-ferxxo-black to-ferxxo-black/70 overflow-hidden">
-            <div class="w-full h-full flex flex-col items-center justify-center p-6">
-              <span class="text-3xl md:text-4xl text-ferxxo-blue/30 font-bold mb-2">{project.title.split(' ')[0]}</span>
-              <span class="w-16 h-0.5 bg-ferxxo-blue/30"></span>
-            </div>
-            
-            <!-- Líneas de cuadrícula para efecto tecnológico -->
-            <div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-10">
-              {Array.from({ length: 8 }).map(() => (
-                <div class="border-r border-ferxxo-blue/50"></div>
-              ))}
-            </div>
-            <div class="absolute inset-0 grid grid-rows-8 pointer-events-none opacity-10">
-              {Array.from({ length: 8 }).map(() => (
-                <div class="border-b border-ferxxo-blue/50"></div>
-              ))}
-            </div>
-            
-            <!-- Overlay con enlaces -->
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ferxxo-black/60 to-ferxxo-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-6 gap-4">
-              <a 
-                href={project.link} 
-                class="px-4 py-2 bg-ferxxo-pink/10 hover:bg-ferxxo-pink/20 text-ferxxo-pink border border-ferxxo-pink font-medium rounded-lg transition-colors duration-300 text-sm md:text-base flex items-center gap-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Ver Demo</span>
-                <Icon name="mdi:link" class="h-4 w-4" />
-              </a>
-              <a 
-                href={project.github} 
-                class="px-4 py-2 bg-ferxxo-blue/10 hover:bg-ferxxo-blue/20 text-ferxxo-blue border border-ferxxo-blue font-medium rounded-lg transition-colors duration-300 text-sm md:text-base flex items-center gap-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>GitHub</span>
-                <Icon name="simple-icons:github" class="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-          
-          <!-- Información del proyecto -->
-          <div class="p-4 md:p-6">
-            <div class="flex items-start justify-between mb-3 gap-2">
-              <h4 class="text-lg md:text-xl font-bold text-white line-clamp-1">{project.title}</h4>
-              <span class="inline-block px-2 py-1 text-xs font-semibold bg-ferxxo-pink/10 text-ferxxo-pink rounded-full border border-ferxxo-pink/30 whitespace-nowrap">
-                {project.category}
-              </span>
-            </div>
-            <p class="text-gray-300 text-sm md:text-base mb-4 line-clamp-2">{project.description}</p>
-            
-            <!-- Tecnologías -->
-            <div class="flex flex-wrap gap-1.5">
-              {project.technologies.map((tech) => (
-                <span class="inline-block px-2 py-0.5 text-xs bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+    <!-- Contenedor de ambas secciones -->
+    <div id="projects-work-content">
+      <!-- Sección de Proyectos -->
+      <div id="projects-tab" class="projects-work-content-section">
+        <!-- Filtros de proyectos -->
+        <div class="flex flex-wrap justify-center mb-10 md:mb-12 gap-2 md:gap-3" 
+             data-aos="fade-up" 
+             data-aos-delay="400">
+          {projectCategories.map((category) => (
+            <button 
+              class={`projects-category-filter px-4 py-2 rounded-full text-white border transition-all duration-300 text-sm md:text-base hover:shadow-[0_0_10px_rgba(255,45,158,0.5)] ${category.id === 'all' ? 'bg-ferxxo-pink/10 border-ferxxo-pink' : 'border-ferxxo-blue/30 hover:border-ferxxo-pink'}`}
+              data-category={category.id}
+              data-section="projects"
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
-      ))}
-    </div>
-    
-    <!-- Botón de ver más proyectos -->
-    <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
-      <a href="#" class="group relative inline-block">
-        <div
-          class="absolute -inset-0.5 bg-gradient-to-r from-ferxxo-blue to-ferxxo-purple rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-200"
-        >
+        
+        <!-- Grid de proyectos destacados -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="500">
+          {featuredProjects.map((project) => (
+            <div 
+              class="projects-project-card relative group overflow-hidden bg-ferxxo-black/60 backdrop-blur-sm border border-ferxxo-blue/20 hover:border-ferxxo-blue/80 transition-all duration-300 rounded-xl hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+              data-category={project.category}
+            >
+              <!-- Imagen del proyecto con placeholder -->
+              <div class="relative aspect-video bg-gradient-to-br from-ferxxo-black to-ferxxo-black/70 overflow-hidden">
+                <div class="w-full h-full flex flex-col items-center justify-center p-6">
+                  <span class="text-3xl md:text-4xl text-ferxxo-blue/30 font-bold mb-2">{project.title.split(' ')[0]}</span>
+                  <span class="w-16 h-0.5 bg-ferxxo-blue/30"></span>
+                </div>
+                
+                <!-- Líneas de cuadrícula para efecto tecnológico -->
+                <div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-10">
+                  {Array.from({ length: 8 }).map(() => (
+                    <div class="border-r border-ferxxo-blue/50"></div>
+                  ))}
+                </div>
+                <div class="absolute inset-0 grid grid-rows-8 pointer-events-none opacity-10">
+                  {Array.from({ length: 8 }).map(() => (
+                    <div class="border-b border-ferxxo-blue/50"></div>
+                  ))}
+                </div>
+                
+                <!-- Overlay con enlaces -->
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ferxxo-black/60 to-ferxxo-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-6 gap-4 card-overlay">
+                  <a 
+                    href={project.link} 
+                    class="px-4 py-2 bg-ferxxo-pink/10 hover:bg-ferxxo-pink/20 text-ferxxo-pink border border-ferxxo-pink font-medium rounded-lg transition-colors duration-300 text-sm md:text-base flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Ver Demo</span>
+                    <Icon name="mdi:link" class="h-4 w-4" />
+                  </a>
+                  <a 
+                    href={project.github} 
+                    class="px-4 py-2 bg-ferxxo-blue/10 hover:bg-ferxxo-blue/20 text-ferxxo-blue border border-ferxxo-blue font-medium rounded-lg transition-colors duration-300 text-sm md:text-base flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>GitHub</span>
+                    <Icon name="simple-icons:github" class="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Información del proyecto -->
+              <div class="p-4 md:p-6">
+                <div class="flex items-start justify-between mb-3 gap-2">
+                  <h4 class="text-lg md:text-xl font-bold text-white line-clamp-1">{project.title}</h4>
+                  <span class="inline-block px-2 py-1 text-xs font-semibold bg-ferxxo-pink/10 text-ferxxo-pink rounded-full border border-ferxxo-pink/30 whitespace-nowrap">
+                    {project.category}
+                  </span>
+                </div>
+                <p class="text-gray-300 text-sm md:text-base mb-4 line-clamp-2">{project.description}</p>
+                
+                <!-- Tecnologías -->
+                <div class="flex flex-wrap gap-1.5">
+                  {project.technologies.map((tech) => (
+                    <span class="inline-block px-2 py-0.5 text-xs bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <button
-          class="relative bg-ferxxo-black px-6 py-3 rounded-lg text-white font-bold uppercase tracking-wider group-hover:text-ferxxo-blue transition duration-200"
-        >
-          Ver Todos Los Proyectos
-        </button>
-      </a>
+      
+      </div>
+      
+      <!-- Sección de Freelance -->
+      <div id="freelance-tab" class="projects-work-content-section hidden">
+        <!-- Filtros de freelance -->
+        <div class="flex flex-wrap justify-center mb-10 md:mb-12 gap-2 md:gap-3" 
+             data-aos="fade-up" 
+             data-aos-delay="400">
+          {freelanceCategories.map((category) => (
+            <button 
+              class={`projects-category-filter px-4 py-2 rounded-full text-white border transition-all duration-300 text-sm md:text-base hover:shadow-[0_0_10px_rgba(255,45,158,0.5)] ${category.id === 'all' ? 'bg-ferxxo-pink/10 border-ferxxo-pink' : 'border-ferxxo-blue/30 hover:border-ferxxo-pink'}`}
+              data-category={category.id}
+              data-section="freelance"
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+        
+        <!-- Grid de trabajos freelance -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="500">
+          {featuredFreelance.map((project) => (
+            <div 
+              class="projects-freelance-card relative group overflow-hidden bg-ferxxo-black/60 backdrop-blur-sm border border-ferxxo-blue/20 hover:border-ferxxo-blue/80 transition-all duration-300 rounded-xl hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+              data-category={project.category}
+            >
+              <!-- Imagen del proyecto con placeholder -->
+              <div class="relative aspect-video bg-gradient-to-br from-ferxxo-black to-ferxxo-black/70 overflow-hidden">
+                <div class="w-full h-full flex flex-col items-center justify-center p-6">
+                  <span class="text-3xl md:text-4xl text-ferxxo-blue/30 font-bold mb-2">{project.title.split(' ')[0]}</span>
+                  <span class="w-16 h-0.5 bg-ferxxo-blue/30"></span>
+                </div>
+                
+                <!-- Líneas de cuadrícula para efecto tecnológico -->
+                <div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-10">
+                  {Array.from({ length: 8 }).map(() => (
+                    <div class="border-r border-ferxxo-blue/50"></div>
+                  ))}
+                </div>
+                <div class="absolute inset-0 grid grid-rows-8 pointer-events-none opacity-10">
+                  {Array.from({ length: 8 }).map(() => (
+                    <div class="border-b border-ferxxo-blue/50"></div>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- Información del proyecto -->
+              <div class="p-4 md:p-6">
+                <div class="flex items-start justify-between mb-3 gap-2">
+                  <h4 class="text-lg md:text-xl font-bold text-white line-clamp-1">{project.title}</h4>
+                  <span class="inline-block px-2 py-1 text-xs font-semibold bg-ferxxo-pink/10 text-ferxxo-pink rounded-full border border-ferxxo-pink/30 whitespace-nowrap">
+                    {project.category}
+                  </span>
+                </div>
+                <p class="text-gray-300 text-sm md:text-base mb-4 line-clamp-2">{project.description}</p>
+                
+                <!-- Tecnologías -->
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span class="inline-block px-2 py-0.5 text-xs bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <!-- Cliente y Testimonio -->
+                <div class="bg-ferxxo-blue/5 p-3 rounded-lg border border-ferxxo-blue/10">
+                  <div class="flex items-center mb-2">
+                    <Icon name="mdi:account" class="h-4 w-4 text-ferxxo-blue mr-2" />
+                    <span class="text-sm text-ferxxo-blue">{project.client}</span>
+                  </div>
+                  <p class="text-xs text-gray-400 italic">
+                    "{project.testimonial}"
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+      
+      </div>
     </div>
   </div>
 </section>
@@ -204,32 +339,124 @@ const categories = [
     50% { border-color: rgba(0, 240, 255, 0.7); }
   }
   
-  .project-card {
+  .projects-project-card, .projects-freelance-card {
     transform: translateY(0);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1 !important;
+    isolation: isolate;
   }
   
-  .project-card:hover {
+  .projects-project-card:hover, .projects-freelance-card:hover {
     transform: translateY(-10px);
+    z-index: 1 !important;
+  }
+  
+  /* Overlay forzado a estar por debajo de la social bar */
+  .projects-project-card .absolute, 
+  .projects-freelance-card .absolute {
+    z-index: 1 !important;
   }
   
   @media (max-width: 640px) {
-    .project-card:hover {
+    .projects-project-card:hover, .projects-freelance-card:hover {
       transform: translateY(-5px);
     }
   }
+  
+  .projects-work-tab {
+    position: relative;
+    overflow: hidden;
+    z-index: 1 !important;
+  }
+  
+  .projects-work-tab.active {
+    background-color: rgba(255, 45, 158, 0.1);
+    border: 1px solid rgb(255, 45, 158);
+  }
+  
+  .projects-work-tab:not(.active) {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+  
+  .projects-category-filter {
+    position: relative;
+    z-index: 1 !important;
+  }
+  
+  .projects-show-all-btn {
+    position: relative;
+    z-index: 1 !important;
+  }
+  
+  #projects-work-content {
+    position: relative;
+    z-index: 1 !important;
+    isolation: isolate;
+  }
+  
+  .card-overlay {
+    z-index: 2 !important;
+    position: relative !important;
+  }
+  
+  /* Forzar todos los absolutes a tener z-index bajo */
+  section#projects .absolute {
+    z-index: 1 !important;
+  }
 </style>
 
-<script>
+<script define:vars={{ componentId }}>
   document.addEventListener('DOMContentLoaded', () => {
-    // Filtrado de proyectos por categoría
-    const categoryFilters = document.querySelectorAll('.category-filter');
-    const projectCards = document.querySelectorAll('.project-card');
+    // Obtener la referencia al componente actual usando el ID único
+    const currentComponent = document.querySelector(`[data-component-id="${componentId}"]`);
+    
+    if (!currentComponent) return;
+    
+    // Manejo de tabs - con alcance limitado a este componente
+    const tabs = currentComponent.querySelectorAll('.projects-work-tab');
+    const contentSections = currentComponent.querySelectorAll('.projects-work-content-section');
+    
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', function() {
+        // Actualizar tabs
+        tabs.forEach((t) => {
+          t.classList.remove('active', 'bg-ferxxo-pink/10', 'border-ferxxo-pink');
+        });
+        this.classList.add('active', 'bg-ferxxo-pink/10', 'border-ferxxo-pink');
+        
+        const tabId = this.getAttribute('data-tab');
+        
+        // Mostrar sección correspondiente
+        contentSections.forEach((section) => {
+          if (!(section instanceof HTMLElement)) return;
+          
+          if (section.id === `${tabId}-tab`) {
+            section.classList.remove('hidden');
+          } else {
+            section.classList.add('hidden');
+          }
+        });
+      });
+    });
+    
+    // Filtrado de proyectos por categoría - con alcance limitado a este componente
+    const categoryFilters = currentComponent.querySelectorAll('.projects-category-filter');
+    const projectCards = currentComponent.querySelectorAll('.projects-project-card');
+    const freelanceCards = currentComponent.querySelectorAll('.projects-freelance-card');
     
     categoryFilters.forEach((filter) => {
-      filter.addEventListener('click', function(this: HTMLElement) {
-        // Actualizar clase active
-        categoryFilters.forEach((f) => {
+      filter.addEventListener('click', function(event) {
+        // Prevenir el comportamiento predeterminado para evitar el scroll
+        event.preventDefault();
+        
+        // Determinar qué sección está activa
+        const section = this.getAttribute('data-section');
+        
+        // Actualizar clase active solo para los filtros de la sección activa
+        const sectionFilters = currentComponent.querySelectorAll(`.projects-category-filter[data-section="${section}"]`);
+        sectionFilters.forEach((f) => {
           f.classList.remove('active', 'bg-ferxxo-pink/10', 'border-ferxxo-pink');
           f.classList.add('border-ferxxo-blue/30');
         });
@@ -238,8 +465,16 @@ const categories = [
         
         const category = this.getAttribute('data-category');
         
-        // Filtrar proyectos
-        projectCards.forEach((card) => {
+        // Filtrar tarjetas según la sección
+        let cards;
+        if (section === 'projects') {
+          cards = projectCards;
+        } else {
+          cards = freelanceCards;
+        }
+        
+        // Aplicar filtrado
+        cards.forEach((card) => {
           if (!(card instanceof HTMLElement)) return;
           
           const cardCategory = card.getAttribute('data-category');
@@ -266,16 +501,45 @@ const categories = [
     });
     
     // Ajustar visibilidad inicial de las tarjetas para animación de entrada
-    projectCards.forEach((card) => {
-      if (!(card instanceof HTMLElement)) return;
-      
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 50);
+    const setupInitialCards = (cards) => {
+      cards.forEach((card) => {
+        if (!(card instanceof HTMLElement)) return;
+        
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
+      });
+    };
+    
+    setupInitialCards(projectCards);
+    setupInitialCards(freelanceCards);
+    
+    // Establecer el primer tab como activo
+    if (tabs[0] instanceof HTMLElement) {
+      tabs[0].classList.add('active');
+    }
+
+    // Manejar botones de "Ver todos los proyectos" y "Trabajemos Juntos"
+    const showAllButtons = currentComponent.querySelectorAll('.projects-show-all-btn');
+    showAllButtons.forEach((button) => {
+      button.addEventListener('click', function(event) {
+        // Prevenir el comportamiento predeterminado si no es un enlace de contacto
+        const section = this.getAttribute('data-section');
+        if (section === 'projects') {
+          event.preventDefault();
+          
+          // Encontrar el filtro "Todos" de la sección y activarlo
+          const allFilter = currentComponent.querySelector(`.projects-category-filter[data-section="${section}"][data-category="all"]`);
+          if (allFilter instanceof HTMLElement) {
+            allFilter.click();
+          }
+        }
+        // Para 'freelance', se permite el comportamiento predeterminado (navegar a #contact)
+      });
     });
   });
 </script> 

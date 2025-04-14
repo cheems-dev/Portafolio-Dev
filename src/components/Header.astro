@@ -123,46 +123,49 @@ import { Icon } from "astro-icon/components";
   <!-- Menú móvil -->
   <div
     id="mobileMenu"
-    class="hidden md:hidden absolute top-full left-0 w-full bg-ferxxo-black/90 shadow-lg py-4 px-6 transition-all duration-300 ease-in-out transform opacity-0 border-t border-ferxxo-pink/20 backdrop-blur-md"
+    class="hidden md:hidden fixed top-[60px] left-0 w-full bg-ferxxo-black/95 shadow-lg py-4 px-6 transition-all duration-300 ease-in-out transform opacity-0 border-t border-ferxxo-pink/20 backdrop-blur-md"
     aria-hidden="true"
+    style="z-index: 10000 !important;"
   >
     <div
       class="glitch-line absolute top-0 left-0 right-0 h-px bg-ferxxo-pink/30"
     >
     </div>
 
-    <nav class="flex flex-col space-y-4">
+    <nav
+      class="flex flex-col space-y-4 bg-black/80 rounded-lg border-2 border-ferxxo-pink/50 p-5 mobile-nav-glow"
+    >
       <a
         href="#home"
-        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-bold uppercase touch-target relative mobile-nav-item text-lg"
         >Inicio</a
       >
-      <a
+      <!--   <a
         href="#about"
-        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-bold uppercase touch-target relative mobile-nav-item text-lg"
         >Sobre mí</a
-      >
+      > -->
       <a
         href="#projects"
-        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-bold uppercase touch-target relative mobile-nav-item text-lg"
         >Proyectos</a
       >
       <a
         href="#experience"
-        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-bold uppercase touch-target relative mobile-nav-item text-lg"
         >Experiencia</a
       >
       <a
         href="#certificates"
-        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-medium uppercase touch-target"
+        class="text-white hover:text-ferxxo-pink transition-colors py-3 tracking-wider font-bold uppercase touch-target relative mobile-nav-item text-lg"
         >Certificados</a
       >
-      <a
+      <!--   <a
         href="#contact"
-        class="w-full bg-ferxxo-black border border-ferxxo-pink py-3 my-2 text-ferxxo-pink font-bold text-center uppercase tracking-wider hover:bg-ferxxo-pink/10 transition-colors touch-target"
+        class="w-full bg-ferxxo-pink/20 border-2 border-ferxxo-pink py-3 my-2 text-white font-bold text-center uppercase tracking-wider hover:bg-ferxxo-pink/30 transition-colors touch-target relative mobile-nav-item text-lg"
       >
         Contacto
-      </a>
+      </a> -->
     </nav>
   </div>
 </header>
@@ -196,6 +199,50 @@ import { Icon } from "astro-icon/components";
     }
   }
 
+  .mobile-nav-glow {
+    box-shadow:
+      0 0 20px rgba(255, 45, 158, 0.5),
+      0 0 40px rgba(255, 45, 158, 0.3);
+    animation: mobile-nav-pulse 4s infinite alternate;
+  }
+
+  .mobile-nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      var(--ferxxo-pink),
+      var(--ferxxo-blue)
+    );
+    transition: width 0.3s ease;
+  }
+
+  .mobile-nav-item:hover::after {
+    width: 100%;
+  }
+
+  @keyframes mobile-nav-pulse {
+    0% {
+      box-shadow:
+        0 0 20px rgba(255, 45, 158, 0.5),
+        0 0 40px rgba(255, 45, 158, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 0 20px rgba(0, 240, 255, 0.5),
+        0 0 40px rgba(0, 240, 255, 0.3);
+    }
+    100% {
+      box-shadow:
+        0 0 20px rgba(255, 45, 158, 0.5),
+        0 0 40px rgba(255, 45, 158, 0.3);
+    }
+  }
+
   /* Media query para mejorar accesibilidad en pantallas pequeñas */
   @media (max-width: 360px) {
     .container {
@@ -209,6 +256,36 @@ import { Icon } from "astro-icon/components";
     #mobileMenu {
       overflow-y: auto;
       max-height: calc(100vh - 70px);
+      z-index: 10000 !important;
+    }
+
+    #mobileMenu.opacity-100 {
+      display: block !important;
+    }
+
+    .mobile-nav-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mobile-nav-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 45, 158, 0.2),
+        transparent
+      );
+      transition: left 0.5s;
+    }
+
+    .mobile-nav-item:hover::before {
+      left: 100%;
     }
   }
 </style>
@@ -230,8 +307,9 @@ import { Icon } from "astro-icon/components";
 
         // Alternar la visibilidad del menú móvil
         if (isExpanded) {
-          mobileMenu.classList.add("hidden", "opacity-0");
+          mobileMenu.classList.add("hidden");
           mobileMenu.classList.remove("opacity-100");
+          mobileMenu.classList.add("opacity-0");
           openIcon.classList.remove("hidden");
           closeIcon.classList.add("hidden");
         } else {
@@ -275,7 +353,7 @@ import { Icon } from "astro-icon/components";
 
   // Navegación suave
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    const handleClick = (e: Event) => {
+    const handleClick = function (e: Event) {
       e.preventDefault();
 
       const link = e.currentTarget as HTMLAnchorElement;
