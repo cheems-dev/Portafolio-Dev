@@ -130,10 +130,23 @@ const componentId = "projects-" + Math.random().toString(36).substring(2, 9);
         Una selección de mis proyectos personales y trabajos freelance. Cada uno representa mi pasión
         por crear experiencias digitales innovadoras.
       </p>
+      
+      <!-- Indicador de trabajo en progreso -->
+      <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="400">
+        <div class="inline-flex items-center px-4 py-2 bg-ferxxo-purple/10 border border-ferxxo-purple/30 rounded-full">
+          <div class="w-2 h-2 bg-ferxxo-purple rounded-full mr-3 animate-pulse"></div>
+          <span class="text-ferxxo-purple text-sm font-medium">Sección en desarrollo</span>
+          <div class="ml-3 flex space-x-1">
+            <div class="w-1 h-1 bg-ferxxo-purple/60 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+            <div class="w-1 h-1 bg-ferxxo-purple/60 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+            <div class="w-1 h-1 bg-ferxxo-purple/60 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- Tabs para alternar entre Proyectos y Freelance -->
-    <div class="flex justify-center mb-10 md:mb-12" data-aos="fade-up" data-aos-delay="300">
+    <div class="flex justify-center mb-10 md:mb-12" data-aos="fade-up" data-aos-delay="300" style="display: none;">
       <div class="inline-flex p-1 bg-ferxxo-black/80 border border-ferxxo-blue/20 rounded-lg overflow-hidden">
         <button 
           class="projects-work-tab px-6 py-3 text-white font-medium rounded-lg transition-colors duration-300 bg-ferxxo-pink/10 border border-ferxxo-pink text-sm md:text-base"
@@ -151,7 +164,7 @@ const componentId = "projects-" + Math.random().toString(36).substring(2, 9);
     </div>
     
     <!-- Contenedor de ambas secciones -->
-    <div id="projects-work-content">
+    <div id="projects-work-content" style="display: none;">
       <!-- Sección de Proyectos -->
       <div id="projects-tab" class="projects-work-content-section">
         <!-- Filtros de proyectos -->

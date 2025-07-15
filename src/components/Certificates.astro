@@ -1,434 +1,458 @@
 ---
-// Certificates.astro - Sección de certificados y credenciales
+// Certificates.astro - Sección de certificaciones profesionales
 
-// Datos simulados de certificados
+// Importar iconos
+import { Icon } from 'astro-icon/components';
+
+// Importar SVG locales
+import awsLogo from '../assets/svg/aws-svgrepo-com.svg';
+import linuxFoundationLogo from '../assets/svg/Linux_Foundation_logo_2013.svg';
+import tecsupLogo from '../assets/svg/tecsup.svg';
+
+// Datos de certificaciones obtenidos de LinkedIn
 const certificates = [
   {
-    title: "Full Stack Web Development",
-    organization: "freeCodeCamp",
-    date: "2023",
-    image: "/images/certificates/freecodecamp.webp",
-    link: "#"
+    name: "AWS Educate Introduction to Generative AI",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Marzo 2025",
+    description: "Introducción a la inteligencia artificial generativa con AWS, cubriendo conceptos fundamentales y aplicaciones prácticas.",
+    credentialUrl: "https://www.credly.com/badges/0963e804-8e34-46c1-826c-19013ee07c3b/linked_in_profile",
+    logo: awsLogo.src,
+    skills: ["Generative AI", "AWS", "Machine Learning"],
+    category: "Cloud Computing"
   },
   {
-    title: "React & Redux Expert",
-    organization: "Udemy",
-    date: "2022",
-    image: "/images/certificates/udemy.webp",
-    link: "#"
+    name: "LFS162: Introduction to DevOps and Site Reliability Engineering",
+    issuer: "The Linux Foundation",
+    date: "Enero 2025",
+    description: "Fundamentos de DevOps y Site Reliability Engineering (SRE), incluyendo prácticas de automatización y monitoreo.",
+    credentialUrl: "https://www.credly.com/badges/471b7822-3409-4d43-acc1-a4bd969dac33/linked_in_profile",
+    logo: linuxFoundationLogo.src,
+    skills: ["DevOps", "SRE", "Linux", "Automation"],
+    category: "DevOps"
   },
   {
-    title: "JavaScript Algorithms & Data Structures",
-    organization: "freeCodeCamp",
-    date: "2022",
-    image: "/images/certificates/freecodecamp.webp",
-    link: "#"
+    name: "Talento Cloud Pro",
+    issuer: "Ubits Learning Solutions México S.A.P.I. de C.V.",
+    date: "Julio 2024",
+    description: "Certificación avanzada en tecnologías cloud y arquitectura de soluciones empresariales.",
+    credentialUrl: "https://certificates.ubits.com/es/verify/47807294074561",
+    credentialId: "47807294074561",
+    logo: null, // No logo available
+    skills: ["Amazon Web Services (AWS)", "Cloud Architecture"],
+    category: "Cloud Computing"
   },
   {
-    title: "Advanced Node.js",
-    organization: "Coursera",
-    date: "2021",
-    image: "/images/certificates/coursera.webp",
-    link: "#"
+    name: "AWS Cloud Quest: Cloud Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Abril 2023",
+    description: "Certificación práctica de AWS Cloud Practitioner a través del programa interactivo Cloud Quest.",
+    credentialUrl: "https://www.credly.com/badges/2edae7e9-c30f-49fe-b354-5affa2d7bc6d/linked_in_profile",
+    logo: awsLogo.src,
+    skills: ["AWS", "Computer Engineer RegisteR", "Software Engineer"],
+    category: "Cloud Computing"
   },
   {
-    title: "UI/UX Design Fundamentals",
-    organization: "Udemy",
-    date: "2021",
-    image: "/images/certificates/udemy.webp",
-    link: "#"
+    name: "AWS Partner: Cloud Economics Accreditation",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Abril 2023",
+    description: "Acreditación en economía de la nube AWS, enfocada en optimización de costos y value proposition.",
+    credentialUrl: "https://www.credly.com/badges/e7150daa-3518-4fde-a8e3-2cd3edf5343f/linked_in_profile",
+    logo: awsLogo.src,
+    skills: ["AWS", "Amazon Web Services (AWS)", "Cloud Economics"],
+    category: "Cloud Computing"
   },
   {
-    title: "AWS Certified Developer Associate",
-    organization: "Amazon Web Services",
-    date: "2020",
-    image: "/images/certificates/aws.webp",
-    link: "#"
+    name: "AWS Partner: Accreditation (Technical)",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Marzo 2023",
+    description: "Acreditación técnica de AWS Partner, validando conocimientos en arquitecturas y servicios de AWS.",
+    credentialUrl: "https://www.credly.com/badges/bb3006b9-f023-467d-a5fd-b1f5a159ef24/linked_in_profile",
+    logo: awsLogo.src,
+    skills: ["Amazon Web Services (AWS)"],
+    category: "Cloud Computing"
+  },
+  {
+    name: "AWS Partner: Sales Accreditation (Business)",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Marzo 2023",
+    description: "Acreditación de ventas AWS Partner, enfocada en estrategias comerciales y posicionamiento de soluciones cloud.",
+    credentialUrl: "https://www.credly.com/badges/6de8d083-e701-4ccc-bec4-324f11d76090/linked_in_profile",
+    credentialId: "6de8d083-e701-4ccc-bec4-324f11d76090",
+    logo: awsLogo.src,
+    skills: ["Amazon Web Services (AWS)"],
+    category: "Business"
+  },
+  {
+    name: "Desarrollador Full Stack",
+    issuer: "Codigo by Tecsup",
+    date: "Junio 2019",
+    description: "Certificación integral en desarrollo full stack, cubriendo tecnologías frontend y backend modernas.",
+    credentialUrl: "https://drive.google.com/file/d/1R5nVNwY-IRa_9VSW2wvCYrzMCLPX-ww8/view?usp=sharing",
+    logo: tecsupLogo.src,
+    skills: ["Diseño web adaptable", "Full Stack Development"],
+    category: "Development"
   }
 ];
+
+// Agrupar certificados por categoría
+const certificateCategories = certificates.reduce((acc, cert) => {
+  if (!acc[cert.category]) {
+    acc[cert.category] = [];
+  }
+  acc[cert.category].push(cert);
+  return acc;
+}, {});
 ---
 
 <section id="certificates" class="py-20 bg-ferxxo-black relative overflow-hidden">
   <!-- Elementos decorativos de fondo -->
-  <div class="absolute inset-0 z-0 opacity-10">
-    <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-ferxxo-blue/20 to-transparent"></div>
-    <div class="absolute bottom-0 right-0 w-full h-40 bg-gradient-to-t from-ferxxo-pink/20 to-transparent"></div>
+  <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
+    <!-- Gradiente diagonal -->
+    <div class="absolute top-0 right-0 left-0 h-64 bg-gradient-to-bl from-ferxxo-green/20 via-transparent to-transparent"></div>
+    
+    <!-- Grid futurista -->
+    <div class="absolute inset-0 grid grid-cols-6 md:grid-cols-12">
+      {Array.from({ length: 12 }).map(() => (
+        <div class="border-r border-ferxxo-green/5"></div>
+      ))}
+    </div>
     
     <!-- Líneas horizontales -->
-    <div class="absolute top-1/3 left-0 w-full h-px bg-ferxxo-blue/20"></div>
+    <div class="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-ferxxo-green/10 to-transparent"></div>
+    
+    <!-- Círculos decorativos -->
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-ferxxo-green/5 blur-3xl opacity-30"></div>
   </div>
 
   <div class="container mx-auto px-4 relative z-10">
     <!-- Encabezado de sección -->
     <div class="text-center mb-12 md:mb-16">
       <h2 
-        class="text-4xl md:text-5xl font-bold mb-4 uppercase"
+        class="text-4xl md:text-5xl font-bold mb-4 uppercase text-white"
         data-aos="fade-up"
       >
-        Mis <span class="text-ferxxo-blue">Certificados</span>
+        Mis <span class="text-ferxxo-green ferxxo-glow">Certificaciones</span>
       </h2>
       <div 
-        class="w-32 h-1 bg-gradient-to-r from-ferxxo-blue via-ferxxo-purple to-ferxxo-pink mx-auto"
+        class="w-32 h-1 bg-gradient-to-r from-ferxxo-green via-ferxxo-blue to-ferxxo-purple mx-auto"
         data-aos="zoom-in"
         data-aos-delay="200"
       ></div>
       <p 
-        class="mt-4 max-w-2xl mx-auto text-gray-300"
+        class="mt-6 max-w-2xl mx-auto text-gray-300 md:text-lg"
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        Credenciales y certificaciones que acreditan mi formación técnica y compromiso
-        con el aprendizaje continuo.
+        Certificaciones profesionales que validan mis conocimientos y experiencia en tecnologías cloud, desarrollo y DevOps.
       </p>
     </div>
     
-    <!-- Carrusel de certificados -->
-    <div class="relative mx-auto max-w-6xl px-4 md:px-8" data-aos="fade-up" data-aos-delay="400">
-      <!-- Controles de navegación -->
-      <button 
-        id="prevCert" 
-        class="absolute top-1/2 -left-2 md:left-0 -translate-y-1/2 z-10 bg-ferxxo-black/90 p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none hover:bg-ferxxo-black border border-ferxxo-blue/30 hover:border-ferxxo-blue text-ferxxo-blue touch-target"
-        aria-label="Certificado anterior"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      
-      <button 
-        id="nextCert" 
-        class="absolute top-1/2 -right-2 md:right-0 -translate-y-1/2 z-10 bg-ferxxo-black/90 p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none hover:bg-ferxxo-black border border-ferxxo-blue/30 hover:border-ferxxo-blue text-ferxxo-blue touch-target"
-        aria-label="Certificado siguiente"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-      
-      <!-- Contenedor del carrusel -->
-      <div id="certificates-carousel" class="overflow-hidden rounded-lg border border-ferxxo-blue/20">
-        <div id="certificates-track" class="flex transition-transform duration-500 ease-out">
-          {certificates.map((certificate, index) => (
-            <div class="certificate-slide w-full min-w-full sm:min-w-[50%] md:min-w-[33.333%] p-3 md:p-4">
-              <div class="relative h-full bg-ferxxo-black/70 backdrop-blur-sm rounded-lg overflow-hidden group border border-ferxxo-blue/20 hover:border-ferxxo-blue/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,240,255,0.3)]">
-                <!-- Imagen placeholder del certificado con efecto neón -->
-                <div class="relative aspect-[4/3] bg-gradient-to-br from-ferxxo-black to-ferxxo-black/90 overflow-hidden group">
-                  <div class="w-full h-full flex flex-col items-center justify-center p-6">
-                    <span class="text-2xl md:text-3xl text-ferxxo-blue/30 font-semibold mb-2">
-                      {certificate.organization}
-                    </span>
-                    <div class="w-24 h-1 bg-ferxxo-blue/20"></div>
-                  </div>
+    <!-- Certificaciones por categoría -->
+    <div class="max-w-6xl mx-auto space-y-16">
+      {Object.entries(certificateCategories).map(([category, certs], categoryIndex) => (
+        <div class="ferxxo-fade-in" data-aos="fade-up" data-aos-delay={categoryIndex * 150}>
+          <!-- Título de categoría -->
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center">
+            <span class="inline-block w-6 h-0.5 bg-ferxxo-green mr-4"></span>
+            {category}
+            <span class="ml-4 text-sm font-normal text-ferxxo-green bg-ferxxo-green/10 px-3 py-1 rounded-full border border-ferxxo-green/30">
+              {certs.length} certificación{certs.length > 1 ? 'es' : ''}
+            </span>
+          </h3>
+          
+          <!-- Grid de certificados -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certs.map((certificate, certIndex) => (
+              <div 
+                class="certificate-card cursor-pointer bg-ferxxo-black/60 backdrop-blur-sm rounded-xl overflow-hidden border border-ferxxo-green/20 transition-all duration-300"
+                data-certificate={JSON.stringify(certificate)}
+                onclick="openCertificateModalFromElement(this)"
+              >
+                <!-- Header con logo e issuer -->
+                <div class="relative h-24 bg-gradient-to-br from-ferxxo-black to-ferxxo-black/80 overflow-hidden flex items-center justify-center p-4">
+                  <!-- Logo del issuer -->
+                  {certificate.logo ? (
+                    <img 
+                      src={certificate.logo} 
+                      alt={certificate.issuer}
+                      class="h-12 w-12 object-contain rounded-lg bg-white p-2"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="h-12 w-12 rounded-lg bg-ferxxo-green/20 flex items-center justify-center">
+                      <Icon name="mdi:certificate" class="w-6 h-6 text-ferxxo-green" />
+                    </div>
+                  )}
                   
-                  <!-- Líneas de cuadrícula para efecto tecnológico -->
-                  <div class="absolute inset-0 grid grid-cols-8 pointer-events-none opacity-10">
-                    {Array.from({ length: 8 }).map((_, i) => (
-                      <div class="border-r border-ferxxo-blue/50"></div>
-                    ))}
-                  </div>
-                  <div class="absolute inset-0 grid grid-rows-8 pointer-events-none opacity-10">
-                    {Array.from({ length: 8 }).map((_, i) => (
-                      <div class="border-b border-ferxxo-blue/50"></div>
-                    ))}
-                  </div>
-                  
-                  <!-- Overlay con efecto neón -->
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-ferxxo-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                    <a 
-                      href={certificate.link}
-                      class="px-4 py-2 bg-ferxxo-blue/10 hover:bg-ferxxo-blue/20 text-ferxxo-blue border border-ferxxo-blue font-medium rounded-lg transition-colors duration-300 text-sm md:text-base"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ver Certificado
-                    </a>
+                  <!-- Click indicator -->
+                  <div class="absolute top-3 right-3 bg-ferxxo-black/80 backdrop-blur-sm rounded-full p-2 border border-ferxxo-green/30 opacity-80">
+                    <Icon name="mdi:arrow-expand" class="w-3 h-3 text-ferxxo-green" />
                   </div>
                 </div>
                 
-                <!-- Información del certificado -->
-                <div class="p-4 md:p-6">
-                  <h3 class="text-base md:text-lg font-bold text-white mb-1 line-clamp-2">
-                    {certificate.title}
-                  </h3>
-                  <div class="flex justify-between items-center flex-wrap gap-2">
-                    <p class="text-ferxxo-blue font-medium text-sm md:text-base">
-                      {certificate.organization}
-                    </p>
-                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30">
-                      {certificate.date}
-                    </span>
+                <!-- Contenido -->
+                <div class="p-4">
+                  <!-- Título del certificado -->
+                  <h4 class="text-lg font-bold text-white mb-2 line-clamp-2 leading-tight">
+                    {certificate.name}
+                  </h4>
+                  
+                  <!-- Issuer y fecha -->
+                  <p class="text-sm text-ferxxo-green mb-2 font-medium">
+                    {certificate.issuer}
+                  </p>
+                  <p class="text-xs text-gray-400 mb-3">
+                    {certificate.date}
+                  </p>
+                  
+                  <!-- Skills preview -->
+                  <div class="flex flex-wrap gap-1">
+                    {certificate.skills.slice(0, 2).map((skill) => (
+                      <span class="text-xs bg-ferxxo-green/10 text-ferxxo-green px-2 py-1 rounded-full border border-ferxxo-green/30 truncate">
+                        {skill}
+                      </span>
+                    ))}
+                    {certificate.skills.length > 2 && (
+                      <span class="text-xs bg-ferxxo-blue/20 text-ferxxo-blue px-2 py-1 rounded-full border border-ferxxo-blue/30">
+                        +{certificate.skills.length - 2}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      
-      <!-- Indicadores -->
-      <div class="flex justify-center mt-6 md:mt-8 space-x-2">
-        {certificates.map((_, index) => (
-          <button
-            class={`certificate-indicator w-2 h-2 md:w-3 md:h-3 rounded-full ${index === 0 ? 'bg-ferxxo-blue' : 'bg-ferxxo-blue/30'} hover:bg-ferxxo-blue transition-colors duration-300 focus:outline-none`}
-            data-index={index}
-            aria-label={`Ir al certificado ${index + 1}`}
-          ></button>
-        ))}
-      </div>
+      ))}
     </div>
   </div>
 </section>
 
+<!-- Modal para detalles de certificación -->
+<div id="certificateModal" class="fixed inset-0 bg-ferxxo-black/90 backdrop-blur-sm z-[10000] hidden items-center justify-center p-1 sm:p-4">
+  <div class="relative bg-ferxxo-black rounded-xl border border-ferxxo-green/30 w-full max-w-[98vw] sm:max-w-2xl lg:max-w-4xl max-h-[98vh] sm:max-h-[85vh] overflow-hidden shadow-[0_0_20px_rgba(0,255,127,0.2)]">
+    <!-- Fondo con gradiente -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#00ff7f]/10 via-[#00f0ff]/5 to-[#a020f0]/8 rounded-xl"></div>
+    
+    <!-- Header del modal -->
+    <div class="relative flex justify-between items-center p-2 sm:p-4 border-b border-ferxxo-green/20 bg-[#0f0f0f]/50 backdrop-blur-sm">
+      <h3 id="modalCertTitle" class="text-sm sm:text-lg lg:text-xl font-bold text-white truncate mr-2 leading-tight"></h3>
+      <button 
+        onclick="closeCertificateModal()" 
+        class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0f0f0f]/50 border border-ferxxo-green/30 flex items-center justify-center text-ferxxo-green hover:bg-ferxxo-green/10 transition-colors"
+      >
+        <Icon name="mdi:close" class="w-4 h-4 sm:w-5 sm:h-5" />
+      </button>
+    </div>
+    
+    <!-- Contenido del modal -->
+    <div class="relative p-2 sm:p-4 lg:p-6 overflow-y-auto bg-[#0f0f0f]/50 backdrop-blur-sm max-h-[calc(98vh-8rem)] sm:max-h-[calc(85vh-8rem)] scrollbar-thin scrollbar-thumb-ferxxo-green/50 scrollbar-track-ferxxo-black/20">
+      <div class="flex flex-col md:grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <!-- Logo e información del issuer (columna izquierda) -->
+        <div class="md:col-span-1 order-1">
+          <div class="text-center space-y-3 sm:space-y-4">
+            <!-- Logo -->
+            <div class="flex justify-center">
+              <div id="modalCertLogo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border border-ferxxo-green/20 flex items-center justify-center bg-white p-2"></div>
+            </div>
+            
+            <!-- Issuer info -->
+            <div>
+              <h4 class="text-xs sm:text-sm font-semibold text-ferxxo-green mb-2">Emitido por</h4>
+              <p id="modalCertIssuer" class="text-white font-medium text-sm sm:text-base leading-tight"></p>
+              <p id="modalCertDate" class="text-gray-400 text-xs sm:text-sm mt-1"></p>
+              <p id="modalCertId" class="text-gray-500 text-xs mt-1"></p>
+            </div>
+            
+            <!-- Botón de credencial -->
+            <div class="pt-2">
+              <a 
+                id="modalCertLink" 
+                href="" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center w-full px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-ferxxo-green to-ferxxo-blue rounded-lg text-white font-semibold text-xs sm:text-sm shadow-[0_0_15px_rgba(0,255,127,0.4)] hover:shadow-[0_0_25px_rgba(0,255,127,0.6)] hover:scale-105 transition-all duration-300 group"
+              >
+                <Icon name="mdi:link-variant" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 group-hover:scale-110 transition-transform" />
+                <span>Ver Credencial</span>
+                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full ml-1 sm:ml-2 animate-pulse"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Descripción y skills (columna derecha) -->
+        <div class="md:col-span-2 order-2 space-y-3 sm:space-y-4">
+          <!-- Descripción -->
+          <div>
+            <h4 class="text-xs sm:text-sm font-semibold text-ferxxo-blue mb-2 flex items-center">
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-ferxxo-blue rounded-full mr-2 flex-shrink-0"></div>
+              <span>Descripción</span>
+            </h4>
+            <div class="bg-ferxxo-black/40 p-2 sm:p-3 rounded-lg border border-ferxxo-blue/20 backdrop-blur-sm">
+              <p id="modalCertDescription" class="text-gray-200 text-xs sm:text-sm leading-relaxed"></p>
+            </div>
+          </div>
+          
+          <!-- Skills/Competencias -->
+          <div>
+            <h4 class="text-xs sm:text-sm font-semibold text-ferxxo-purple mb-2 flex items-center">
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-ferxxo-purple rounded-full mr-2 flex-shrink-0"></div>
+              <span>Competencias</span>
+            </h4>
+            <div class="bg-ferxxo-black/40 p-2 sm:p-3 rounded-lg border border-ferxxo-purple/20 backdrop-blur-sm">
+              <div id="modalCertSkills" class="flex flex-wrap gap-1 sm:gap-1.5"></div>
+            </div>
+          </div>
+          
+          <!-- Categoría -->
+          <div>
+            <h4 class="text-xs sm:text-sm font-semibold text-ferxxo-pink mb-2 flex items-center">
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-ferxxo-pink rounded-full mr-2 flex-shrink-0"></div>
+              <span>Categoría</span>
+            </h4>
+            <div class="bg-ferxxo-black/40 p-2 sm:p-3 rounded-lg border border-ferxxo-pink/20 backdrop-blur-sm">
+              <span id="modalCertCategory" class="inline-block px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm bg-ferxxo-pink/10 text-ferxxo-pink rounded-full border border-ferxxo-pink/30"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <style>
-  /* Efectos visuales para el certificado */
-  @keyframes pulse-border {
-    0%, 100% { border-color: rgba(0, 240, 255, 0.3); }
-    50% { border-color: rgba(0, 240, 255, 0.7); }
+  .ferxxo-glow {
+    position: relative;
+    text-shadow: 0 0 10px currentColor;
   }
   
-  /* Ajustes responsivos para carrusel en pantallas pequeñas */
-  @media (max-width: 640px) {
-    .certificate-slide {
-      padding: 0.75rem;
-    }
-    
-    #prevCert, #nextCert {
-      transform: scale(0.9) translateY(-50%);
-    }
+  .certificate-card {
+    position: relative;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Scrollbar personalizada para el modal */
+  #certificateModal .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #certificateModal .overflow-y-auto::-webkit-scrollbar-track {
+    background: rgba(15, 15, 15, 0.2);
+    border-radius: 3px;
+  }
+  
+  #certificateModal .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 127, 0.5);
+    border-radius: 3px;
+  }
+  
+  #certificateModal .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 127, 0.7);
+  }
+  
+  /* Para Firefox */
+  #certificateModal .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 127, 0.5) rgba(15, 15, 15, 0.2);
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Elementos del carrusel
-    const carousel = document.getElementById('certificates-carousel') as HTMLElement;
-    const track = document.getElementById('certificates-track') as HTMLElement;
-    const slides = document.querySelectorAll('.certificate-slide') as NodeListOf<HTMLElement>;
-    const indicators = document.querySelectorAll('.certificate-indicator') as NodeListOf<HTMLElement>;
-    const prevButton = document.getElementById('prevCert') as HTMLElement;
-    const nextButton = document.getElementById('nextCert') as HTMLElement;
+  // Función para abrir modal desde elemento
+  function openCertificateModalFromElement(element) {
+    const certificateData = element.getAttribute('data-certificate');
+    const certificate = JSON.parse(certificateData);
+    openCertificateModal(certificate);
+  }
+  
+  // Funciones para manejar el modal de certificación
+  function openCertificateModal(certificate) {
+    const modal = document.getElementById('certificateModal');
+    const modalTitle = document.getElementById('modalCertTitle');
+    const modalLogo = document.getElementById('modalCertLogo');
+    const modalIssuer = document.getElementById('modalCertIssuer');
+    const modalDate = document.getElementById('modalCertDate');
+    const modalId = document.getElementById('modalCertId');
+    const modalDescription = document.getElementById('modalCertDescription');
+    const modalSkills = document.getElementById('modalCertSkills');
+    const modalCategory = document.getElementById('modalCertCategory');
+    const modalLink = document.getElementById('modalCertLink');
     
-    if (!carousel || !track || slides.length === 0) return;
+    // Llenar contenido del modal
+    modalTitle.textContent = certificate.name;
+    modalIssuer.textContent = certificate.issuer;
+    modalDate.textContent = certificate.date;
+    modalDescription.textContent = certificate.description;
+    modalCategory.textContent = certificate.category;
+    modalLink.href = certificate.credentialUrl;
     
-    // Configuración
-    let currentIndex = 0;
-    let slidesPerView = 3; // Valor predeterminado para escritorio
-    let isDragging = false;
-    let startPosition = 0;
-    let currentTranslate = 0;
-    let previousTranslate = 0;
+    // ID de credencial (si existe)
+    if (certificate.credentialId) {
+      modalId.textContent = `ID: ${certificate.credentialId}`;
+      modalId.style.display = 'block';
+    } else {
+      modalId.style.display = 'none';
+    }
     
-    // Función para calcular el ancho de un slide
-    const getSlideWidth = () => {
-      const carouselWidth = carousel.clientWidth;
-      
-      // Determinar cuántos slides mostrar según el ancho
-      if (window.innerWidth < 640) {
-        slidesPerView = 1; // Móvil
-      } else if (window.innerWidth < 1024) {
-        slidesPerView = 2; // Tablet
-      } else {
-        slidesPerView = 3; // Escritorio
-      }
-      
-      // Establecer ancho exacto para cada slide
-      const slideWidth = carouselWidth / slidesPerView;
-      return slideWidth;
-    };
+    // Logo
+    modalLogo.innerHTML = '';
+    if (certificate.logo) {
+      const img = document.createElement('img');
+      img.src = certificate.logo;
+      img.alt = certificate.issuer;
+      img.className = 'w-full h-full object-contain rounded-lg bg-white p-1';
+      modalLogo.appendChild(img);
+    } else {
+      modalLogo.innerHTML = '<svg class="w-8 h-8 text-ferxxo-green"><use href="#mdi:certificate"></use></svg>';
+      modalLogo.classList.add('bg-ferxxo-green/20');
+    }
     
-    // Actualizar anchos de slides
-    const updateSlideWidths = () => {
-      const slideWidth = getSlideWidth();
-      
-      // Actualizar el ancho de cada slide
-      slides.forEach(slide => {
-        slide.style.minWidth = `${slideWidth}px`;
-        slide.style.width = `${slideWidth}px`;
-      });
-      
-      return slideWidth;
-    };
-    
-    // Inicializar los anchos
-    updateSlideWidths();
-    
-    // Actualizar indicador activo
-    const updateIndicators = () => {
-      indicators.forEach((indicator, index) => {
-        if (index === currentIndex) {
-          indicator.classList.add('bg-ferxxo-blue');
-          indicator.classList.remove('bg-ferxxo-blue/30');
-          indicator.setAttribute('aria-current', 'true');
-        } else {
-          indicator.classList.remove('bg-ferxxo-blue');
-          indicator.classList.add('bg-ferxxo-blue/30');
-          indicator.removeAttribute('aria-current');
-        }
-      });
-    };
-    
-    // Ir a un slide específico
-    const goToSlide = (index: number) => {
-      // Límites
-      const maxIndex = slides.length - slidesPerView;
-      currentIndex = Math.max(0, Math.min(index, maxIndex));
-      
-      // Calcular el desplazamiento
-      const slideWidth = getSlideWidth();
-      const offset = -currentIndex * slideWidth;
-      previousTranslate = offset;
-      
-      // Aplicar transformación con animación
-      track.style.transform = `translateX(${offset}px)`;
-      
-      // Actualizar indicadores
-      updateIndicators();
-      
-      // Actualizar estado de los botones
-      updateButtons();
-    };
-    
-    // Actualizar estado de botones (desactivar cuando estemos en el límite)
-    const updateButtons = () => {
-      if (currentIndex <= 0) {
-        prevButton.classList.add('opacity-50', 'cursor-not-allowed');
-        prevButton.setAttribute('disabled', 'true');
-      } else {
-        prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
-        prevButton.removeAttribute('disabled');
-      }
-      
-      const maxIndex = slides.length - slidesPerView;
-      if (currentIndex >= maxIndex) {
-        nextButton.classList.add('opacity-50', 'cursor-not-allowed');
-        nextButton.setAttribute('disabled', 'true');
-      } else {
-        nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
-        nextButton.removeAttribute('disabled');
-      }
-    };
-    
-    // Event listeners para botones
-    prevButton?.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        goToSlide(currentIndex - 1);
-      }
+    // Llenar skills
+    modalSkills.innerHTML = '';
+    certificate.skills.forEach(skill => {
+      const skillSpan = document.createElement('span');
+      skillSpan.className = 'inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs bg-ferxxo-green/10 text-ferxxo-green rounded-full border border-ferxxo-green/30';
+      skillSpan.textContent = skill;
+      modalSkills.appendChild(skillSpan);
     });
     
-    nextButton?.addEventListener('click', () => {
-      const maxIndex = slides.length - slidesPerView;
-      if (currentIndex < maxIndex) {
-        goToSlide(currentIndex + 1);
-      }
-    });
-    
-    // Event listeners para indicadores
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        goToSlide(index);
-      });
-    });
-    
-    // Event listener para redimensión de ventana
-    window.addEventListener('resize', () => {
-      // Guardar el slide actual
-      const currentSlide = currentIndex;
-      
-      // Recalcular anchos y volver al mismo slide
-      updateSlideWidths();
-      goToSlide(currentSlide);
-    });
-    
-    // Inicializar
-    goToSlide(0);
-    
-    // Soporte táctil para deslizar
-    const touchStart = (event: MouseEvent | TouchEvent) => {
-      isDragging = true;
-      startPosition = getTouchPosition(event);
-      track.style.transition = 'none';
-    };
-    
-    const touchMove = (event: MouseEvent | TouchEvent) => {
-      if (!isDragging) return;
-      
-      const currentPosition = getTouchPosition(event);
-      currentTranslate = previousTranslate + (currentPosition - startPosition);
-      
-      // Limitar el deslizamiento
-      const maxTranslate = 0;
-      const minTranslate = -(slides.length - slidesPerView) * getSlideWidth();
-      
-      if (currentTranslate > maxTranslate) {
-        currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.3;
-      } else if (currentTranslate < minTranslate) {
-        currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.3;
-      }
-      
-      track.style.transform = `translateX(${currentTranslate}px)`;
-    };
-    
-    const touchEnd = () => {
-      isDragging = false;
-      
-      const movedBy = currentTranslate - previousTranslate;
-      
-      track.style.transition = 'transform 0.5s ease-out';
-      
-      // Si el usuario deslizó lo suficiente, cambiar de slide
-      if (Math.abs(movedBy) > getSlideWidth() * 0.2) {
-        if (movedBy < 0) {
-          // Deslizó hacia la izquierda -> siguiente slide
-          const maxIndex = slides.length - slidesPerView;
-          const newIndex = Math.min(currentIndex + 1, maxIndex);
-          goToSlide(newIndex);
-        } else {
-          // Deslizó hacia la derecha -> slide anterior
-          const newIndex = Math.max(currentIndex - 1, 0);
-          goToSlide(newIndex);
-        }
-      } else {
-        // No deslizó lo suficiente, volver al slide actual
-        goToSlide(currentIndex);
-      }
-    };
-    
-    // Obtener posición del evento táctil
-    const getTouchPosition = (event: MouseEvent | TouchEvent): number => {
-      return 'type' in event && event.type.includes('mouse') 
-        ? (event as MouseEvent).pageX 
-        : (event as TouchEvent).touches[0].clientX;
-    };
-    
-    // Agregar eventos táctiles
-    carousel.addEventListener('mousedown', touchStart);
-    carousel.addEventListener('touchstart', touchStart);
-    
-    carousel.addEventListener('mousemove', touchMove);
-    carousel.addEventListener('touchmove', touchMove);
-    
-    carousel.addEventListener('mouseup', touchEnd);
-    carousel.addEventListener('touchend', touchEnd);
-    carousel.addEventListener('mouseleave', touchEnd);
-    
-    // Prevenir comportamiento predeterminado de arrastrar
-    carousel.addEventListener('dragstart', (e: DragEvent) => e.preventDefault());
-    
-    // Navegación con teclado
-    carousel.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        if (currentIndex > 0) {
-          goToSlide(currentIndex - 1);
-        }
-      } else if (e.key === 'ArrowRight') {
-        const maxIndex = slides.length - slidesPerView;
-        if (currentIndex < maxIndex) {
-          goToSlide(currentIndex + 1);
-        }
-      }
-    });
-    
-    // Hacer que el carrusel sea focusable
-    carousel.setAttribute('tabindex', '0');
+    // Mostrar modal
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeCertificateModal() {
+    const modal = document.getElementById('certificateModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Cerrar modal con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeCertificateModal();
+    }
   });
-</script> 
+  
+  // Cerrar modal haciendo click fuera del contenido
+  document.getElementById('certificateModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'certificateModal') {
+      closeCertificateModal();
+    }
+  });
+  
+  // Hacer las funciones globales
+  window.openCertificateModal = openCertificateModal;
+  window.openCertificateModalFromElement = openCertificateModalFromElement;
+  window.closeCertificateModal = closeCertificateModal;
+</script>

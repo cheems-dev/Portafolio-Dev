@@ -464,14 +464,22 @@
     z-index: 9999 !important; /* Para elementos de UI fijos como la barra social */
   }
 
-  .social-sidebar,
+  .social-sidebar {
+    z-index: 9999 !important; /* Barra lateral de escritorio - alta prioridad */
+  }
+  
   .social-mobile {
-    z-index: 9999 !important; /* Asegurar que la barra social tenga mayor prioridad absoluta */
+    z-index: 50 !important; /* Barra móvil - prioridad media para no interferir con modales */
   }
 
   /* Ajustes para el menú móvil */
   #mobileMenu {
     z-index: 10000 !important; /* Mayor prioridad que la barra social */
+  }
+  
+  /* Botón back to top */
+  .back-to-top {
+    z-index: 60 !important; /* Por encima del social bar pero debajo de modales */
   }
 
   #mobileMenu nav {
@@ -522,8 +530,8 @@
   }
 
   .social-mobile {
-    margin: 0.5rem 0.5rem;
-    border-radius: 0.75rem 0.75rem 0 0; /* Redondeado en la parte superior */
+    margin: 0; /* Sin margin para que esté pegado a la pantalla */
+    border-radius: 0; /* Sin border-radius para que cubra completamente el ancho */
   }
 
   /* Cards y elementos interactivos dentro del contenido principal */

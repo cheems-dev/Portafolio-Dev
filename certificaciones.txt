@@ -1,0 +1,1559 @@
+<ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo " tabindex="-1">
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-0">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/2382910/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4E0BAQGTiepUn-pyyw/company-logo_100_100/B4EZfvvAaBH0AQ-/0/1752073766889/amazon_web_services_logo?e=1755734400&amp;v=beta&amp;t=WIrNFzT_7plDfYTcytzRREml8fnrnaqYt9hSBEm-5FU" loading="lazy" height="48" alt="Logotipo de Amazon Web Services (AWS)" id="ember764" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/0963e804-8e34-46c1-826c-19013ee07c3b/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->AWS Educate Introduction to Generative AI<!----></span><span class="visually-hidden"><!---->AWS Educate Introduction to Generative AI<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><!---->Amazon Web Services (AWS)<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: mar. 2025<!----></span><span class="visually-hidden"><!---->Expedición: mar. 2025<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para AWS Educate Introduction to Generative AI" aria-hidden="false" href="https://www.credly.com/badges/0963e804-8e34-46c1-826c-19013ee07c3b/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C1834320992%29&amp;trackingId=agTPMLokRC6yQ%2FPj9%2FrN%2Fg%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: AWS Educate Introduction to Generative AI" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-1">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/208777/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/C560BAQEXYSSWEvEL9g/company-logo_100_100/company-logo_100_100/0/1657565842240/the_linux_foundation_logo?e=1755734400&amp;v=beta&amp;t=0Htx7UllaDuP9qshSILXb7rL41Vhbecicbg9mGhvwO8" loading="lazy" height="48" alt="Logotipo de The Linux Foundation" id="ember770" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/471b7822-3409-4d43-acc1-a4bd969dac33/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->LFS162: Introduction to DevOps and Site Reliability Engineering<!----></span><span class="visually-hidden"><!---->LFS162: Introduction to DevOps and Site Reliability Engineering<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->The Linux Foundation<!----></span><span class="visually-hidden"><!---->The Linux Foundation<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: ene. 2025<!----></span><span class="visually-hidden"><!---->Expedición: ene. 2025<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para LFS162: Introduction to DevOps and Site Reliability Engineering" aria-hidden="false" href="https://www.credly.com/badges/471b7822-3409-4d43-acc1-a4bd969dac33/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C1790552368%29&amp;trackingId=Qo8VeKqzSW6%2BkgMPOQ7gtQ%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: LFS162: Introduction to DevOps and Site Reliability Engineering" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-2">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/208777/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/C560BAQEXYSSWEvEL9g/company-logo_100_100/company-logo_100_100/0/1657565842240/the_linux_foundation_logo?e=1755734400&amp;v=beta&amp;t=0Htx7UllaDuP9qshSILXb7rL41Vhbecicbg9mGhvwO8" loading="lazy" height="48" alt="Logotipo de The Linux Foundation" id="ember776" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/471b7822-3409-4d43-acc1-a4bd969dac33/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->LFS162: Introduction to DevOps and Site Reliability Engineering<!----></span><span class="visually-hidden"><!---->LFS162: Introduction to DevOps and Site Reliability Engineering<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->The Linux Foundation<!----></span><span class="visually-hidden"><!---->The Linux Foundation<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: ene. 2025<!----></span><span class="visually-hidden"><!---->Expedición: ene. 2025<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para LFS162: Introduction to DevOps and Site Reliability Engineering" aria-hidden="false" href="https://www.credly.com/badges/471b7822-3409-4d43-acc1-a4bd969dac33/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C1790093603%29&amp;trackingId=2iiVVkb0QW2jRyNXvYzTlw%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: LFS162: Introduction to DevOps and Site Reliability Engineering" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-3">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" tabindex="-1">
+        
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+        <div class="EntityPhoto-square-3-ghost-company ivm-view-attr__ghost-entity  ">
+            <div class="visually-hidden">Talento Cloud Pro</div>
+        </div>
+    </div>
+  
+          </div>
+  
+        
+      </div>
+      
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://certificates.ubits.com/es/verify/47807294074561">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Talento Cloud Pro<!----></span><span class="visually-hidden"><!---->Talento Cloud Pro<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Ubits Learning Solutions México S.A.P.I. de C.V.<!----></span><span class="visually-hidden"><!---->Ubits Learning Solutions México S.A.P.I. de C.V.<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: jul. 2024<!----></span><span class="visually-hidden"><!---->Expedición: jul. 2024<!----></span>
+              </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span aria-hidden="true"><!---->ID de la credencial 47807294074561<!----></span><span class="visually-hidden"><!---->ID de la credencial 47807294074561<!----></span>
+              </span>
+          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para Talento Cloud Pro" aria-hidden="false" href="https://certificates.ubits.com/es/verify/47807294074561">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Amazon Web Services (AWS)<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    
+        <a class="optional-action-target-wrapper" target="_self" href="https://www.linkedin.com/in/luis-c-2b6b19171/details/certifications/1721009837809/single-media-viewer?type=IMAGE&amp;profileId=ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw">
+      <div class="display-flex flex-row">
+          <div>
+            
+    
+      <div class="pvs-thumbnail__wrapper" aria-label="Vista en miniatura de 47807294074561.png">
+        
+      <figure class="pvs-thumbnail">
+          <img src="https://media.licdn.com/dms/image/v2/D4E2DAQGQvpcdozp56w/profile-treasury-image-shrink_160_160/profile-treasury-image-shrink_160_160/0/1721009469698?e=1753146000&amp;v=beta&amp;t=s8cztV4uTKgGZL_Cnw1Wq50yyKDVRUClO87-Q1V_dsw" loading="lazy" alt="" id="thumbnail-image-ember787" class="pvs-thumbnail__image evi-image lazy-image ember-view">
+<!---->
+<!---->      </figure>
+    
+      </div>
+      
+  
+          </div>
+
+        <div class="flex-column ml1 align-self-center">
+            
+    <div class="xdfyeAgymZHodZQIwnODNXdAmYNEjaaQ
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+        
+         t-14 t-bold break-words" style="-webkit-line-clamp:2;" dir="ltr" tabindex="-1">
+
+        <span aria-hidden="true"><!---->47807294074561.png<!----></span><span class="visually-hidden"><!---->47807294074561.png<!----></span>
+
+<!---->    </div>
+  
+
+<!---->        </div>
+      </div>
+    </a>
+  
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C875434444%29&amp;trackingId=juGY3A6MTkGfu6yUevC1qA%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: Talento Cloud Pro" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-4">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/2382910/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4E0BAQGTiepUn-pyyw/company-logo_100_100/B4EZfvvAaBH0AQ-/0/1752073766889/amazon_web_services_logo?e=1755734400&amp;v=beta&amp;t=WIrNFzT_7plDfYTcytzRREml8fnrnaqYt9hSBEm-5FU" loading="lazy" height="48" alt="Logotipo de Amazon Web Services (AWS)" id="ember792" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/2edae7e9-c30f-49fe-b354-5affa2d7bc6d/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->AWS Cloud Quest: Cloud Practitioner<!----></span><span class="visually-hidden"><!---->AWS Cloud Quest: Cloud Practitioner<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><!---->Amazon Web Services (AWS)<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: abr. 2023<!----></span><span class="visually-hidden"><!---->Expedición: abr. 2023<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para AWS Cloud Quest: Cloud Practitioner" aria-hidden="false" href="https://www.credly.com/badges/2edae7e9-c30f-49fe-b354-5affa2d7bc6d/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>AWS · Computer Engineer RegisteR · Software Engineer<!----></span><span class="visually-hidden"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>AWS · Computer Engineer RegisteR · Software Engineer<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C2031145397%29&amp;trackingId=xNp0zXHFR%2Baj41H6xjx6bw%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: AWS Cloud Quest: Cloud Practitioner" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-5">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/2382910/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4E0BAQGTiepUn-pyyw/company-logo_100_100/B4EZfvvAaBH0AQ-/0/1752073766889/amazon_web_services_logo?e=1755734400&amp;v=beta&amp;t=WIrNFzT_7plDfYTcytzRREml8fnrnaqYt9hSBEm-5FU" loading="lazy" height="48" alt="Logotipo de Amazon Web Services (AWS)" id="ember799" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/e7150daa-3518-4fde-a8e3-2cd3edf5343f/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->AWS Partner: Cloud Economics Accreditation<!----></span><span class="visually-hidden"><!---->AWS Partner: Cloud Economics Accreditation<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><!---->Amazon Web Services (AWS)<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: abr. 2023<!----></span><span class="visually-hidden"><!---->Expedición: abr. 2023<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para AWS Partner: Cloud Economics Accreditation" aria-hidden="false" href="https://www.credly.com/badges/e7150daa-3518-4fde-a8e3-2cd3edf5343f/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>AWS · Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>AWS · Amazon Web Services (AWS)<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C1132651851%29&amp;trackingId=w%2FRpDG%2FjTSWFAr5hnEozeQ%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: AWS Partner: Cloud Economics Accreditation" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-6">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/2382910/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4E0BAQGTiepUn-pyyw/company-logo_100_100/B4EZfvvAaBH0AQ-/0/1752073766889/amazon_web_services_logo?e=1755734400&amp;v=beta&amp;t=WIrNFzT_7plDfYTcytzRREml8fnrnaqYt9hSBEm-5FU" loading="lazy" height="48" alt="Logotipo de Amazon Web Services (AWS)" id="ember806" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/bb3006b9-f023-467d-a5fd-b1f5a159ef24/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->AWS Partner: Accreditation (Technical)<!----></span><span class="visually-hidden"><!---->AWS Partner: Accreditation (Technical)<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><!---->Amazon Web Services (AWS)<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: mar. 2023<!----></span><span class="visually-hidden"><!---->Expedición: mar. 2023<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para AWS Partner: Accreditation (Technical)" aria-hidden="false" href="https://www.credly.com/badges/bb3006b9-f023-467d-a5fd-b1f5a159ef24/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Amazon Web Services (AWS)<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C541557929%29&amp;trackingId=TroaAFRtThOX0byBDwpfYA%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: AWS Partner: Accreditation (Technical)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-7">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/2382910/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4E0BAQGTiepUn-pyyw/company-logo_100_100/B4EZfvvAaBH0AQ-/0/1752073766889/amazon_web_services_logo?e=1755734400&amp;v=beta&amp;t=WIrNFzT_7plDfYTcytzRREml8fnrnaqYt9hSBEm-5FU" loading="lazy" height="48" alt="Logotipo de Amazon Web Services (AWS)" id="ember813" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.credly.com/badges/6de8d083-e701-4ccc-bec4-324f11d76090/linked_in_profile">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->AWS Partner: Sales Accreditation (Business)<!----></span><span class="visually-hidden"><!---->AWS Partner: Sales Accreditation (Business)<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><!---->Amazon Web Services (AWS)<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: mar. 2023<!----></span><span class="visually-hidden"><!---->Expedición: mar. 2023<!----></span>
+              </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span aria-hidden="true"><!---->ID de la credencial 6de8d083-e701-4ccc-bec4-324f11d76090<!----></span><span class="visually-hidden"><!---->ID de la credencial 6de8d083-e701-4ccc-bec4-324f11d76090<!----></span>
+              </span>
+          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para AWS Partner: Sales Accreditation (Business)" aria-hidden="false" href="https://www.credly.com/badges/6de8d083-e701-4ccc-bec4-324f11d76090/linked_in_profile">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Amazon Web Services (AWS)<!----></span><span class="visually-hidden"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Amazon Web Services (AWS)<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C203522951%29&amp;trackingId=LRPWxR7rSPmngV2clJsMfA%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: AWS Partner: Sales Accreditation (Business)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-LICENSES-AND-CERTIFICATIONS-VIEW-DETAILS-profile-ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw-NONE-es-ES-8">
+                    <div>
+  
+                      
+          
+<!---->    <div class="hfpbmNAhYpweDusVquBRDBONBrAoQVmaOI
+        hQkIJpdLOjWGQhInLzRJcIDstXzTcQkoNwWphQ ANrASbLpzIQlDIISRyQEXYDjeVWrGKjJrk
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            
+            pvs-entity__image-container--outline-offset
+            display-flex" target="_self" href="https://www.linkedin.com/company/35504615/">
+              
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        
+        ">
+<!---->
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/v2/D4E0BAQFlAm1aeOXdAw/company-logo_100_100/company-logo_100_100/0/1728945081929/codigotecsup_logo?e=1755734400&amp;v=beta&amp;t=ZZGoYU7O3-WGzobIyGu-aE114MZg_pwMTdECnwq_hrE" loading="lazy" height="48" alt="Logotipo de Codigo by Tecsup" id="ember820" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column align-self-center flex-grow-1">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://drive.google.com/file/d/1R5nVNwY-IRa_9VSW2wvCYrzMCLPX-ww8/view?usp=sharing">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Desarrollador Full Stack<!----></span><span class="visually-hidden"><!---->Desarrollador Full Stack<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Codigo by Tecsup<!----></span><span class="visually-hidden"><!---->Codigo by Tecsup<!----></span>
+                </span>
+              <span class="t-14 t-normal
+                  t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Expedición: jun. 2019<!----></span><span class="visually-hidden"><!---->Expedición: jun. 2019<!----></span>
+              </span>
+<!---->          </a>
+  
+        </div>
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA pvs-entity__sub-components">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+        <div class="pv-action pv-action__padding">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--secondary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-label="Mostrar credencial para Desarrollador Full Stack" aria-hidden="false" href="https://drive.google.com/file/d/1R5nVNwY-IRa_9VSW2wvCYrzMCLPX-ww8/view?usp=sharing">
+<!---->            <span class="pvs-navigation__text">
+              Mostrar credencial
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!---->        <ul class="LUBGKOFSupOQpIZLFCUynNCEhQiyQXHGeawVPOo
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Diseño web adaptable<!----></span><span class="visually-hidden"><strong><!---->Aptitudes:<!----></strong><span class="white-space-pre"> </span>Diseño web adaptable<!----></span>
+          </div>
+<!---->      
+      </div>
+      
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="ltktPjDCJfhHncJrhddRZEBBnkUzppxaGXgVHPg">
+              
+          
+    <div class="UXeJAXGtTSAJqlEIywkZRGrppGNDhmOuCahjrA">
+<!----><!----><!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+<!---->
+        <div class="pvs-entity__action-text-with-no-wrap
+            pvs-entity__action-container">
+          
+        <div class="pv-action ">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--3 artdeco-button--muted artdeco-button--circle
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" aria-hidden="false" id="navigation-add-edit-deeplink-edit-licenses-and-certifications" href="https://www.linkedin.com/in/luis-c-2b6b19171/add-edit/CERTIFICATION/?profileFormEntryPoint=PROFILE_SECTION&amp;entityUrn=urn%3Ali%3Afsd_profileCertification%3A%28ACoAACjsI2oBhb9frs67jol2QQ78TT7wCEGtgPw%2C481019024%29&amp;trackingId=MJISNTJHQB%2BwhjXYV8iTsg%3D%3D&amp;desktopBackground=PROFILE_DETAIL_SCREEN">
+            <div class="pvs-navigation__icon">
+              <svg role="img" aria-hidden="false" aria-label="Editar certificación: Desarrollador Full Stack" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="edit-medium">
+<!---->    
+    <use href="#edit-medium" width="24" height="24"></use>
+</svg>
+
+            </div>
+<!----><!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+              </ul>

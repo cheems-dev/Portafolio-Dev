@@ -161,15 +161,14 @@ const experiences = [
 const socialLinks = [
   { name: "github", url: "https://github.com/cheems-dev", icon: "simple-icons:github" },
   { name: "linkedin", url: "https://www.linkedin.com/in/luis-c-2b6b19171/", icon: "simple-icons:linkedin" },
-  { name: "twitter", url: "#", icon: "simple-icons:twitter" },
   { name: "instagram", url: "https://www.instagram.com/lucho.dev.pe/", icon: "simple-icons:instagram" }
 ];
 ---
 
 <section id="experience" class="py-20 bg-ferxxo-black relative overflow-hidden">
   <!-- Barra lateral de redes sociales (sticky) -->
-  <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-[9999] hidden md:block" style="z-index: 9999 !important;">
-    <div class="social-sidebar bg-ferxxo-black/80 backdrop-blur-sm p-3 rounded-r-xl border-r border-t border-b border-ferxxo-pink/30 mx-2 my-4">
+  <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-[9999] hidden md:block">
+    <div class="social-sidebar bg-ferxxo-black/80 backdrop-blur-sm p-3 rounded-r-xl border-r border-t border-b border-ferxxo-pink/30">
       <ul class="flex flex-col gap-4">
         {socialLinks.map((social) => (
           <li>
@@ -189,16 +188,16 @@ const socialLinks = [
   </div>
 
   <!-- Barra de redes sociales móvil (bottom) -->
-  <div class="fixed bottom-0 left-0 right-0 z-[9999] md:hidden" style="z-index: 9999 !important;">
-    <div class="social-mobile bg-ferxxo-black/90 backdrop-blur-md p-2 border-t border-ferxxo-pink/30 mx-2 my-2 rounded-t-xl">
-      <ul class="flex justify-center gap-6">
+  <div class="fixed bottom-0 left-0 right-0 z-[50] md:hidden">
+    <div class="social-mobile bg-ferxxo-black/95 backdrop-blur-md py-3 px-4 border-t border-ferxxo-pink/30">
+      <ul class="flex justify-center items-center gap-8">
         {socialLinks.map((social) => (
           <li>
             <a 
               href={social.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              class="social-icon-link block p-2 rounded-full bg-ferxxo-black/50 border border-ferxxo-blue/20 hover:border-ferxxo-pink transition-all duration-300"
+              class="social-icon-link flex items-center justify-center w-12 h-12 rounded-full bg-ferxxo-black/60 border border-ferxxo-blue/20 hover:border-ferxxo-pink transition-all duration-300"
               aria-label={`Visitar ${social.name}`}
             >
               <Icon name={social.icon} class="w-5 h-5 text-ferxxo-blue social-icon-glow" />
@@ -293,56 +292,52 @@ const socialLinks = [
                 </h4>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
-                  {experience.projects.map((project) => (
-                    <div class="project-card group bg-ferxxo-black/60 backdrop-blur-sm rounded-xl overflow-hidden border border-ferxxo-blue/20 hover:border-ferxxo-blue/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]" style="z-index: 1 !important;">
+                  {experience.projects.map((project, projectIndex) => (
+                    <div 
+                      class="project-card cursor-pointer bg-ferxxo-black/60 backdrop-blur-sm rounded-xl overflow-hidden border border-ferxxo-blue/20 transition-all duration-300"
+                      data-project={JSON.stringify(project)}
+                      onclick="openProjectModalFromElement(this)"
+                    >
                       <!-- Imagen del proyecto -->
-                      <div class="relative h-48 bg-gradient-to-br from-ferxxo-black to-ferxxo-black/80 overflow-hidden">
+                      <div class="relative h-48 bg-gradient-to-br from-ferxxo-black to-ferxxo-black/80 overflow-hidden group">
                         <!-- Líneas de cuadrícula para efecto tecnológico -->
-                        <div class="absolute inset-0 grid grid-cols-8 opacity-10" style="z-index: 1 !important;">
+                        <div class="absolute inset-0 grid grid-cols-8 opacity-10">
                           {Array.from({ length: 8 }).map(() => (
                             <div class="border-r border-ferxxo-blue/50"></div>
                           ))}
                         </div>
-                        <div class="absolute inset-0 grid grid-rows-8 opacity-10" style="z-index: 1 !important;">
+                        <div class="absolute inset-0 grid grid-rows-8 opacity-10">
                           {Array.from({ length: 8 }).map(() => (
                             <div class="border-b border-ferxxo-blue/50"></div>
                           ))}
                         </div>
                         
                         <!-- Capa de fondo oscuro para mejorar contraste -->
-                        <div class="absolute inset-0 bg-ferxxo-black/60 z-10" style="z-index: 1 !important;"></div>
+                        <div class="absolute inset-0 bg-ferxxo-black/60"></div>
                         
-                        <!-- Imagen del proyecto - ahora usando la Variable de la imagen importada -->
+                        <!-- Imagen del proyecto -->
                         <img 
                           src={project.image.src} 
                           alt={project.name}
                           width={project.image.width}
                           height={project.image.height}
-                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                          class="absolute inset-0 w-full h-full object-cover opacity-40"
                           loading="lazy"
                           decoding="async"
-                          style="z-index: 0 !important;"
                         />
                         
-                        <!-- Nombre del proyecto con mejor contraste -->
-                        <div class="absolute inset-0 flex items-center justify-center p-6 z-20" style="z-index: 2 !important;">
+                        <!-- Nombre del proyecto -->
+                        <div class="absolute inset-0 flex items-center justify-center p-6 z-20">
                           <span class="text-2xl text-ferxxo-blue font-bold project-title">
                             {project.name.split(' ')[0]}
                           </span>
                         </div>
                         
-                        <!-- Overlay con información - Mejorado para mayor legibilidad -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black via-ferxxo-black/80 to-ferxxo-black/40 flex flex-col justify-end p-6 z-30 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style="z-index: 3 !important;">
-                          <div class="ferxxo-neon-card backdrop-blur-sm p-3 rounded-lg border border-ferxxo-pink/50 bg-ferxxo-black/40">
-                            <div class="neon-glow-bg"></div>
-                            <h5 class="text-lg md:text-xl font-bold text-white mb-2 text-shadow ferxxo-neon-text">{project.name}</h5>
-                            <p class="text-sm md:text-base text-gray-200 text-shadow-sm">{project.description}</p>
-                            <div class="mt-2 flex items-center">
-                              <Icon name="mdi:link-variant" class="w-4 h-4 text-ferxxo-pink" />
-                              <a href={project.link} target="_blank" rel="noopener noreferrer" class="ml-1 text-xs text-ferxxo-blue hover:text-ferxxo-pink transition-colors">Ver proyecto</a>
-                            </div>
-                          </div>
+                        <!-- Click indicator -->
+                        <div class="absolute top-4 right-4 bg-ferxxo-black/80 backdrop-blur-sm rounded-full p-2 border border-ferxxo-pink/30 z-30 opacity-80">
+                          <Icon name="mdi:arrow-expand" class="w-4 h-4 text-ferxxo-pink" />
                         </div>
+                        
                       </div>
                       
                       <!-- Tecnologías usadas -->
@@ -367,6 +362,117 @@ const socialLinks = [
   </div>
 </section>
 
+<!-- Modal para detalles del proyecto -->
+<div id="projectModal" class="fixed inset-0 bg-ferxxo-black/90 backdrop-blur-sm z-[10000] hidden items-center justify-center p-2 sm:p-4">
+  <div class="relative bg-ferxxo-black rounded-xl border border-ferxxo-pink/30 max-w-xs sm:max-w-2xl lg:max-w-4xl w-full max-h-[95vh] sm:max-h-[85vh] overflow-hidden shadow-[0_0_20px_rgba(255,45,158,0.2)]">
+    <!-- Fondo con gradiente visible -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#ff2d9e]/10 via-[#a020f0]/5 to-[#00f0ff]/8 rounded-xl"></div>
+    
+    <!-- Header del modal -->
+    <div class="relative flex justify-between items-center p-3 sm:p-4 border-b border-ferxxo-pink/20 bg-[#0f0f0f]/50 backdrop-blur-sm">
+      <h3 id="modalTitle" class="text-lg sm:text-xl font-bold text-white truncate mr-2"></h3>
+      <button 
+        onclick="closeProjectModal()" 
+        class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0f0f0f]/50 border border-ferxxo-pink/30 flex items-center justify-center text-ferxxo-pink hover:bg-ferxxo-pink/10 transition-colors"
+      >
+        <Icon name="mdi:close" class="w-5 h-5" />
+      </button>
+    </div>
+    
+    <!-- Contenido del modal -->
+    <div class="relative p-3 sm:p-4 lg:p-6 overflow-y-auto bg-[#0f0f0f]/50 backdrop-blur-sm">
+      <div class="flex flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-6">
+        <!-- Imagen del proyecto (columna izquierda) -->
+        <div class="lg:col-span-2 order-1">
+          <div class="relative rounded-lg overflow-hidden border border-ferxxo-blue/20 cursor-pointer group bg-ferxxo-black/30" onclick="openImageModal()">
+            <img 
+              id="modalImage" 
+              src="" 
+              alt="" 
+              class="w-full h-52 sm:h-64 lg:h-72 xl:h-80 object-cover transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ferxxo-black/30 via-transparent to-transparent group-hover:from-ferxxo-black/50 transition-all duration-300"></div>
+            
+            <!-- Indicador de zoom mejorado -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div class="bg-ferxxo-pink/95 backdrop-blur-sm rounded-full p-3 sm:p-4 border-2 border-white/90 shadow-[0_0_25px_rgba(255,45,158,0.8)] scale-75 group-hover:scale-100 transition-transform duration-300">
+                <Icon name="mdi:arrow-expand" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </div>
+            </div>
+            
+            <!-- Indicador en esquina -->
+            <div class="absolute top-2 right-2 bg-ferxxo-black/90 rounded-md px-2 py-1 opacity-70 group-hover:opacity-100 transition-opacity duration-300 border border-ferxxo-pink/20">
+              <span class="text-xs text-ferxxo-pink font-medium hidden sm:inline">Click para ampliar</span>
+              <span class="text-xs text-ferxxo-pink font-medium sm:hidden">Ampliar</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Información del proyecto (columna derecha) -->
+        <div class="lg:col-span-1 order-2 space-y-3 sm:space-y-4">
+          <!-- Descripción -->
+          <div>
+            <h4 class="text-sm sm:text-base font-semibold text-ferxxo-blue mb-2 flex items-center">
+              <div class="w-2 h-2 bg-ferxxo-blue rounded-full mr-2 flex-shrink-0"></div>
+              <span>Descripción</span>
+            </h4>
+            <div class="bg-ferxxo-black/40 p-3 rounded-lg border border-ferxxo-blue/20 backdrop-blur-sm">
+              <p id="modalDescription" class="text-gray-200 text-xs sm:text-sm leading-relaxed"></p>
+            </div>
+          </div>
+          
+          <!-- Tecnologías -->
+          <div>
+            <h4 class="text-sm sm:text-base font-semibold text-ferxxo-purple mb-2 flex items-center">
+              <div class="w-2 h-2 bg-ferxxo-purple rounded-full mr-2 flex-shrink-0"></div>
+              <span>Tecnologías</span>
+            </h4>
+            <div class="bg-ferxxo-black/40 p-3 rounded-lg border border-ferxxo-purple/20 backdrop-blur-sm">
+              <div id="modalTechnologies" class="flex flex-wrap gap-1.5"></div>
+            </div>
+          </div>
+          
+          <!-- Botón -->
+          <div class="pt-2 lg:pt-4">
+            <a 
+              id="modalLink" 
+              href="" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-ferxxo-pink to-ferxxo-purple rounded-lg text-white font-semibold text-sm shadow-[0_0_15px_rgba(255,45,158,0.4)] hover:shadow-[0_0_25px_rgba(255,45,158,0.6)] hover:scale-105 transition-all duration-300 group"
+            >
+              <Icon name="mdi:link-variant" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+              <span>Ver Proyecto</span>
+              <div class="w-2 h-2 bg-white rounded-full ml-2 animate-pulse"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para imagen ampliada -->
+<div id="imageModal" class="fixed inset-0 bg-ferxxo-black/95 backdrop-blur-lg z-[10002] hidden items-center justify-center p-4" onclick="closeImageModal()">
+  <div class="relative max-w-[85vw] max-h-[75vh] rounded-xl overflow-hidden" onclick="event.stopPropagation()">
+    <!-- Botón cerrar -->
+    <button 
+      onclick="closeImageModal()" 
+      class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-ferxxo-black/80 border border-ferxxo-pink/40 flex items-center justify-center text-ferxxo-pink hover:bg-ferxxo-pink/20 hover:shadow-[0_0_15px_rgba(255,45,158,0.5)] transition-all duration-300"
+    >
+      <Icon name="mdi:close" class="w-6 h-6" />
+    </button>
+    
+    <!-- Imagen ampliada -->
+    <img 
+      id="enlargedImage" 
+      src="" 
+      alt="" 
+      class="max-w-full max-h-full object-contain rounded-xl border border-ferxxo-pink/30 shadow-[0_0_40px_rgba(255,45,158,0.3)]"
+    />
+  </div>
+</div>
+
 <style>
   .ferxxo-glow {
     position: relative;
@@ -387,25 +493,17 @@ const socialLinks = [
   }
   
   .project-card {
-    transform: translateY(0);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     z-index: 1 !important;
   }
   
-  .project-card:hover {
-    transform: translateY(-8px);
-    z-index: 1 !important;
-  }
-  
-  /* Forzar todos los elementos absolute a tener z-index bajo */
-  section#experience .absolute {
-    z-index: 1 !important;
-  }
-  
-  /* Pero dar prioridad a las barras sociales */
-  .social-sidebar, .social-mobile {
+  /* Asegurar jerarquía correcta de z-index */
+  .social-sidebar {
     z-index: 9999 !important;
+  }
+  
+  .social-mobile {
+    z-index: 50 !important;
   }
   
   .project-title {
@@ -462,7 +560,7 @@ const socialLinks = [
   .social-sidebar {
     box-shadow: 4px 0 15px rgba(255, 0, 128, 0.2);
     animation: sidebar-glow 4s infinite alternate;
-    margin: 0 0.5rem;
+    margin: 0;
   }
   
   @keyframes pulse {
@@ -486,9 +584,103 @@ const socialLinks = [
     100% { box-shadow: 4px 0 15px rgba(255, 0, 128, 0.2); }
   }
   
-  @media (max-width: 640px) {
-    .project-card:hover {
-      transform: translateY(-5px);
+</style>
+
+<script>
+  // Función para abrir modal desde elemento
+  function openProjectModalFromElement(element) {
+    const projectData = element.getAttribute('data-project');
+    const project = JSON.parse(projectData);
+    openProjectModal(project);
+  }
+  
+  // Funciones para manejar el modal del proyecto
+  function openProjectModal(project) {
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalTechnologies = document.getElementById('modalTechnologies');
+    const modalLink = document.getElementById('modalLink');
+    
+    // Llenar contenido del modal
+    modalTitle.textContent = project.name;
+    modalImage.src = project.image.src;
+    modalImage.alt = project.name;
+    modalDescription.textContent = project.description;
+    modalLink.href = project.link;
+    
+    // Llenar tecnologías
+    modalTechnologies.innerHTML = '';
+    project.technologies.forEach(tech => {
+      const techSpan = document.createElement('span');
+      techSpan.className = 'inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm bg-ferxxo-blue/10 text-ferxxo-blue rounded-full border border-ferxxo-blue/30';
+      techSpan.textContent = tech;
+      modalTechnologies.appendChild(techSpan);
+    });
+    
+    // Mostrar modal
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Cerrar modal con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeProjectModal();
+    }
+  });
+  
+  // Cerrar modal haciendo click fuera del contenido
+  document.getElementById('projectModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'projectModal') {
+      closeProjectModal();
+    }
+  });
+  
+  // Funciones para el modal de imagen
+  function openImageModal() {
+    const modalImage = document.getElementById('modalImage');
+    const enlargedImage = document.getElementById('enlargedImage');
+    const imageModal = document.getElementById('imageModal');
+    
+    if (modalImage && enlargedImage && imageModal) {
+      enlargedImage.src = modalImage.src;
+      enlargedImage.alt = modalImage.alt;
+      imageModal.classList.remove('hidden');
+      imageModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
     }
   }
-</style> 
+  
+  function closeImageModal() {
+    const imageModal = document.getElementById('imageModal');
+    if (imageModal) {
+      imageModal.classList.add('hidden');
+      imageModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  }
+  
+  // Cerrar modal de imagen con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeImageModal();
+    }
+  });
+  
+  // Hacer las funciones globales
+  window.openProjectModal = openProjectModal;
+  window.openProjectModalFromElement = openProjectModalFromElement;
+  window.closeProjectModal = closeProjectModal;
+  window.openImageModal = openImageModal;
+  window.closeImageModal = closeImageModal;
+</script> 

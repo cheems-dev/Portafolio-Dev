@@ -48,6 +48,8 @@ export default defineConfig({
           "github",
           "link",
           "open-in-new",
+          "arrow-expand",
+          "certificate",
         ],
       },
     }),
